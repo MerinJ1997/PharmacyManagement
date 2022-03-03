@@ -8,5 +8,6 @@ namespace PharmacyManagement.ViewModel
 {
     public class AddStockViewModel:BaseViewModel
     {
+        public int id;
     }
 }

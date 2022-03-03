@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <ContentControl Content="{Binding SelectedView}"></ContentControl>
-        <Menu Background="#0a1e5e" Margin="0,0,626,0" FontSize="14" >
+        <Menu Background="Black" HorizontalAlignment="Left" Width="150"  FontSize="14" >
             <Menu.ItemsPanel>
                 <ItemsPanelTemplate>
 
@@ -17,7 +17,7 @@
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
 
-            <MenuItem  Header="My Profile" Command="{Binding AddUserCommand}" CommandParameter="addUser" Height="30" >
+            <MenuItem  Header="My Profile" Command="{Binding EmployeeCommand}" CommandParameter="My Profile" Height="30" >
                 <MenuItem.Icon>
                     <Image Source="/images/adduser.jpeg" />
 
@@ -34,7 +34,7 @@
                     </Style>
                 </MenuItem.Style>-->
             </MenuItem>
-            <MenuItem Header="Billing" Command="{Binding AddUserCommand}" CommandParameter="ViewUpdateUser" Height="30" >
+            <MenuItem Header="Billing" Command="{Binding EmployeeCommand}" CommandParameter="Billing" Height="30" >
                 <MenuItem.Icon>
 
 
@@ -44,7 +44,7 @@
 
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem Header="Log Out" Command="{Binding AddUserCommand}" CommandParameter="ViewStock" Height="30">
+            <MenuItem Header="Log Out" Command="{Binding EmployeeCommand}" CommandParameter="Log Out" Height="30">
                 <MenuItem.Icon>
                     <Image Source="/images/icons8-logout-48.png" />
 
@@ -60,7 +60,7 @@
 
 
 
-        <Image Source="/images/icons8-home-64.png" Margin="33,39,683,0" VerticalAlignment="Top" Height="60"/>
+        
 
 
 

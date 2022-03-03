@@ -25,6 +25,13 @@
         <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
             <view:LoginView></view:LoginView>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:EmployeeDetailViewModel}">
+            <view:EmployeeDetailView></view:EmployeeDetailView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:BillingViewModel}">
+            <view:BillingView></view:BillingView>
+        </DataTemplate>
+        
 
 
 

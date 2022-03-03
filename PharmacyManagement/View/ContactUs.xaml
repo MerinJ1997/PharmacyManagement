@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="PharmacyManagement.View.ContactUs"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PharmacyManagement.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/images/mainpage.jpeg" Opacity="0.9" />
+
+
+
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Contact Us" FontWeight="Bold" FontSize="30" HorizontalAlignment="Center"/>
+        <RichTextBox Opacity="0.8" Grid.Row="1" Margin="160,20,0,0" Name="RichTextBox1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="515" Height="240" Grid.RowSpan="2">
+            <FlowDocument Background="#93b1c2" >
+                <Paragraph Background="White">
+                    <Bold >To arrange a visit, or for any other enquiries , please contact</Bold>
+                </Paragraph>
+
+                <Paragraph Background="White">
+                    <Bold>Address</Bold> : PharmaMed,Prathap Nagar, Muttom, Alwaye, Cochin - 683106, Kerala, India
+                </Paragraph>
+                <Paragraph Background="White">
+                    <Bold>Official Facebook Page</Bold> : https://www.PharmaMed.com/
+                </Paragraph >
+                <Paragraph Background="White">
+                    <Bold>Email</Bold> : Pharma@med.org
+                </Paragraph>
+                <Paragraph Background="White">
+                    <Bold>Phone</Bold> : Tel: +91 484 2623803, +91 484 2623800
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+    </Grid>
+</UserControl>

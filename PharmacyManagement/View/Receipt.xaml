@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="PharmacyManagement.View.Receipt"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PharmacyManagement.View"
+             mc:Ignorable="d" Height="900" Width="804">
+    <Grid Margin="5,-8,0,415" Background="#f0f5f4">
+        <Image Source="/images/6e22000a0d68024c1b100e9c50ca304704afd197-640x380.png" Margin="-5,-421,4,-581" Height="1495" />
+
+        <TextBlock Text="PHARMACY INVOICE" Margin="295,23,245,-23" FontSize="15" FontWeight="Bold"></TextBlock>
+        <Grid Margin="20,58,20,-271">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Foreground="White" Height="28" FontSize="13" FontWeight="Bold" Background="#3273D3" Content="DETAILS" Grid.Row="0" Grid.Column="1" Margin="0,0,0,82"></Label>
+            <Label Grid.Row="0" Content="Date" Grid.Column="1" Margin="0,38,310,45" FontWeight="Bold"/>
+            <Label Content="22-7-2022" x:Name="Date" Grid.Column="1" FontWeight="Bold" Margin="105,37,0,47" HorizontalAlignment="Left" Width="290"/>
+            <Label Grid.Row="0" Content="Invoice No" Grid.Column="1" Margin="0,66,305,17" FontWeight="Bold"/>
+            <Label Content="12345" x:Name="invoice_num" Grid.Column="1" FontWeight="Bold" Margin="105,65,0,19" HorizontalAlignment="Left" Width="290"/>
+
+            <Label Foreground="White"  Height="28" FontSize="13" FontWeight="Bold" Background="#3273D3" Content="BILL TO" Margin="0,108,0,247" Grid.Column="1" Grid.RowSpan="2"/>
+            <Label Grid.Row="1" Content="Company" Margin="0,30,294,135" FontWeight="Bold" Grid.Column="1"/>
+            <Label Content="abcd" x:Name="companyname" Grid.Column="1" FontWeight="Bold" Margin="96,32,0,141" HorizontalAlignment="Left" Width="305" Grid.Row="1"/>
+            <Label Grid.Row="1" Content="Address" Margin="0,55,294,121" FontWeight="Bold" Grid.Column="1"/>
+            <Label Content="abcd kollam" x:Name="address" Grid.Column="1" FontWeight="Bold" Margin="96,55,0,128" HorizontalAlignment="Left" Width="305" Grid.Row="1"/>
+            <Label Grid.Row="1" Content="Phone No" Margin="0,85,304,91" FontWeight="Bold" Grid.Column="1" RenderTransformOrigin="0.5,1.595"/>
+            <Label Content="123456" x:Name="phonenum" Grid.Column="1" FontWeight="Bold" Margin="96,85,0,162" HorizontalAlignment="Left" Width="305" Grid.Row="1"/>
+            <Label Grid.Row="1" Content="Email" Margin="0,115,329,135" FontWeight="Bold" Grid.Column="1" RenderTransformOrigin="0.5,1.595"/>
+            <Label Content="abc@gmail.com" x:Name="email" Grid.Column="1" FontWeight="Bold" Margin="96,115,0,111" HorizontalAlignment="Left" Width="305" Grid.Row="1"/>
+
+            <Label Foreground="White" Width="400" Height="28" FontSize="13" FontWeight="Bold" Background="#3273D3" Content="FROM" Margin="0,108,40,250" Grid.RowSpan="2"/>
+            <Label Grid.Row="1" Content="Company" Margin="-1,30,314,189" FontWeight="Bold"/>
+            <Label Content="abcd" x:Name="fromcompanyname" FontWeight="Bold" Margin="85,29,0,202" HorizontalAlignment="Left" Width="260" Grid.Row="1"/>
+            <Label Grid.Row="1" Content="Address" Margin="0,54,302,148" FontWeight="Bold"/>
+            <Label Content="abcd kollam" x:Name="fromaddress" FontWeight="Bold" Margin="85,54,0,176" HorizontalAlignment="Left" Width="260" Grid.Row="1"/>
+            <Label Grid.Row="1" Content="Phone No" Margin="0,84,308,133" FontWeight="Bold" RenderTransformOrigin="0.5,1.595"/>
+            <Label Content="123456" x:Name="fromphne" FontWeight="Bold" Margin="85,85,0,146" HorizontalAlignment="Left" Width="260" Grid.Row="1"/>
+            <Label Grid.Row="1" Content="Email" Margin="0,117,320,139" FontWeight="Bold" RenderTransformOrigin="0.5,1.595"/>
+            <Label Content="abc@gmail.com" x:Name="fromemail" FontWeight="Bold" Margin="85,115,0,137" HorizontalAlignment="Left" Width="260" Grid.Row="1"/>
+
+        </Grid>
+        <DataGrid Margin="16,333,24,-10" Opacity="0.80" AutoGenerateColumns="False" >
+
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Description" Width="350"  FontWeight="Bold" />
+                <DataGridTextColumn Header="Quantity" Width="140" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Unit Price" Width="140" FontWeight="Bold"/>
+                <DataGridTextColumn Header="Amount" Width="100" FontWeight="Bold"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid x:Name="datgrd"  Margin="515,508,19,-346">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="SUBTOTAL" FontWeight="Bold" Foreground="White" Background="#3273D3" ></Label>
+            <Label Grid.Row="1" Grid.Column="0" Content="GST"  FontWeight="Bold" Background="#3273D3"  Foreground="White"></Label>
+            <Label Grid.Row="2" Grid.Column="0" Content="TOTAL" FontWeight="Bold"  Foreground="White" Background="#3273D3" ></Label>
+            <Label Grid.Row="0" Grid.Column="1" Content="1000"></Label>
+            <Label Grid.Row="1" Grid.Column="1" Content="10.25"  ></Label>
+            <Label Grid.Row="2" Grid.Column="1" Content="1010.25"  ></Label>
+
+
+
+        </Grid>
+
+
+
+    </Grid>
+
+</UserControl>

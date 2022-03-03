@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="PharmacyManagement.View.EmployeeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PharmacyManagement.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/images/emp.png"  />
+        </Grid.Background>
+
+
+
+        <DataGrid Background="Black"
+
+            Name="DataGrid" IsReadOnly="True"
+            Margin="180,50,20,40" AutoGenerateColumns="True" Opacity="0.60" FontWeight="Bold" FontStyle="Normal" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Employee ID" Width="100"  ></DataGridTextColumn>
+                <DataGridTextColumn Header="Name" MinWidth="5" Width="*"  ></DataGridTextColumn>
+                <DataGridTextColumn Header="Address" MinWidth="5" Width="*"  ></DataGridTextColumn>
+                <DataGridTextColumn Header="Phone No" MinWidth="5" Width="*" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Email" MinWidth="5" Width="*" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Gender" MinWidth="5" Width="*"  ></DataGridTextColumn>
+                <DataGridTextColumn Header="Age" MinWidth="5" Width="*" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Role" MinWidth="5" Width="*" ></DataGridTextColumn>
+
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+
+    </Grid>
+</UserControl>

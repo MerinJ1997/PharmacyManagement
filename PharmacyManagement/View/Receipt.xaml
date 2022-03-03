@@ -6,10 +6,14 @@
              xmlns:local="clr-namespace:PharmacyManagement.View"
              mc:Ignorable="d" Height="900" Width="804">
     <Grid Margin="5,-8,0,415" Background="#f0f5f4">
-        <Image Source="/images/6e22000a0d68024c1b100e9c50ca304704afd197-640x380.png" Margin="-5,-421,4,-581" Height="1495" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="42*"/>
+        </Grid.ColumnDefinitions>
+        <Image Source="/images/6e22000a0d68024c1b100e9c50ca304704afd197-640x380.png" Margin="-5,-421,4,-581" Height="1495" Grid.ColumnSpan="2" />
 
-        <TextBlock Text="PHARMACY INVOICE" Margin="295,23,245,-23" FontSize="15" FontWeight="Bold"></TextBlock>
-        <Grid Margin="20,58,20,-271">
+        <TextBlock Text="PHARMACY INVOICE" Margin="210,23,245,-23" FontSize="15" FontWeight="Bold" Grid.Column="1"></TextBlock>
+        <Grid Margin="20,58,20,-271" Grid.ColumnSpan="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
@@ -46,7 +50,7 @@
             <Label Content="abc@gmail.com" x:Name="fromemail" FontWeight="Bold" Margin="85,115,0,137" HorizontalAlignment="Left" Width="260" Grid.Row="1"/>
 
         </Grid>
-        <DataGrid Margin="16,333,24,-10" Opacity="0.80" AutoGenerateColumns="False" >
+        <DataGrid Margin="16,333,24,-10" Opacity="0.80" AutoGenerateColumns="False" Grid.ColumnSpan="2" >
 
             <DataGrid.Columns >
                 <DataGridTextColumn Header="Description" Width="350"  FontWeight="Bold" />
@@ -55,7 +59,7 @@
                 <DataGridTextColumn Header="Amount" Width="100" FontWeight="Bold"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Grid x:Name="datgrd"  Margin="515,508,19,-346">
+        <Grid x:Name="datgrd"  Margin="430,508,19,-245" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
@@ -73,12 +77,14 @@
             <Label Grid.Row="0" Grid.Column="1" Content="1000"></Label>
             <Label Grid.Row="1" Grid.Column="1" Content="10.25"  ></Label>
             <Label Grid.Row="2" Grid.Column="1" Content="1010.25"  ></Label>
+            <Button Content="Back" Margin="-485,-460,518,480"  Click="Button_Click"/>
+
 
 
 
         </Grid>
 
-
+        <Frame x:Name="Back" Margin="70,23,61,-50" Grid.Column="1"></Frame>
 
     </Grid>
 

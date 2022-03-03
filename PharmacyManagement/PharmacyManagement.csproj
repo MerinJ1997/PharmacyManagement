@@ -57,10 +57,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\AddUserCommand.cs" />
+    <Compile Include="Commands\EmployeeCommand.cs" />
     <Compile Include="ViewModel\AddStockViewModel.cs" />
     <Compile Include="ViewModel\AddUserViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\BillingViewModel.cs" />
+    <Compile Include="ViewModel\EmployeeDetailViewModel.cs" />
+    <Compile Include="ViewModel\EmployeeWelcomeViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainModelView.cs" />
     <Compile Include="ViewModel\StockViewModel.cs" />
     <Compile Include="ViewModel\ViewUpdateUserViewModel.cs" />
@@ -78,6 +83,9 @@
     </Compile>
     <Compile Include="View\ContactUs.xaml.cs">
       <DependentUpon>ContactUs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EmployeeDetailView.xaml.cs">
+      <DependentUpon>EmployeeDetailView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\EmployeeView.xaml.cs">
       <DependentUpon>EmployeeView.xaml</DependentUpon>
@@ -129,6 +137,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ContactUs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EmployeeDetailView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -256,6 +268,9 @@
   <ItemGroup>
     <Resource Include="images\green.jpeg" />
     <Resource Include="images\green1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\Pharmacists.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

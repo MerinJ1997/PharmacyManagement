@@ -7,6 +7,69 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <ContentControl Content="{Binding SelectedView}"></ContentControl>
+        <Menu Background="#0a1e5e" Margin="0,0,626,0" FontSize="14" >
+            <Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+
+                    <StackPanel VerticalAlignment="Center" Background="White" />
+
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+
+            <MenuItem  Header="My Profile" Command="{Binding AddUserCommand}" CommandParameter="addUser" Height="30" >
+                <MenuItem.Icon>
+                    <Image Source="/images/adduser.jpeg" />
+
+
+
+                </MenuItem.Icon>
+                <!--<MenuItem.Style>
+                    <Style TargetType="MenuItem">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="IsSubmenuOpen" Value="True" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </MenuItem.Style>-->
+            </MenuItem>
+            <MenuItem Header="Billing" Command="{Binding AddUserCommand}" CommandParameter="ViewUpdateUser" Height="30" >
+                <MenuItem.Icon>
+
+
+                    <Image Source="/images/icons8-bill-64.png" />
+
+
+
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="Log Out" Command="{Binding AddUserCommand}" CommandParameter="ViewStock" Height="30">
+                <MenuItem.Icon>
+                    <Image Source="/images/icons8-logout-48.png" />
+
+
+
+                </MenuItem.Icon>
+            </MenuItem>
+
+
+
+        </Menu>
+
+
+
+
+        <Image Source="/images/icons8-home-64.png" Margin="33,39,683,0" VerticalAlignment="Top" Height="60"/>
+
+
+
+
+
+
+
+    </Grid>
+    <!--<Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/images/employeelogin.jpeg" />
 
@@ -59,6 +122,6 @@
         <Label Content="abc address" Margin="70,170,560,250" Foreground="White" FontWeight="Bold"></Label>
         <Label Content="shalima@gmail.com" Margin="70,210,560,210" Foreground="White" FontWeight="Bold"></Label>
         <Label Content="773678988" Margin="70,250,560,170" Foreground="White" FontWeight="Bold"></Label>
-    </Grid>
+    </Grid>-->
 </UserControl>
  

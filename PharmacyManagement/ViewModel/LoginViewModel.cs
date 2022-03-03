@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace PharmacyManagement.ViewModel
 {
-    public class AddStockViewModel : BaseViewModel
+    public class LoginViewModel:BaseViewModel
     {
-      
     }
 }

@@ -67,6 +67,7 @@
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainModelView.cs" />
+    <Compile Include="ViewModel\ReceiptViewModel.cs" />
     <Compile Include="ViewModel\StockViewModel.cs" />
     <Compile Include="ViewModel\ViewUpdateUserViewModel.cs" />
     <Compile Include="View\AboutUs.xaml.cs">

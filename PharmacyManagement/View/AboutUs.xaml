@@ -22,7 +22,7 @@
         <RichTextBox Opacity="0.8" Grid.Row="1" Margin="160,20,0,0" Name="RichTextBox1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="500" Height="195" Grid.RowSpan="2">
             <FlowDocument Background="#93b1c2" >
                 <Paragraph>
-                    <Bold >PHARMA MED  is a family owned Lebanese pharmaceutical company. It has been marketing and distributing niche healthcare products across Lebanon since 1990. The company serves retail drugstores, hospitals and governmental institutions.Its portfolio encompasses value-add pharmaceuticals, a diverse list of medical supplies as well as a line of dietary supplements. In providing cost-effective medications while enforcing quality standards, the company boosts its reputation in the healthcare sector as being a distinguished healthcare provider.</Bold>
+                    <Bold >PHARMA MED  is a family owned   Lebanese pharmaceutical company. It has been marketing and distributing niche healthcare products across Lebanon since 1990. The company serves retail drugstores, hospitals and governmental institutions.Its portfolio encompasses value-add pharmaceuticals, a diverse list of medical supplies as well as a line of dietary supplements. In providing cost-effective medications while enforcing quality standards, the company boosts its reputation in the healthcare sector as being a distinguished healthcare provider.</Bold>
                 </Paragraph>
 
 

@@ -61,7 +61,7 @@
 
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem Header="Logout" Command="{Binding }" CommandParameter="" Height="30">
+            <MenuItem Header="Logout" Command="{Binding AddUserCommand }" CommandParameter="Logout" Height="30">
                 <MenuItem.Icon>
 
                     

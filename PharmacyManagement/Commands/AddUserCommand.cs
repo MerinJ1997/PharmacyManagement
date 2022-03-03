@@ -27,7 +27,7 @@ namespace PharmacyManagement.Commands
             if (parameter.ToString() == "addUser")
 
             {
-                 model.SelectedView = new AddUserViewModel();
+                model.SelectedView = new AddUserViewModel();
             }
             else if (parameter.ToString() == "ViewUpdateUser")
 
@@ -42,7 +42,12 @@ namespace PharmacyManagement.Commands
             {
                 model.SelectedView = new AddStockViewModel();
             }
-           
+            else if (parameter.ToString() == "Logout")
+            {
+                model.SelectedView = new LoginViewModel();
+            }
+
+
 
         }
     }

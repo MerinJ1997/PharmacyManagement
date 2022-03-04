@@ -58,15 +58,20 @@
     </ApplicationDefinition>
     <Compile Include="Commands\AddUserCommand.cs" />
     <Compile Include="Commands\EmployeeCommand.cs" />
+    <Compile Include="Commands\HomePageCommands.cs" />
+    <Compile Include="ViewModel\AboutUsViewModel.cs" />
     <Compile Include="ViewModel\AddStockViewModel.cs" />
     <Compile Include="ViewModel\AddUserViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BillingViewModel.cs" />
+    <Compile Include="ViewModel\ContactUsViewModel.cs" />
     <Compile Include="ViewModel\EmployeeDetailViewModel.cs" />
     <Compile Include="ViewModel\EmployeeWelcomeViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainModelView.cs" />
+    <Compile Include="ViewModel\MainPageHomeViewModel.cs" />
+    <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\ReceiptViewModel.cs" />
     <Compile Include="ViewModel\StockViewModel.cs" />
     <Compile Include="ViewModel\ViewUpdateUserViewModel.cs" />
@@ -78,6 +83,9 @@
     </Compile>
     <Compile Include="View\AddUserView.xaml.cs">
       <DependentUpon>AddUserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminPageView.xaml.cs">
+      <DependentUpon>AdminPageView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\BillingView.xaml.cs">
       <DependentUpon>BillingView.xaml</DependentUpon>
@@ -100,8 +108,8 @@
     <Compile Include="View\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
+    <Compile Include="View\MainPageHome.xaml.cs">
+      <DependentUpon>MainPageHome.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Receipt.xaml.cs">
       <DependentUpon>Receipt.xaml</DependentUpon>
@@ -133,6 +141,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\AdminPageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\BillingView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -161,7 +173,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MainPage.xaml">
+    <Page Include="View\MainPageHome.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -200,7 +212,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="images\page1.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="images\employeelogin.jpeg" />
     <Resource Include="images\login.jpeg" />

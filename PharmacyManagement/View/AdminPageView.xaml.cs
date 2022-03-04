@@ -14,17 +14,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PharmacyManagement
+namespace PharmacyManagement.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AdminPageView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AdminPageView : UserControl
     {
-        public MainWindow()
+        public AdminPageView()
         {
             InitializeComponent();
-            DataContext = new MainPageViewModel();
+            DataContext = new MainModelView();
         }
     }
 }

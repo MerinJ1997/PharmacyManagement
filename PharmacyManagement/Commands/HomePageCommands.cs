@@ -28,6 +28,10 @@ namespace PharmacyManagement.Commands
             {
                 model.SelectedView = new AboutUsViewModel();
             }
+            else if (parameter.ToString() == "Home")
+            {
+                model.SelectedView = new MainPageHomeViewModel();
+            }
             else if (parameter.ToString() == "Contactus")
             {
                 model.SelectedView = new ContactUsViewModel();

@@ -7,11 +7,9 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid >
-
-
         <Grid x:Name="LayoutRoot">
             <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="450" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <ContentControl Content="{Binding SelectedView}"></ContentControl>
@@ -28,6 +26,9 @@
                 <Menu.BitmapEffect>
                     <DropShadowBitmapEffect />
                 </Menu.BitmapEffect>
+                <MenuItem Header="Home" Command="{Binding HomePageCommands}" CommandParameter="Home" IsCheckable="True">
+
+                </MenuItem>
                 <MenuItem Header="About Us" Command="{Binding HomePageCommands}" CommandParameter="Aboutus" IsCheckable="true">
                     <MenuItem.Icon>
                         <Image Source="/images/icons8-about-48.png" Width="20" Height="20" />
@@ -56,6 +57,7 @@
 
                     </MenuItem.Icon>
                 </MenuItem>
+                
 
 
             </Menu>

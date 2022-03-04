@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLayer;
+using EntityLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,6 @@ namespace PharmacyManagement.ViewModel
 {
     public class ViewUpdateUserViewModel:BaseViewModel
     {
+        
     }
 }

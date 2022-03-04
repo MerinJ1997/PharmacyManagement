@@ -1,0 +1,19 @@
+﻿using DataAccessLayer;
+using EntityLayer;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BusinessLayer
+{
+    public class UpdateStockBusiness
+    {
+        public List<StockModel> GetStockToDisplay()
+        {
+            StockData model = new StockData();
+            return model.GetStock();
+        }
+    }
+}

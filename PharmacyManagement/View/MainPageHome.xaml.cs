@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace PharmacyManagement.View
 {
     /// <summary>
-    /// Interaction logic for MainPage.xaml
+    /// Interaction logic for MainPageHome.xaml
     /// </summary>
-    public partial class MainPage : UserControl
+    public partial class MainPageHome : UserControl
     {
-        public MainPage()
+        public MainPageHome()
         {
             InitializeComponent();
         }

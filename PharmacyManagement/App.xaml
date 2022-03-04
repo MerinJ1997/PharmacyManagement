@@ -34,6 +34,19 @@
         <DataTemplate DataType="{x:Type viewModel:ReceiptViewModel}">
             <view:Receipt></view:Receipt>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:AboutUsViewModel}">
+        <view:AboutUs></view:AboutUs>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:ContactUsViewModel}">
+            <view:ContactUs></view:ContactUs>
+        </DataTemplate>
+        <!--<DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
+            <view:LoginView></view:LoginView>
+        </DataTemplate>-->
+        <DataTemplate DataType="{x:Type viewModel:MainPageHomeViewModel}">
+            <view:MainPageHome></view:MainPageHome>
+        </DataTemplate>
+
 
 
 

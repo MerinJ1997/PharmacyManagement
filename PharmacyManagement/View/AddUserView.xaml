@@ -49,7 +49,7 @@ VerticalScrollBarVisibility="Hidden"/>
 
 
     </UserControl.Resources>
-    <Grid Margin="0,0,0,0" Background="#165052">
+    <Grid  Background="#165052">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="363*"/>
             <ColumnDefinition Width="37*"/>
@@ -123,29 +123,28 @@ VerticalScrollBarVisibility="Hidden"/>
                 <Label Grid.Row="15" Grid.Column="0"></Label>
                 <Label Grid.Row="16" Grid.Column="0" Content="Role " Foreground="White"  FontWeight="Bold"></Label>
                 <Label Grid.Row="17" Grid.Column="0"></Label>
-                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtname" Margin="0,0,-301,10" Grid.RowSpan="2" ></TextBox>
+                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtname" Text="{Binding Name}" Margin="0,0,-301,10" Grid.RowSpan="2" ></TextBox>
                 <Label Grid.Row="1" Grid.Column="1"></Label>
-                <TextBox Grid.Row="2" Grid.Column="1"  x:Name="txtaddress" Margin="0,0,-302,0" ></TextBox>
+                <TextBox Grid.Row="2" Grid.Column="1"  x:Name="txtaddress" Text="{Binding Address}" Margin="0,0,-302,0" ></TextBox>
                 <Label Grid.Row="3" Grid.Column="1"></Label>
-                <TextBox Grid.Row="4" Grid.Column="1"  x:Name="txtphno" Margin="0,0,-302,0" ></TextBox>
+                <TextBox Grid.Row="4" Grid.Column="1"  x:Name="txtphno" Text="{Binding PhoneNo}" Margin="0,0,-302,0" ></TextBox>
                 <Label Grid.Row="5" Grid.Column="1"></Label>
-                <TextBox Grid.Row="6" Grid.Column="1"  x:Name="txtemail" Margin="0,0,-302,0" ></TextBox>
+                <TextBox Grid.Row="6" Grid.Column="1"  x:Name="txtemail" Text="{Binding Email}" Margin="0,0,-302,0" ></TextBox>
                 <Label Grid.Row="7" Grid.Column="1"></Label>
 
-                <ComboBox Grid.Row="8" Grid.Column="1" x:Name="cmbgender" Margin="0,0,-302,0" >
+                <ComboBox Grid.Row="8" Grid.Column="1" Text="{Binding Gender}" x:Name="cmbgender" Margin="0,0,-302,0" >
                     <TextBlock Text="Male" Margin="0,0,-302,0"></TextBlock>
                     <TextBlock Text="Female"></TextBlock>
                     <TextBlock Text="Others"></TextBlock>
-
                 </ComboBox>
                 <Label Grid.Row="9" Grid.Column="1"></Label>
-                <TextBox Grid.Row="10" Grid.Column="1" Margin="0,0,-302,0" ></TextBox>
+                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Age}" Margin="0,0,-302,0" ></TextBox>
                 <Label Grid.Row="11" Grid.Column="1"></Label>
-                <TextBox Grid.Row="12" Grid.Column="1" Margin="0,0,-303,10" Grid.RowSpan="2" ></TextBox>
+                <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding Username}" Margin="0,0,-303,10" Grid.RowSpan="2" ></TextBox>
                 <Label Grid.Row="13" Grid.Column="1"></Label>
-                <TextBox Grid.Row="14" Grid.Column="1" Margin="0,0,-302,10" Grid.RowSpan="2" ></TextBox>
+                <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Password}" Margin="0,0,-302,10" Grid.RowSpan="2" ></TextBox>
                 <Label Grid.Row="15" Grid.Column="1"></Label>
-                <ComboBox Grid.Row="16" Grid.Column="1" Margin="0,0,-304,23" Grid.RowSpan="2">
+                <ComboBox Grid.Row="16" Grid.Column="1" Text="{Binding Role}" Margin="0,0,-304,23" Grid.RowSpan="2">
                     <TextBlock Text="Manager" Margin="0,0,-302,0"></TextBlock>
                     <TextBlock Text="Employee"></TextBlock>
                 </ComboBox>
@@ -157,7 +156,7 @@ VerticalScrollBarVisibility="Hidden"/>
 
             </Grid>
         </Grid>
-        <Button Content=" Add User "  Margin="490,0,114,20" VerticalAlignment="Bottom"   x:Name="btn" Height="55">
+        <Button Content=" Add User " Command="{Binding Submit}" Margin="490,0,114,20" VerticalAlignment="Bottom"   x:Name="btn" Height="55">
         </Button>
 
     </Grid>

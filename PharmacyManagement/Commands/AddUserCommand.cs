@@ -27,7 +27,7 @@ namespace PharmacyManagement.Commands
             if (parameter.ToString() == "addUser")
 
             {
-                model.SelectedView = new AddUserViewModel();
+                model.SelectedView = new AddUserViewModel(new EntityLayer.AddUserDetailsModel());
             }
             else if (parameter.ToString() == "ViewUpdateUser")
 

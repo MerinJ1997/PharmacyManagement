@@ -9,26 +9,18 @@
     <Grid >
         <Grid.Background >
             <ImageBrush ImageSource="/images/1.jpg"/>
-
-
-
-
         </Grid.Background>
 
-
         <DataGrid 
-            Name="DataGrid" IsReadOnly="True" 
+            Name="DataGrid" IsReadOnly="True" ItemsSource="{Binding list}"
             Margin="185,75,15,155" AutoGenerateColumns="False" Opacity="0.9" FontWeight="Bold" FontStyle="Normal" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="MedicineID"  Width="80" ></DataGridTextColumn>
-                <DataGridTextColumn Header="Name"  Width="100"  ></DataGridTextColumn>
-                <DataGridTextColumn Header="Company Name" Width="120"  ></DataGridTextColumn>
-                <DataGridTextColumn Header="Available Stock" Width="100"  ></DataGridTextColumn>
-                <DataGridTextColumn Header="Unit Price" Width="100"  ></DataGridTextColumn>
-                <DataGridTextColumn Header="Expiry Date" Width="100" ></DataGridTextColumn>
-
-
-
+                <DataGridTextColumn Header="MedicineID" Binding="{Binding MedID}" Width="80" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Name"  Width="100" Binding="{Binding MedName}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Company Name" Width="120" Binding="{Binding Company}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Available Stock" Width="100" Binding="{Binding StockAvailable}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Unit Price" Width="100" Binding="{Binding UnitPrice}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Expiry Date" Width="100" Binding="{Binding Expiry}" ></DataGridTextColumn>
             </DataGrid.Columns>
 
         </DataGrid>
@@ -45,9 +37,6 @@
                 <TextBlock Text="Save" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Border>-->
         <!--</Button>-->
-
-
-
 
 
     </Grid>

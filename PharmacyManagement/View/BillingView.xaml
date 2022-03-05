@@ -59,13 +59,13 @@
                 </DataGrid.Columns>
             </DataGrid>
 
-            <Button Content="     Add" Margin="160,338,395,58" TextOptions.TextFormattingMode="Display" />
-            <Button Content="    Print" Click ="Button_Click" Margin="270,338,285,58" TextOptions.TextFormattingMode="Display"  />
-            <Button Content="    Expiry" Margin="495,338,60,58" TextOptions.TextFormattingMode="Display" Background="#a33b3b"/>
-            <Button Content="    Clear" Margin="381,338,174,58" TextOptions.TextFormattingMode="Display"/>
+            <Button Content="     Add" Margin="160,376,387,58" TextOptions.TextFormattingMode="Display" />
+            <Button Content="    Print" Click ="Button_Click" Margin="270,376,279,58" TextOptions.TextFormattingMode="Display"  />
+            <Button Content="    Expiry" Margin="495,376,55,58" TextOptions.TextFormattingMode="Display" Background="#a33b3b"/>
+            <Button Content="    Clear" Margin="381,376,175,58" TextOptions.TextFormattingMode="Display"/>
 
         </Grid>
-        <Frame x:Name="mainbill" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="150,0,0,0"/>
+        <Frame x:Name="mainbill" Grid.RowSpan="2" Margin="121,4,29,-4" Grid.ColumnSpan="2"/>
     </Grid>
 
 </UserControl>

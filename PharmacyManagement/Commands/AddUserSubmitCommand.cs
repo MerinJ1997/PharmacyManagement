@@ -27,7 +27,7 @@ namespace PharmacyManagement.Commands
 
         public void Execute(object parameter)
         {
-            AddUserDetailsModel add = new AddUserDetailsModel();
+            AddUserDetailsModel add = new AddUserDetailsModel(); 
             AddUserBusiness addUserBusiness = new AddUserBusiness();    
             add.Name = ViewModel.Name;
             add.Address = ViewModel.Address;

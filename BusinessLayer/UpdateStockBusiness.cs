@@ -20,5 +20,11 @@ namespace BusinessLayer
             StockData stockData = new StockData();
             stockData.SaveStockData(stockModel);
         }
+        public void DeleteData(StockModel stockModel)
+        {
+            StockData stockData = new StockData();
+            stockData.DeleteStockData(stockModel);
+
+        }
     }
 }

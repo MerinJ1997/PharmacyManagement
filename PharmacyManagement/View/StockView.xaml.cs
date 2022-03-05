@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLayer;
+using EntityLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +26,41 @@ namespace PharmacyManagement.View
         {
             InitializeComponent();
         }
+
+        
+        private void DeleteStock(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (DataGrid.Items.Count > 0)
+                {
+                    var value = (DataGrid.SelectedItem as StockModel).MedID;
+                    StockModel Model = new StockModel();
+                    UpdateStockBusiness add = new UpdateStockBusiness();
+                    Model.MedID = value;
+                    add.DeleteData(Model);
+                    MessageBox.Show("User Data Deleted :" + Model.MedID);
+                    Refresh();
+                }
+                else
+                {
+                    MessageBox.Show("No Data available for Delete:??");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            void Refresh()
+            {
+                UpdateStockBusiness add = new UpdateStockBusiness();
+                DataGrid.ItemsSource = add.GetStockToDisplay();
+            }
+        }
+
     }
 }
+    
+    
+    
+

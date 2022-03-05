@@ -15,5 +15,10 @@ namespace BusinessLayer
             AddUserData userData = new AddUserData();
             userData.SaveUserData(addUser);
         }
+        public List<AddUserDetailsModel> GetUserDetails()
+        {
+            AddUserData userData = new AddUserData();
+            return userData.GetUserData();
+        }
     }
 }

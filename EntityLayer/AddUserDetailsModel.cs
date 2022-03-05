@@ -8,6 +8,7 @@ namespace EntityLayer
 {
     public class AddUserDetailsModel
     {
+        public int ID { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }
@@ -17,5 +18,11 @@ namespace EntityLayer
         public string Role { get; set; }
         public string username { get; set; }
         public string password { get; set; }
+        public RoleData Roling { get; set; }
+    }
+    public class RoleData
+    {
+        public int RoleID { get; set; }
+        public string RoleName { get; set; }
     }
 }

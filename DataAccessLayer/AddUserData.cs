@@ -15,7 +15,7 @@ namespace DataAccessLayer
         public void SaveUserData(AddUserDetailsModel userDetailsModel)
         {
             SqlConnection connection = null;
-            using(connection = new SqlConnection("data source = LAPTOP-MIPGISHL; database = PharmacyManagement; integrated security = SSPI"))
+            using(connection = new SqlConnection("data source =.; database = PharmacyManagement; integrated security = SSPI"))
             {
                 string Name = userDetailsModel.Name;
                 string Address = userDetailsModel.Address;
@@ -41,6 +41,30 @@ namespace DataAccessLayer
                 int rowsadded = command.ExecuteNonQuery();
                 MessageBox.Show("Inserted Succesfully");
             }
+        }
+        public List<AddUserDetailsModel> GetUserData()
+        {
+            List<AddUserDetailsModel> addUserDetailsModels = new List<AddUserDetailsModel>();
+            PharmacyManagementEntities pharmacyManagementEntities = new PharmacyManagementEntities();
+            var data = from userobj in pharmacyManagementEntities.UserDetails
+                       join roleobj in pharmacyManagementEntities.Roles on userobj.RoleID equals roleobj.RoleID
+                       select userobj;
+            foreach (var user in data)
+            {
+                AddUserDetailsModel addUserDetailsModel = new AddUserDetailsModel();
+                addUserDetailsModel.Roling = new RoleData();
+                addUserDetailsModel.ID = user.EmployeeID;
+                addUserDetailsModel.Name = user.EmployeeName;
+                addUserDetailsModel.Address = user.EmployeeAddress;
+                addUserDetailsModel.Email = user.Email;
+                addUserDetailsModel.Phone = user.PhoneNo;
+                addUserDetailsModel.Gender = user.Gender;
+                addUserDetailsModel.Age = user.Age;
+                addUserDetailsModel.Roling.RoleName = user.Role.RoleName;
+                addUserDetailsModels.Add(addUserDetailsModel);
+
+            }
+            return addUserDetailsModels;
         }
     }
 }

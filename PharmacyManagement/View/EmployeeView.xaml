@@ -13,20 +13,19 @@
 
 
 
-        <DataGrid Background="Black"
+        <DataGrid Background="Black"  ItemsSource="{Binding adduserlist}" 
 
             Name="DataGrid" IsReadOnly="True"
-            Margin="180,50,20,40" AutoGenerateColumns="True" Opacity="0.60" FontWeight="Bold" FontStyle="Normal" >
+            Margin="192,24,8,251" AutoGenerateColumns="False" Opacity="0.60" FontWeight="Bold" FontStyle="Normal" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Employee ID" Width="100"  ></DataGridTextColumn>
-                <DataGridTextColumn Header="Name" MinWidth="5" Width="*"  ></DataGridTextColumn>
-                <DataGridTextColumn Header="Address" MinWidth="5" Width="*"  ></DataGridTextColumn>
-                <DataGridTextColumn Header="Phone No" MinWidth="5" Width="*" ></DataGridTextColumn>
-                <DataGridTextColumn Header="Email" MinWidth="5" Width="*" ></DataGridTextColumn>
-                <DataGridTextColumn Header="Gender" MinWidth="5" Width="*"  ></DataGridTextColumn>
-                <DataGridTextColumn Header="Age" MinWidth="5" Width="*" ></DataGridTextColumn>
-                <DataGridTextColumn Header="Role" MinWidth="5" Width="*" ></DataGridTextColumn>
-
+                <DataGridTextColumn Header="EmpID" Width="50" Binding="{Binding ID}"  ></DataGridTextColumn>
+                <DataGridTextColumn Header="Name" MinWidth="60" Width="*" Binding="{Binding Name}"  ></DataGridTextColumn>
+                <DataGridTextColumn Header="Address" MinWidth="70" Width="*" Binding="{Binding Address}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="PhoneNo" MinWidth="70" Width="*" Binding="{Binding Phone}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Email" MinWidth="40" Width="*" Binding="{Binding Email}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Gender" MinWidth="60" Width="*" Binding="{Binding Gender}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Age" MinWidth="20" Width="*" Binding="{Binding Age}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Role" MinWidth="50" Width="*" Binding="{Binding Roling.RoleName}" ></DataGridTextColumn>
 
             </DataGrid.Columns>
 

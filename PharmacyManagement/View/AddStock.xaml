@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:PharmacyManagement.View"
+             xmlns:local="clr-namespace:PharmacyManagement.View" xmlns:viewmodel="clr-namespace:PharmacyManagement.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:AddStockViewModel}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Margin="0,0,0,0" Background="Black">
@@ -55,6 +55,8 @@
                     <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+
 
 
 
@@ -67,23 +69,26 @@
                 <Label Grid.Row="1" Grid.Column="0" ></Label>
                 <Label Grid.Row="2" Grid.Column="0" Content="Medicine Name " Foreground="White" FontWeight="Bold"></Label>
                 <Label Grid.Row="3" Grid.Column="0"></Label>
-                <Label Grid.Row="4" Grid.Column="0" Content="Available Stock " Foreground="White"  FontWeight="Bold"></Label>
+                <Label Grid.Row="4" Grid.Column="0" Content="Company Name " Foreground="White"  FontWeight="Bold"></Label>
                 <Label Grid.Row="5" Grid.Column="0"></Label>
                 <Label Grid.Row="6" Grid.Column="0" Content="Unit Price " Foreground="White"  FontWeight="Bold"></Label>
                 <Label Grid.Row="7" Grid.Column="0"></Label>
                 <Label Grid.Row="8" Grid.Column="0" Content="Expiry Date "  Foreground="White"  FontWeight="Bold"></Label>
                 <Label Grid.Row="9" Grid.Column="0"></Label>
+                <Label Grid.Row="10" Grid.Column="0" Content="Stock "  Foreground="White"  FontWeight="Bold"></Label>
 
-                <TextBox Grid.Row="0" Grid.Column="1" Margin="0,0,-301,10" Name="txtid" Grid.RowSpan="2" ></TextBox>
+
+                <TextBox Grid.Row="0" Grid.Column="1" Margin="0,0,-301,10" Name="txtid"  Text="{Binding MedId}" Grid.RowSpan="2" ></TextBox>
                 <Label Grid.Row="1" Grid.Column="1"></Label>
-                <TextBox Grid.Row="2" Grid.Column="1" Margin="0,0,-302,0" Name="txtname" ></TextBox>
+                <TextBox Grid.Row="2" Grid.Column="1" Margin="0,0,-302,0" Text="{Binding MedName}" Name="txtname" ></TextBox>
                 <Label Grid.Row="3" Grid.Column="1"></Label>
-                <TextBox Grid.Row="4" Grid.Column="1" Margin="0,0,-302,0" Name="txtstock" ></TextBox>
+                <TextBox Grid.Row="4" Grid.Column="1" Margin="0,0,-302,0" Text="{Binding Company}" Name="txtcompany" ></TextBox>
                 <Label Grid.Row="5" Grid.Column="1"></Label>
-                <TextBox Grid.Row="6" Grid.Column="1" Margin="0,0,-302,0"  Name="txtprice" ></TextBox>
+                <TextBox Grid.Row="6" Grid.Column="1" Margin="0,0,-302,0" Text="{Binding  Price}" Name="txtprice" ></TextBox>
                 <Label Grid.Row="7" Grid.Column="1"></Label>
-                <DatePicker Grid.Row="8" Grid.Column="1" Margin="0,0,-302,0" Name="expiredate"></DatePicker>
+                <DatePicker Grid.Row="8" Grid.Column="1" x:Name="dtpicker1" Margin="0,0,-302,0"  FontSize="18" SelectedDate="{Binding Expiry}"></DatePicker>
                 <Label Grid.Row="9" Grid.Column="1"></Label>
+                <TextBox Grid.Row="10" Grid.Column="1" Margin="0,0,-302,0" Text="{Binding Stocks}" Name="txtstock" ></TextBox>
 
                 <Label Grid.Row="11" Grid.Column="1"></Label>
 
@@ -92,7 +97,7 @@
                 <Label Grid.Row="15" Grid.Column="1"></Label>
 
                 <Label Grid.Row="17" Grid.Column="1"></Label>
-                <Button Content="     Save" Height="61" Margin="94,0,-174,-59" Grid.RowSpan="2" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="17" >
+                <Button Content="Save" Command="{Binding StockSubmitCommand}" Height="61" Margin="94,0,-174,-59" Grid.RowSpan="2" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="17" >
                     <Button.Foreground>
                         <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
                     </Button.Foreground>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace DataAccessLayer
 {
@@ -24,7 +25,7 @@ namespace DataAccessLayer
                     stockModel.MedName = item.MedicineName;
                     stockModel.Company = item.CompanyName;
                     stockModel.StockAvailable = item.StockAvailable;
-                    stockModel.UnitPrice = item.Price;
+                    stockModel.UnitPrice = (float)item.Price;
                     stockModel.Expiry = item.ExpiryDate;
                     stock.Add(stockModel);
                 }
@@ -35,6 +36,22 @@ namespace DataAccessLayer
 
                 throw ex;
             }
+        }
+
+        public void SaveStockData(StockModel stockModel)
+        {
+            PharmacyManagementEntities1 pharmacy = new PharmacyManagementEntities1();
+            StockDetail stocks = new StockDetail();
+            stocks.MedicineName = stockModel.MedName;
+            stocks.MedID = stockModel.MedID;
+            stocks.CompanyName = stockModel.Company;
+            stocks.Price = stockModel.UnitPrice;
+            stocks.StockAvailable = stockModel.StockAvailable;
+            stocks.ExpiryDate = stockModel.Expiry;
+            pharmacy.StockDetails.Add(stocks);
+            pharmacy.SaveChanges();
+            MessageBox.Show("Saved Succesfully");
+
         }
     }
 }

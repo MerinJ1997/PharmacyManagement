@@ -10,15 +10,10 @@
 namespace DataAccessLayer
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class StockDetail
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public int MedID { get; set; }
-        public string MedicineName { get; set; }
-        public string CompanyName { get; set; }
-        public double Price { get; set; }
-        public System.DateTime ExpiryDate { get; set; }
-        public int StockAvailable { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

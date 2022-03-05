@@ -1,0 +1,74 @@
+﻿<Page x:Class="PharmacyManagement.View.SampleBill"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PharmacyManagement.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SampleBill">
+
+    <Grid>
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="544*"/>
+                <ColumnDefinition Width="31*"/>
+                <ColumnDefinition Width="0*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Margin="-35,4,-5,-4" Grid.ColumnSpan="3">
+
+               
+                  <Image Source="/images/bills.jpeg" Margin="-325,-497,-125,-563" />
+                
+
+                <Grid Margin="16,37,434,133">
+                    <Grid.RowDefinitions >
+                        <RowDefinition Height="auto" ></RowDefinition>
+                        <RowDefinition Height="auto" ></RowDefinition>
+                        <RowDefinition Height="auto" ></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="5.56"/>
+                        <RowDefinition Height="7.92"/>
+                        <RowDefinition Height="auto"/>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Content="Medicine ID" FontWeight="Bold" Margin="0,0,0,13" Grid.RowSpan="4" ></Label>
+                    <TextBox Grid.Row="0" Grid.Column="1" Margin="0,0,-225,3" Grid.RowSpan="3" Name="medid"/>
+                    <Label Grid.Row="6" Grid.Column="0" Content="Medicine Name" Margin="0,9,0,11" FontWeight="Bold" />
+                    <Label Grid.Row="6" Grid.Column="0" Content="Unit Price" Margin="0,61,0,-48" FontWeight="Bold"/>
+                    <Label Grid.Row="6" Grid.Column="0" Content="Quantity" Margin="0,108,0,-108" FontWeight="Bold" ></Label>
+                    <TextBox Grid.Row="6" Grid.Column="1" Margin="0,5,-225,10" Name="medname"/>
+                    <TextBox Grid.Row="6" Grid.Column="1" Margin="0,60,-225,-45" Name="unit"/>
+                    <TextBox Grid.Row="6" Grid.Column="1" Margin="0,106,-225,-91" Name="qty"/>
+                    <TextBox Grid.Row="6" Grid.Column="1" Margin="0,154,-225,-139" Name="totalprice"/>
+                    <Label Grid.Row="6" Grid.Column="0" Content="Total Price" Margin="0,158,0,-158" FontWeight="Bold"/>
+
+                </Grid>
+                <DataGrid  Margin="365,177,25,189" AutoGenerateColumns="False" Opacity="0.70" FontWeight="Bold">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Medicine ID" Width="100"/>
+                        <DataGridTextColumn Header="Medicine Name" Width="130"/>
+                        <DataGridTextColumn Header="Company Price" Width="130"/>
+                        <DataGridTextColumn Header="Unit Price" Width="100"/>
+                        <DataGridTextColumn Header="Quantity" Width="100"/>
+                        <DataGridTextColumn Header="Price" Width="100"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+                <Button Content="     Add" Margin="260,335,440,60" TextOptions.TextFormattingMode="Display" Height="55" ></Button>
+                <Button Content="    Print" Margin="504,335,196,60" TextOptions.TextFormattingMode="Display"  Height="55"  ></Button>
+                <Button Content="    Expiry" Margin="626,335,74,60" TextOptions.TextFormattingMode="Display" Background="#a33b3b" Height="55"></Button>
+                <Button Content="    Clear" Margin="381,335,319,60" TextOptions.TextFormattingMode="Display"  Height="55"></Button>
+
+                
+            </Grid>
+        </Grid>
+        </Grid>
+</Page>

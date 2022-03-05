@@ -26,5 +26,10 @@ namespace PharmacyManagement.View
             InitializeComponent();
             DataContext = new EmployeeWelcomeViewModel();
         }
+
+        private void MenuItem_SubmenuClosed(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

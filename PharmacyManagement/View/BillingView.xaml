@@ -56,7 +56,7 @@
             </DataGrid>
 
             <Button Content="     Add" Margin="260,335,440,60" TextOptions.TextFormattingMode="Display" Height="55" ></Button>
-            <Button Content="    Print" Margin="504,335,196,60" TextOptions.TextFormattingMode="Display"  Height="55" Click="Button_Click_1" ></Button>
+            <!--<Button Content="    Print" Margin="504,335,196,60" TextOptions.TextFormattingMode="Display"  Height="55" Click="Button_Click_1" ></Button>-->
             <Button Content="    Expiry" Margin="626,335,74,60" TextOptions.TextFormattingMode="Display" Background="#a33b3b" Height="55"></Button>
             <Button Content="    Clear" Margin="381,335,319,60" TextOptions.TextFormattingMode="Display"  Height="55"></Button>
             

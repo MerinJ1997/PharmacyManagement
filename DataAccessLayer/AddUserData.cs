@@ -66,5 +66,24 @@ namespace DataAccessLayer
             }
             return addUserDetailsModels;
         }
+        public void DeleteUserData(AddUserDetailsModel addUserDetailsModel)
+        {
+            try
+            {
+                PharmacyManagementEntities entities = new PharmacyManagementEntities();
+                var result = from Obj in entities.UserDetails
+                             where Obj.EmployeeID == addUserDetailsModel.ID
+                             select Obj;
+                foreach (var entity in result)
+                {
+                    entities.UserDetails.Remove(entity);
+                }
+                entities.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

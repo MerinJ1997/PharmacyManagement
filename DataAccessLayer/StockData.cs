@@ -72,5 +72,35 @@ namespace DataAccessLayer
                 throw ex;
             }
         }
+
+        public void UpdateStockData(StockModel stockModel)
+        {
+            try
+            {
+                PharmacyManagementEntities pharmacy = new PharmacyManagementEntities();
+                var query = from productObj in pharmacy.StockDetails
+                            where productObj.MedID == stockModel.MedID
+                            select productObj;
+                foreach (var entity in query)
+                {
+                    entity.MedicineName = stockModel.MedName;
+                    entity.StockAvailable = stockModel.StockAvailable;
+                    entity.ExpiryDate = stockModel.Expiry;
+                    entity.Price = stockModel.UnitPrice;
+                    entity.CompanyName = stockModel.Company;
+
+                   
+                }
+                pharmacy.SaveChanges();
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
     }
 }

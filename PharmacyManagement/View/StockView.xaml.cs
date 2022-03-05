@@ -21,13 +21,35 @@ namespace PharmacyManagement.View
     /// Interaction logic for StockView.xaml
     /// </summary>
     public partial class StockView : UserControl
+
     {
+        public int id { get; set; }
         public StockView()
         {
             InitializeComponent();
         }
 
-        
+        private void EditStock(Object sender, RoutedEventArgs e)
+        {
+            id = (DataGrid.SelectedItem as StockModel).MedID;
+            medname.Text = (DataGrid.SelectedItem as StockModel).MedName;
+            companyname.Text = (DataGrid.SelectedItem as StockModel).Company;
+            stock.Text = (DataGrid.SelectedItem as StockModel).StockAvailable.ToString();
+            Price.Text=(DataGrid.SelectedItem as StockModel).UnitPrice.ToString();
+            dtpicker.Text= (DataGrid.SelectedItem as StockModel).Expiry.ToString();
+
+        }
+
+        void ClearTextBox()
+        {
+            medname.Text = string.Empty;
+            companyname.Text = string.Empty;
+            stock.Text = string.Empty;
+            Price.Text = string.Empty;
+            dtpicker.Text = string.Empty;
+        }
+
+
         private void DeleteStock(object sender, RoutedEventArgs e)
         {
             try
@@ -51,13 +73,37 @@ namespace PharmacyManagement.View
             {
                 MessageBox.Show(ex.ToString());
             }
-            void Refresh()
-            {
-                UpdateStockBusiness add = new UpdateStockBusiness();
-                DataGrid.ItemsSource = add.GetStockToDisplay();
-            }
+            
         }
 
+        void Refresh()
+        {
+            UpdateStockBusiness add = new UpdateStockBusiness();
+            DataGrid.ItemsSource = add.GetStockToDisplay();
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            StockModel stockModel = new StockModel();
+            stockModel.MedID = id;
+            stockModel.MedName = medname.Text;
+            stockModel.StockAvailable = Int32.Parse(stock.Text);
+            stockModel.UnitPrice = float.Parse(Price.Text);
+            stockModel.Expiry  =Convert.ToDateTime(dtpicker.Text);
+
+            stockModel.Company=companyname.Text;
+            UpdateStockBusiness usb = new UpdateStockBusiness();
+            usb.UpdateData(stockModel);
+            MessageBox.Show("Stock Details is Updated");
+            Refresh();
+            ClearTextBox();
+
+
+
+
+
+
+            
+        }
     }
 }
     

@@ -1,4 +1,5 @@
-﻿using PharmacyManagement.ViewModel;
+﻿using EntityLayer;
+using PharmacyManagement.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,7 +41,8 @@ namespace PharmacyManagement.Commands
             }
             else if (parameter.ToString() == "AddStock")
             {
-                model.SelectedView = new AddStockViewModel();
+                StockModel stockModel = new StockModel();
+                model.SelectedView = new AddStockViewModel(stockModel);
             }
             else if (parameter.ToString() == "Logout")
             {

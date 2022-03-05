@@ -12,7 +12,7 @@ namespace EntityLayer
         public string MedName { get; set; }
         public string Company { get; set; }
         public int StockAvailable { get; set; }
-        public double UnitPrice { get; set; }
+        public float UnitPrice { get; set; }
         public DateTime Expiry { get; set; }
     }
 }

@@ -16,23 +16,13 @@ using System.Windows.Shapes;
 namespace PharmacyManagement.View
 {
     /// <summary>
-    /// Interaction logic for Receipt.xaml
+    /// Interaction logic for SampleBill.xaml
     /// </summary>
-    public partial class Receipt : UserControl
+    public partial class SampleBill : Page
     {
-        public Receipt()
+        public SampleBill()
         {
             InitializeComponent();
-        }
-
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Back.Content = new BillingView();
-        //}
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            Back.Content = new BillingView();
         }
     }
 }

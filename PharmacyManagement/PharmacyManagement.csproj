@@ -70,6 +70,7 @@
     <Compile Include="Commands\AddUserSubmitCommand.cs" />
     <Compile Include="Commands\EmployeeCommand.cs" />
     <Compile Include="Commands\HomePageCommands.cs" />
+    <Compile Include="Commands\StockSubmitCommand.cs" />
     <Compile Include="ViewModel\AboutUsViewModel.cs" />
     <Compile Include="ViewModel\AddStockViewModel.cs" />
     <Compile Include="ViewModel\AddUserViewModel.cs" />
@@ -124,6 +125,9 @@
     </Compile>
     <Compile Include="View\Receipt.xaml.cs">
       <DependentUpon>Receipt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SampleBill.xaml.cs">
+      <DependentUpon>SampleBill.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\StockView.xaml.cs">
       <DependentUpon>StockView.xaml</DependentUpon>
@@ -189,6 +193,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Receipt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SampleBill.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

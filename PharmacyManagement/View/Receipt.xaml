@@ -80,14 +80,14 @@
                 <Label Grid.Row="0" Grid.Column="1" Content="1000"></Label>
                 <Label Grid.Row="1" Grid.Column="1" Content="10.25"  ></Label>
                 <Label Grid.Row="2" Grid.Column="1" Content="1010.25"  ></Label>
-                <!--<Button Content="Back" Margin="-485,-460,518,480"  Click="Button_Click"/>-->
+                <Button Content="Back" Margin="-485,-460,518,480" RenderTransformOrigin="15.906,4.396" Click="Button_Click_1"  />
 
 
 
 
             </Grid>
 
-            <!--<Frame x:Name="Back" Margin="74,-167,57,140" Grid.Column="1"></Frame>-->
+            <Frame x:Name="Back" Margin="74,-167,57,140" Grid.Column="1"></Frame>
 
         </Grid>
     </Grid>

@@ -14,21 +14,10 @@ namespace DataAccessLayer
     
     public partial class Count
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Count()
-        {
-            this.Sales = new HashSet<Sale>();
-        }
-    
         public int CountID { get; set; }
         public int MedID { get; set; }
         public int CustomerID { get; set; }
         public int Count1 { get; set; }
-        public double TotalPrice { get; set; }
-    
-        public virtual CustomerDetail CustomerDetail { get; set; }
-        public virtual StockDetail StockDetail { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sale> Sales { get; set; }
+        public double TotalPrize { get; set; }
     }
 }

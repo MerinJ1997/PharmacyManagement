@@ -14,20 +14,11 @@ namespace DataAccessLayer
     
     public partial class Bill
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Bill()
-        {
-            this.CustomerDetails = new HashSet<CustomerDetail>();
-        }
-    
         public int InvoiceNo { get; set; }
         public int SaleID { get; set; }
         public double GST { get; set; }
         public double Discount { get; set; }
         public System.DateTime Date { get; set; }
-        public Nullable<double> TotalAmount { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CustomerDetail> CustomerDetails { get; set; }
+        public Nullable<int> TotalAmount { get; set; }
     }
 }

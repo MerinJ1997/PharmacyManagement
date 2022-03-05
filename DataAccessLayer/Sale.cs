@@ -14,11 +14,8 @@ namespace DataAccessLayer
     
     public partial class Sale
     {
-        public int SaleID { get; set; }
+        public int SalesID { get; set; }
         public int CustomerID { get; set; }
-        public Nullable<int> CountID { get; set; }
-    
-        public virtual Count Count { get; set; }
-        public virtual CustomerDetail CustomerDetail { get; set; }
+        public int CountID { get; set; }
     }
 }

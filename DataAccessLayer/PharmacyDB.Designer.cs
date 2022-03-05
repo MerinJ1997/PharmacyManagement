@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'E:\C# Training\Project Team 2\Team 2\PharmacyManagement\DataAccessLayer\PharmacyDB.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Quest\PharmacyManagement\DataAccessLayer\PharmacyDB.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

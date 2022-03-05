@@ -21,7 +21,7 @@ namespace DataAccessLayer
         public int PhoneNo { get; set; }
         public string Gender { get; set; }
         public int Age { get; set; }
-        public Nullable<int> RoleID { get; set; }
+        public int RoleID { get; set; }
     
         public virtual Role Role { get; set; }
     }

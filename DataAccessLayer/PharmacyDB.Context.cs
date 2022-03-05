@@ -15,10 +15,10 @@ namespace DataAccessLayer
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class PharmacyManagementEntities : DbContext
+    public partial class PharmacyManagementEntities1 : DbContext
     {
-        public PharmacyManagementEntities()
-            : base("name=PharmacyManagementEntities")
+        public PharmacyManagementEntities1()
+            : base("name=PharmacyManagementEntities1")
         {
         }
     
@@ -28,44 +28,16 @@ namespace DataAccessLayer
         }
     
         public virtual DbSet<Bill> Bills { get; set; }
-        public virtual DbSet<Count> Counts { get; set; }
         public virtual DbSet<CustomerDetail> CustomerDetails { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
         public virtual DbSet<Sale> Sales { get; set; }
         public virtual DbSet<StockDetail> StockDetails { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<UserDetail> UserDetails { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Count> Counts { get; set; }
     
-        public virtual int AddProduct(Nullable<int> medid, string medName, string compName, Nullable<double> price, Nullable<System.DateTime> expDate, Nullable<int> stock)
-        {
-            var medidParameter = medid.HasValue ?
-                new ObjectParameter("Medid", medid) :
-                new ObjectParameter("Medid", typeof(int));
-    
-            var medNameParameter = medName != null ?
-                new ObjectParameter("MedName", medName) :
-                new ObjectParameter("MedName", typeof(string));
-    
-            var compNameParameter = compName != null ?
-                new ObjectParameter("CompName", compName) :
-                new ObjectParameter("CompName", typeof(string));
-    
-            var priceParameter = price.HasValue ?
-                new ObjectParameter("Price", price) :
-                new ObjectParameter("Price", typeof(double));
-    
-            var expDateParameter = expDate.HasValue ?
-                new ObjectParameter("ExpDate", expDate) :
-                new ObjectParameter("ExpDate", typeof(System.DateTime));
-    
-            var stockParameter = stock.HasValue ?
-                new ObjectParameter("Stock", stock) :
-                new ObjectParameter("Stock", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddProduct", medidParameter, medNameParameter, compNameParameter, priceParameter, expDateParameter, stockParameter);
-        }
-    
-        public virtual int AddUser(string empname, string address, string email, Nullable<int> phone, string gender, Nullable<int> age, string role, string username, string password)
+        public virtual int AddNewUser(string empname, string address, string email, string phone, string gender, string age, string role, string username, string password)
         {
             var empnameParameter = empname != null ?
                 new ObjectParameter("empname", empname) :
@@ -79,17 +51,17 @@ namespace DataAccessLayer
                 new ObjectParameter("email", email) :
                 new ObjectParameter("email", typeof(string));
     
-            var phoneParameter = phone.HasValue ?
+            var phoneParameter = phone != null ?
                 new ObjectParameter("phone", phone) :
-                new ObjectParameter("phone", typeof(int));
+                new ObjectParameter("phone", typeof(string));
     
             var genderParameter = gender != null ?
                 new ObjectParameter("gender", gender) :
                 new ObjectParameter("gender", typeof(string));
     
-            var ageParameter = age.HasValue ?
+            var ageParameter = age != null ?
                 new ObjectParameter("age", age) :
-                new ObjectParameter("age", typeof(int));
+                new ObjectParameter("age", typeof(string));
     
             var roleParameter = role != null ?
                 new ObjectParameter("role", role) :
@@ -103,7 +75,52 @@ namespace DataAccessLayer
                 new ObjectParameter("password", password) :
                 new ObjectParameter("password", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddUser", empnameParameter, addressParameter, emailParameter, phoneParameter, genderParameter, ageParameter, roleParameter, usernameParameter, passwordParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddNewUser", empnameParameter, addressParameter, emailParameter, phoneParameter, genderParameter, ageParameter, roleParameter, usernameParameter, passwordParameter);
+        }
+    
+        public virtual int AddUser(Nullable<int> empID, string empName, string empAddress, string email, Nullable<int> phoneno, string gender, Nullable<int> age, string role, string username, string password)
+        {
+            var empIDParameter = empID.HasValue ?
+                new ObjectParameter("EmpID", empID) :
+                new ObjectParameter("EmpID", typeof(int));
+    
+            var empNameParameter = empName != null ?
+                new ObjectParameter("EmpName", empName) :
+                new ObjectParameter("EmpName", typeof(string));
+    
+            var empAddressParameter = empAddress != null ?
+                new ObjectParameter("EmpAddress", empAddress) :
+                new ObjectParameter("EmpAddress", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("Email", email) :
+                new ObjectParameter("Email", typeof(string));
+    
+            var phonenoParameter = phoneno.HasValue ?
+                new ObjectParameter("Phoneno", phoneno) :
+                new ObjectParameter("Phoneno", typeof(int));
+    
+            var genderParameter = gender != null ?
+                new ObjectParameter("Gender", gender) :
+                new ObjectParameter("Gender", typeof(string));
+    
+            var ageParameter = age.HasValue ?
+                new ObjectParameter("Age", age) :
+                new ObjectParameter("Age", typeof(int));
+    
+            var roleParameter = role != null ?
+                new ObjectParameter("Role", role) :
+                new ObjectParameter("Role", typeof(string));
+    
+            var usernameParameter = username != null ?
+                new ObjectParameter("username", username) :
+                new ObjectParameter("username", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AddUser", empIDParameter, empNameParameter, empAddressParameter, emailParameter, phonenoParameter, genderParameter, ageParameter, roleParameter, usernameParameter, passwordParameter);
         }
     
         public virtual ObjectResult<DisplayStockDetails_Result> DisplayStockDetails()

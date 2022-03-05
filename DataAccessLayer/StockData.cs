@@ -14,7 +14,7 @@ namespace DataAccessLayer
             try
             {
                 List<StockModel> stock = new List<StockModel>();
-                PharmacyManagementEntities pharmacy = new PharmacyManagementEntities();
+                PharmacyManagementEntities1 pharmacy = new PharmacyManagementEntities1();
                 var data = from ph in pharmacy.StockDetails
                            select ph;
                 foreach (var item in data)

@@ -12,13 +12,12 @@ namespace DataAccessLayer
     using System;
     using System.Collections.Generic;
     
-    public partial class StockDetail
+    public partial class sysdiagram
     {
-        public int MedID { get; set; }
-        public string MedicineName { get; set; }
-        public string CompanyName { get; set; }
-        public double Price { get; set; }
-        public System.DateTime ExpiryDate { get; set; }
-        public int StockAvailable { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

@@ -10,6 +10,13 @@ namespace PharmacyManagement.ViewModel
 {
     public class ViewUpdateUserViewModel:BaseViewModel
     {
+        public List<AddUserDetailsModel> adduserlist { get; set; }
+        public ViewUpdateUserViewModel()
+        {
+            adduserlist = new List<AddUserDetailsModel>();
+            AddUserBusiness addUserBusiness = new AddUserBusiness();
+            adduserlist = addUserBusiness.GetUserDetails();
+        }
         
     }
 }

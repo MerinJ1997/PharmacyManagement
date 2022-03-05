@@ -14,24 +14,11 @@ namespace DataAccessLayer
     
     public partial class CustomerDetail
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CustomerDetail()
-        {
-            this.Counts = new HashSet<Count>();
-            this.Sales = new HashSet<Sale>();
-        }
-    
         public int CustomerID { get; set; }
         public int InvoiceNo { get; set; }
         public string CustomerName { get; set; }
         public string CustomerAddress { get; set; }
         public string CustomerEmail { get; set; }
-        public Nullable<int> CustomerPhone { get; set; }
-    
-        public virtual Bill Bill { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Count> Counts { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sale> Sales { get; set; }
+        public int CustomerPhone { get; set; }
     }
 }

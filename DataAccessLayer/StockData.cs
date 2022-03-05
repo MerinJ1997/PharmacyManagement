@@ -53,5 +53,24 @@ namespace DataAccessLayer
             MessageBox.Show("Saved Succesfully");
 
         }
+        public void DeleteStockData(StockModel StockModel)
+        {
+            try
+            {
+                PharmacyManagementEntities entities = new PharmacyManagementEntities();
+                var result = from Obj in entities.StockDetails
+                             where Obj.MedID == StockModel.MedID
+                             select Obj;
+                foreach (var entity in result)
+                {
+                    entities.StockDetails.Remove(entity);
+                }
+                entities.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

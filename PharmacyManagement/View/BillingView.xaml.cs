@@ -25,11 +25,9 @@ namespace PharmacyManagement.View
             InitializeComponent();
         }
 
-       
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            mainbill.Content = new Receipt();
-        }
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    mainbill.Content = new Receipt();
+        //}
     }
 }

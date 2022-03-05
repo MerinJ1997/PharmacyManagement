@@ -6,65 +6,63 @@
              xmlns:local="clr-namespace:PharmacyManagement.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <DockPanel >
 
-        <Grid Width="798">
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="/images/Pharmacists.jpeg" Opacity="0.6" />
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Welcome Employee !" FontWeight="Bold" FontSize="25" Grid.ColumnSpan="2" Margin="379,44,0,70" Grid.RowSpan="2" />
+        <Grid  Margin="273,109,30,121">
+            <Grid.RowDefinitions >
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
+                <ColumnDefinition Width="auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <!--<Grid.Background>-->
-            <Image Source="/images/Pharmacists.jpeg" Opacity="0.7" Margin="-142,-230,-431,-218" />
+            <Label Grid.Row="0" Grid.Column="0" Content="Name" FontSize="15" FontWeight="Bold"></Label>
+            <Label Grid.Row="1" Grid.Column="0" ></Label>
+            <Label Grid.Row="2" Grid.Column="0" Content="Phone" FontSize="15" FontWeight="Bold"></Label>
+            <Label Grid.Row="3" Grid.Column="0"></Label>
+            <Label Grid.Row="4" Grid.Column="0" Content="Address"  FontSize="15" FontWeight="Bold"></Label>
+            <Label Grid.Row="5" Grid.Column="0"></Label>
+            <Label Grid.Row="6" Grid.Column="0" Content="Email" FontSize="15" FontWeight="Bold"></Label>
 
+            <TextBox Grid.Row="0" Grid.Column="1" Margin="0,0,-302,9" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5" >
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0.074"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <Label Grid.Row="1" Grid.Column="1" ></Label>
+            <TextBox Grid.Row="2" Grid.Column="1" Margin="0,0,-302,10" Grid.RowSpan="2" x:Name="phno"></TextBox>
+            <Label Grid.Row="3" Grid.Column="1"></Label>
+            <TextBox Grid.Row="4" Grid.Column="1" Margin="0,0,-302,0" x:Name="Address"></TextBox>
+            <Label Grid.Row="5" Grid.Column="1"></Label>
 
+            <TextBox Grid.Row="6" Grid.Column="1" Margin="0,0,-302,0" x:Name="Email"></TextBox>
 
-            <!--</Grid.Background>-->
-
-
-            <Label Margin="300,16,103,380" Content="Welcome Employee !" FontWeight="Bold" FontSize="25"></Label>
-            <Grid  Margin="273,109,30,121">
-                <Grid.RowDefinitions >
-                    <RowDefinition Height="auto" ></RowDefinition>
-                    <RowDefinition Height="auto">
-                    </RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"></ColumnDefinition>
-                    <ColumnDefinition Width="auto"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Content="Name" FontSize="15" FontWeight="Bold"></Label>
-                <Label Grid.Row="1" Grid.Column="0" ></Label>
-                <Label Grid.Row="2" Grid.Column="0" Content="Phone" FontSize="15" FontWeight="Bold"></Label>
-                <Label Grid.Row="3" Grid.Column="0"></Label>
-                <Label Grid.Row="4" Grid.Column="0" Content="Address"  FontSize="15" FontWeight="Bold"></Label>
-                <Label Grid.Row="5" Grid.Column="0"></Label>
-                <Label Grid.Row="6" Grid.Column="0" Content="Email" FontSize="15" FontWeight="Bold"></Label>
-
-                <TextBox Grid.Row="0" Grid.Column="1" Margin="0,0,-302,9" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5" >
-                    <TextBox.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform/>
-                            <SkewTransform/>
-                            <RotateTransform Angle="0.074"/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </TextBox.RenderTransform>
-                </TextBox>
-                <Label Grid.Row="1" Grid.Column="1" ></Label>
-                <TextBox Grid.Row="2" Grid.Column="1" Margin="0,0,-302,10" Grid.RowSpan="2" x:Name="phno"></TextBox>
-                <Label Grid.Row="3" Grid.Column="1"></Label>
-                <TextBox Grid.Row="4" Grid.Column="1" Margin="0,0,-302,0" x:Name="Address"></TextBox>
-                <Label Grid.Row="5" Grid.Column="1"></Label>
-
-                <TextBox Grid.Row="6" Grid.Column="1" Margin="0,0,-302,0" x:Name="Email"></TextBox>
-
-
-            </Grid>
 
         </Grid>
-    </DockPanel>
+
+    </Grid>
+
 </UserControl>

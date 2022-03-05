@@ -12,8 +12,6 @@ namespace PharmacyManagement.ViewModel
     public class BillingViewModel : BaseViewModel
     {
        
-
-
     }
     
 }

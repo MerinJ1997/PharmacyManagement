@@ -37,6 +37,7 @@ namespace PharmacyManagement.Commands
             {
                 model.SelectedView = new BillingViewModel();
             }
+            
             else if (parameter.ToString() == "Log Out")
 
             {

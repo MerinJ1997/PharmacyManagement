@@ -4,21 +4,23 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PharmacyManagement.View"
-             mc:Ignorable="d">
-    <Grid Width="1000" Height="1000" >
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/images/6e22000a0d68024c1b100e9c50ca304704afd197-640x380.png" />
+        </Grid.Background>
         <Grid Margin="5,16,0,391" Background="#f0f5f4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5*"/>
                 <ColumnDefinition Width="42*"/>
-            </Grid.ColumnDefinitions>
-            <Image Source="/images/6e22000a0d68024c1b100e9c50ca304704afd197-640x380.png" Margin="-5,-421,4,-581" Height="1495" Grid.ColumnSpan="2" />
+            </Grid.ColumnDefinitions>           
 
             <TextBlock Text="PHARMACY INVOICE" Margin="210,23,245,-23" FontSize="15" FontWeight="Bold" Grid.Column="1"></TextBlock>
             <Grid Margin="20,58,20,-271" Grid.ColumnSpan="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
-
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>

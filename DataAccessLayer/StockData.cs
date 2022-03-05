@@ -40,7 +40,7 @@ namespace DataAccessLayer
 
         public void SaveStockData(StockModel stockModel)
         {
-            PharmacyManagementEntities1 pharmacy = new PharmacyManagementEntities1();
+            PharmacyManagementEntities pharmacy = new PharmacyManagementEntities();
             StockDetail stocks = new StockDetail();
             stocks.MedicineName = stockModel.MedName;
             stocks.MedID = stockModel.MedID;

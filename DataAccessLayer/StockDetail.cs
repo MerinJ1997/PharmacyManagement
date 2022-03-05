@@ -14,20 +14,11 @@ namespace DataAccessLayer
     
     public partial class StockDetail
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public StockDetail()
-        {
-            this.Counts = new HashSet<Count>();
-        }
-    
         public int MedID { get; set; }
         public string MedicineName { get; set; }
         public string CompanyName { get; set; }
         public double Price { get; set; }
         public System.DateTime ExpiryDate { get; set; }
         public int StockAvailable { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Count> Counts { get; set; }
     }
 }

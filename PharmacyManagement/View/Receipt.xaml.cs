@@ -25,9 +25,14 @@ namespace PharmacyManagement.View
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Back.Content = new BillingView();
+        //}
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            //Back.Content = new BillingView();
+            Back.Content = new BillingView();
         }
     }
 }

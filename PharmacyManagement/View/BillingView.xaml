@@ -54,10 +54,13 @@
                     <DataGridTextColumn Header="Price" Width="100"/>
                 </DataGrid.Columns>
             </DataGrid>
-            <Button Content="     Add" Margin="20,335,440,60" TextOptions.TextFormattingMode="Display" Height="55" ></Button>
-            <Button Content="    Print" Margin="0,335,190,60" TextOptions.TextFormattingMode="Display"  Height="55"  ></Button>
-            <Button Content="    Expiry" Margin="350,335,74,60" TextOptions.TextFormattingMode="Display" Background="#a33b3b" Height="55"></Button>
-            <Button Content="    Clear" Margin="50,335,10,60" TextOptions.TextFormattingMode="Display"  Height="55"></Button>
+
+            <Button Content="     Add" Margin="260,335,440,60" TextOptions.TextFormattingMode="Display" Height="55" ></Button>
+            <Button Content="    Print" Margin="504,335,196,60" TextOptions.TextFormattingMode="Display"  Height="55" Click="Button_Click_1" ></Button>
+            <Button Content="    Expiry" Margin="626,335,74,60" TextOptions.TextFormattingMode="Display" Background="#a33b3b" Height="55"></Button>
+            <Button Content="    Clear" Margin="381,335,319,60" TextOptions.TextFormattingMode="Display"  Height="55"></Button>
+            
+            <Frame x:Name="mainbill" Margin="0,0,0,-311"></Frame>
         </Grid>
         <Frame Source="Receipt.xaml" Margin="74,-167,57,140" Grid.Column="1"></Frame>
     </Grid>

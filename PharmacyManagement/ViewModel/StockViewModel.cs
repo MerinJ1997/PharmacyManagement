@@ -17,5 +17,6 @@ namespace PharmacyManagement.ViewModel
             UpdateStockBusiness stock = new UpdateStockBusiness();
             list = stock.GetStockToDisplay();
         }
+
     }
 }

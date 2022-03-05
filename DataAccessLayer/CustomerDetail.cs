@@ -17,7 +17,6 @@ namespace DataAccessLayer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CustomerDetail()
         {
-            this.Counts = new HashSet<Count>();
             this.Sales = new HashSet<Sale>();
         }
     
@@ -28,9 +27,6 @@ namespace DataAccessLayer
         public string CustomerEmail { get; set; }
         public Nullable<int> CustomerPhone { get; set; }
     
-        public virtual Bill Bill { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Count> Counts { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sale> Sales { get; set; }
     }

@@ -15,5 +15,10 @@ namespace BusinessLayer
             StockData model = new StockData();
             return model.GetStock();
         }
+        public void SaveStockBussiness(StockModel stockModel)
+        {
+            StockData stockData = new StockData();
+            stockData.SaveStockData(stockModel);
+        }
     }
 }

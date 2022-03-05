@@ -54,77 +54,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bill.cs">
-      <DependentUpon>PharmacyDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="AddUserData.cs" />
-    <Compile Include="Count.cs">
-      <DependentUpon>PharmacyDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerDetail.cs">
-      <DependentUpon>PharmacyDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DisplayStockDetails_Result.cs">
-      <DependentUpon>PharmacyDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EmployeeDetailDisplay_Result.cs">
-      <DependentUpon>PharmacyDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PharmacyDB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PharmacyDB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PharmacyDB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PharmacyDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PharmacyDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PharmacyDB.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Role.cs">
-      <DependentUpon>PharmacyDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Sale.cs">
-      <DependentUpon>PharmacyDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="StockData.cs" />
-    <Compile Include="StockDetail.cs">
-      <DependentUpon>PharmacyDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="User.cs">
-      <DependentUpon>PharmacyDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UserDetail.cs">
-      <DependentUpon>PharmacyDB.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <EntityDeploy Include="PharmacyDB.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PharmacyDB.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="PharmacyDB.edmx.diagram">
-      <DependentUpon>PharmacyDB.edmx</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="PharmacyDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PharmacyDB.edmx</DependentUpon>
-      <LastGenOutput>PharmacyDB.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="PharmacyDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PharmacyDB.edmx</DependentUpon>
-      <LastGenOutput>PharmacyDB.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

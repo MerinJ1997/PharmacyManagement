@@ -16,18 +16,24 @@ using System.Windows.Shapes;
 namespace PharmacyManagement.View
 {
     /// <summary>
-    /// Interaction logic for BillingView.xaml
+    /// Interaction logic for BillReceipt.xaml
     /// </summary>
-    public partial class BillingView : UserControl
+    public partial class BillReceipt : UserControl
     {
-        public BillingView()
+        public BillReceipt()
         {
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            mainbill.Content = new BillReceipt();
+            EmployeeWelcomeView obj = new EmployeeWelcomeView();
+            
+        }
+
+        private void Grid_SourceUpdated(object sender, DataTransferEventArgs e)
+        {
+
         }
     }
 }

@@ -102,6 +102,9 @@
     <Compile Include="View\BillingView.xaml.cs">
       <DependentUpon>BillingView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\BillReceipt.xaml.cs">
+      <DependentUpon>BillReceipt.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ContactUs.xaml.cs">
       <DependentUpon>ContactUs.xaml</DependentUpon>
     </Compile>
@@ -161,6 +164,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\BillingView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BillReceipt.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

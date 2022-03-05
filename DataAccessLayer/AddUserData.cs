@@ -15,7 +15,7 @@ namespace DataAccessLayer
         public void SaveUserData(AddUserDetailsModel userDetailsModel)
         {
             SqlConnection connection = null;
-            using(connection = new SqlConnection("data source = LAPTOP-MIPGISHL; database = PharmacyManagement; integrated security = SSPI"))
+            using(connection = new SqlConnection("data source = .; database = PharmacyManagement; integrated security = SSPI"))
             {
                 string Name = userDetailsModel.Name;
                 string Address = userDetailsModel.Address;

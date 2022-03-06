@@ -20,7 +20,7 @@ namespace DataAccessLayer
                 string Name = userDetailsModel.Name;
                 string Address = userDetailsModel.Address;
                 string Email = userDetailsModel.Email;
-                int Phone = userDetailsModel.Phone;
+                string Phone = userDetailsModel.Phone;
                 string Gender = userDetailsModel.Gender;
                 int Age = userDetailsModel.Age;
                 string Role = userDetailsModel.Role;

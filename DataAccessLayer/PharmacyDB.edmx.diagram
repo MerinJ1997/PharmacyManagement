@@ -12,12 +12,12 @@
         <EntityTypeShape EntityType="PharmacyManagementModel.Sale" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="PharmacyManagementModel.StockDetail" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PharmacyManagementModel.sysdiagram" Width="1.5" PointX="7.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PharmacyManagementModel.UserDetail" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
         <EntityTypeShape EntityType="PharmacyManagementModel.User" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
         <AssociationConnector Association="PharmacyManagementModel.FK_BillDetails_SaleDetails" ManuallyRouted="false" />
         <AssociationConnector Association="PharmacyManagementModel.FK_SaleDetails_CustomerDetails" ManuallyRouted="false" />
-        <AssociationConnector Association="PharmacyManagementModel.FK_UserDetails_Role" ManuallyRouted="false" />
         <AssociationConnector Association="PharmacyManagementModel.FK_Users_Role" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PharmacyManagementModel.UserDetail" Width="1.5" PointX="3" PointY="4.5" />
+        <AssociationConnector Association="PharmacyManagementModel.FK_UserDetails_Role" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

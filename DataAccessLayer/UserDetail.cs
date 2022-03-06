@@ -18,7 +18,7 @@ namespace DataAccessLayer
         public string EmployeeName { get; set; }
         public string EmployeeAddress { get; set; }
         public string Email { get; set; }
-        public int PhoneNo { get; set; }
+        public string PhoneNo { get; set; }
         public string Gender { get; set; }
         public int Age { get; set; }
         public Nullable<int> RoleID { get; set; }

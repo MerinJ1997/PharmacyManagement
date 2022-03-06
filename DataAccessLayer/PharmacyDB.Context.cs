@@ -34,8 +34,8 @@ namespace DataAccessLayer
         public virtual DbSet<Sale> Sales { get; set; }
         public virtual DbSet<StockDetail> StockDetails { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<UserDetail> UserDetails { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UserDetail> UserDetails { get; set; }
     
         public virtual int AddNewUser(string empname, string address, string email, string phone, string gender, string age, string role, string username, string password)
         {

@@ -34,9 +34,9 @@ namespace PharmacyManagement.ViewModel
             get { return _email; }
             set { _email = value; OnPropertyChanged("Email"); }
         }
-        private int _phoneNo;
+        private string _phoneNo;
 
-        public int PhoneNo
+        public string PhoneNo
         {
             get { return _phoneNo; }
             set { _phoneNo = value; OnPropertyChanged("PhoneNo"); }

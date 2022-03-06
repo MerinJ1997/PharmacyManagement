@@ -22,13 +22,14 @@ namespace PharmacyManagement.View
     /// </summary>
     public partial class EmployeeView : UserControl
     {
+        public int id { get; set; }
         public EmployeeView()
         {
             InitializeComponent();
             Refresh();
         }
 
-        private void DeleteProduct(object sender, RoutedEventArgs e)
+        private void DeleteUserData(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -56,6 +57,49 @@ namespace PharmacyManagement.View
         {
             AddUserBusiness add = new AddUserBusiness();
             DataGrid.ItemsSource = add.GetUserDetails();
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AddUserDetailsModel Model = new AddUserDetailsModel();
+            Model.ID = id;
+
+            //Model.ID = Convert.ToInt32(txtId.Text);
+            Model.Name = txtname.Text;
+            Model.Address = txtaddress.Text;
+            Model.Phone = txtphone.Text;
+            Model.Email = txtemail.Text;
+            Model.Gender = cmbgender.Text;
+            Model.Age = Convert.ToInt32(txtage.Text);
+            Model.Role = txtrole.Text;
+            AddUserBusiness addUserBusiness = new AddUserBusiness();
+            addUserBusiness.UpdateData(Model);
+            MessageBox.Show("User Details Edited");
+            Refresh();
+            ClearTextBox();
+
+        }
+        private void EditUserData(object sender, RoutedEventArgs e)
+        {
+            id = (DataGrid.SelectedItem as AddUserDetailsModel).ID;
+            txtname.Text = (DataGrid.SelectedItem as AddUserDetailsModel).Name;
+            txtaddress.Text = (DataGrid.SelectedItem as AddUserDetailsModel).Address;
+            txtphone.Text = (DataGrid.SelectedItem as AddUserDetailsModel).Phone;
+            txtemail.Text = (DataGrid.SelectedItem as AddUserDetailsModel).Email;
+            cmbgender.Text = (DataGrid.SelectedItem as AddUserDetailsModel).Gender;
+            txtage.Text = (DataGrid.SelectedItem as AddUserDetailsModel).Age.ToString();
+            txtrole.Text = (DataGrid.SelectedItem as AddUserDetailsModel).Roling.RoleName;
+        }
+        void ClearTextBox()
+        {
+            //txtId.Text = String.Empty;
+            txtname.Text = String.Empty;
+            txtaddress.Text = String.Empty;
+            txtphone.Text = String.Empty;
+            txtemail.Text = String.Empty;
+            cmbgender.Text = String.Empty;
+            txtage.Text = String.Empty;
+            txtrole.Text = String.Empty;
+
         }
     }
 }

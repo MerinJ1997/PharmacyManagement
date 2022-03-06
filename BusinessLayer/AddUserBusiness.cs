@@ -26,5 +26,10 @@ namespace BusinessLayer
             addUserData.DeleteUserData(addUserDetailsModel);
 
         }
+        public void UpdateData(AddUserDetailsModel addUserDetailsModel)
+        {
+            AddUserData addUser = new AddUserData();
+            addUser.UpdateUserData(addUserDetailsModel);
+        }
     }
 }

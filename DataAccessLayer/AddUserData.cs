@@ -85,5 +85,42 @@ namespace DataAccessLayer
                 throw ex;
             }
         }
+        public void UpdateUserData(AddUserDetailsModel addUserDetailsModel)
+
+        {
+            try
+            {
+                PharmacyManagementEntities entities = new PharmacyManagementEntities();
+                var query = from Obj in entities.UserDetails
+                            join roleobj in entities.Roles on Obj.RoleID equals roleobj.RoleID
+                            where Obj.EmployeeID == addUserDetailsModel.ID
+                            select Obj;
+                foreach (var entity in query)
+                {
+                    addUserDetailsModel.Roling = new RoleData();
+                    entity.EmployeeName = addUserDetailsModel.Name;
+                    entity.Age = addUserDetailsModel.Age;
+                    entity.Email = addUserDetailsModel.Email;
+                    entity.EmployeeAddress = addUserDetailsModel.Address;
+                    entity.Gender = addUserDetailsModel.Gender;
+                    entity.PhoneNo = addUserDetailsModel.Phone;
+                    if(addUserDetailsModel.Role=="Manager")
+                    {
+                        entity.RoleID = 2;
+                    }
+                    else
+                    { entity.RoleID = 1;}
+                    entity.Role.RoleName = addUserDetailsModel.Role;
+                    //entities.UserDetails.Add(entity);
+                }
+               entities.SaveChanges();
+
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

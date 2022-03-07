@@ -19,7 +19,7 @@
             <ColumnDefinition Width="31*"/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Grid Margin="150,4,-5,-48" Grid.ColumnSpan="3" Grid.RowSpan="2">
+        <Grid Margin="150,4,-5,-44" Grid.ColumnSpan="3" Grid.RowSpan="2">
             <Grid Margin="16,37,434,133">
                 <Grid.RowDefinitions >
                     <RowDefinition Height="auto" ></RowDefinition>
@@ -65,7 +65,7 @@
             <Button Content="    Clear" Margin="381,376,175,58" TextOptions.TextFormattingMode="Display"/>
 
         </Grid>
-        <Frame x:Name="mainbill" Grid.RowSpan="2" Margin="121,4,29,-4" Grid.ColumnSpan="2"/>
+        <Frame x:Name="mainbill" Grid.RowSpan="2" Margin="121,4,10,-4" Grid.ColumnSpan="2"/>
     </Grid>
 
 </UserControl>

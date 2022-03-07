@@ -58,7 +58,7 @@
         <TextBox HorizontalAlignment="Left" x:Name="txtaddress" Margin="352,270,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="25" Width="86"/>
         <TextBox HorizontalAlignment="Left" x:Name="txtemail" Margin="641,232,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="25" Width="86"/>
 
-        <Button Content="      Edit" Margin="445,375,255,21" RenderTransformOrigin="2.094,1.662" Click="Button_Click"  ></Button>
+        <Button Content="      Edit" Margin="442,386,258,10" RenderTransformOrigin="2.094,1.662" Click="Button_Click"  ></Button>
         <ComboBox   x:Name="cmbgender" Margin="642,264,74,164"  >
             <TextBlock Text="Male" ></TextBlock>
             <TextBlock Text="Female"></TextBlock>

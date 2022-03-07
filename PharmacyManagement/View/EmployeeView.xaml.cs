@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,6 +21,7 @@ namespace PharmacyManagement.View
     /// <summary>
     /// Interaction logic for EmployeeView.xaml
     /// </summary>
+    
     public partial class EmployeeView : UserControl
     {
         public int id { get; set; }
@@ -28,6 +30,9 @@ namespace PharmacyManagement.View
             InitializeComponent();
             Refresh();
         }
+        Regex ValidateEmail = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+        Regex ValidatePhone = new Regex(@"^[6-9][0-9]{9}");
+        Regex ValidatePassword = new Regex(@"^([\w\.\*\@]){8,}");
 
         private void DeleteUserData(object sender, RoutedEventArgs e)
         {
@@ -61,22 +66,37 @@ namespace PharmacyManagement.View
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AddUserDetailsModel Model = new AddUserDetailsModel();
-            Model.ID = id;
-
-            //Model.ID = Convert.ToInt32(txtId.Text);
-            Model.Name = txtname.Text;
-            Model.Address = txtaddress.Text;
-            Model.Phone = txtphone.Text;
-            Model.Email = txtemail.Text;
-            Model.Gender = cmbgender.Text;
-            Model.Age = Convert.ToInt32(txtage.Text);
-            Model.Role = txtrole.Text;
-            AddUserBusiness addUserBusiness = new AddUserBusiness();
-            addUserBusiness.UpdateData(Model);
-            MessageBox.Show("User Details Edited");
+            
+            string Email = Model.Email;
+            string Phone = Convert.ToString(Model.Phone);
+            string Password = Model.password;
+            if (txtemail.Text.Length > 0)
+            {
+                if (!ValidateEmail.IsMatch(txtemail.Text))
+                {
+                    MessageBox.Show("Invalid Email", "Error", MessageBoxButton.OK);
+                }
+                else if (!ValidatePhone.IsMatch(txtphone.Text))
+                {
+                    MessageBox.Show("Invalid Phone Number", "Error", MessageBoxButton.OK);
+                }
+                else
+                {
+                    Model.ID = id;
+                    Model.Name = txtname.Text;
+                    Model.Address = txtaddress.Text;
+                    Model.Phone = txtphone.Text;
+                    Model.Email = txtemail.Text;
+                    Model.Gender = cmbgender.Text;
+                    Model.Age = Convert.ToInt32(txtage.Text);
+                    Model.Role = txtrole.Text;
+                    AddUserBusiness addUserBusiness = new AddUserBusiness();
+                    addUserBusiness.UpdateData(Model);
+                    MessageBox.Show("User Details Edited");
+                }
+            }
             Refresh();
             ClearTextBox();
-
         }
         private void EditUserData(object sender, RoutedEventArgs e)
         {

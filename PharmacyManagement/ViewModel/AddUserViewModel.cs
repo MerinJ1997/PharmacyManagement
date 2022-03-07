@@ -1,17 +1,21 @@
 ﻿using EntityLayer;
 using PharmacyManagement.Commands;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace PharmacyManagement.ViewModel
 {
-    public class AddUserViewModel:BaseViewModel
+    public class AddUserViewModel : BaseViewModel /*INotifyDataErrorInfo*/
 
     {
+        //public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
         private AddUserDetailsModel addUserDetailsModel;
         private string _name;
 
@@ -32,7 +36,11 @@ namespace PharmacyManagement.ViewModel
         public string Email
         {
             get { return _email; }
-            set { _email = value; OnPropertyChanged("Email"); }
+            set 
+            {
+               
+                _email = value; OnPropertyChanged("Email"); 
+            }
         }
         private string _phoneNo;
 
@@ -70,7 +78,6 @@ namespace PharmacyManagement.ViewModel
             set { _username = value; OnPropertyChanged("Username"); }
         }
         private string _password;
-
         public string Password
         {
             get { return _password; }
@@ -78,11 +85,17 @@ namespace PharmacyManagement.ViewModel
         }
         public ICommand Submit { get; set; }
 
+        //public bool HasErrors => throw new NotImplementedException();
+
         public AddUserViewModel(AddUserDetailsModel model)
         {
             this.addUserDetailsModel = model;
             Submit = new AddUserSubmitCommand(this);
         }
 
+        //public IEnumerable GetErrors(string propertyName)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

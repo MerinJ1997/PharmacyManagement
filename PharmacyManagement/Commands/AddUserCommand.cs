@@ -49,8 +49,6 @@ namespace PharmacyManagement.Commands
                 model.SelectedView = new LoginViewModel();
             }
 
-
-
         }
     }
 }

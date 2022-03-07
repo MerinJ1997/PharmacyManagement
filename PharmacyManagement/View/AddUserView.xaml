@@ -129,7 +129,7 @@ VerticalScrollBarVisibility="Hidden"/>
                 <Label Grid.Row="3" Grid.Column="1"></Label>
                 <TextBox Grid.Row="4" Grid.Column="1"  x:Name="txtphno" Text="{Binding PhoneNo}" Margin="0,0,-302,0" ></TextBox>
                 <Label Grid.Row="5" Grid.Column="1"></Label>
-                <TextBox Grid.Row="6" Grid.Column="1"  x:Name="txtemail" Text="{Binding Email}" Margin="0,0,-302,0" ></TextBox>
+                <TextBox Grid.Row="6" Grid.Column="1"  x:Name="txtemail"  Text="{Binding Email}" Margin="0,0,-302,0" ></TextBox>
                 <Label Grid.Row="7" Grid.Column="1"></Label>
 
                 <ComboBox Grid.Row="8" Grid.Column="1" Text="{Binding Gender}" x:Name="cmbgender" Margin="0,0,-302,0" >

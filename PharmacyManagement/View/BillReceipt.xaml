@@ -33,7 +33,7 @@
                 <RowDefinition Height="150"/>
                 <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
-            <DataGrid Height="150" AutoGenerateColumns="False" Opacity="0.70" Margin="10,-10,10,10" >
+            <DataGrid Height="150" AutoGenerateColumns="False" Opacity="0.70" Margin="53,0,10,0" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Medicine Name"  Width="180" Binding="{Binding }" />
                     <DataGridTextColumn Header="Description"  Width="250" Binding="{Binding }" />

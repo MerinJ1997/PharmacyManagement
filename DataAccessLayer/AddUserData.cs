@@ -1,6 +1,7 @@
 ﻿using EntityLayer;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -10,61 +11,90 @@ using System.Windows;
 
 namespace DataAccessLayer
 {
+    
     public class AddUserData
     {
+        public bool ValidateData(AddUserDetailsModel userDetailsModel, CancelEventArgs e)
+        {
+            return false;
+        }
         public void SaveUserData(AddUserDetailsModel userDetailsModel)
         {
+            
             SqlConnection connection = null;
             using(connection = new SqlConnection("data source =.; database = PharmacyManagement; integrated security = SSPI"))
             {
-                string Name = userDetailsModel.Name;
-                string Address = userDetailsModel.Address;
-                string Email = userDetailsModel.Email;
-                string Phone = userDetailsModel.Phone;
-                string Gender = userDetailsModel.Gender;
-                int Age = userDetailsModel.Age;
-                string Role = userDetailsModel.Role;
-                string Username = userDetailsModel.username;
-                string Password = userDetailsModel.password;
-                SqlCommand command = new SqlCommand("AddUser", connection);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@empname", Name);
-                command.Parameters.AddWithValue("@address",Address);
-                command.Parameters.AddWithValue("@email", Email);
-                command.Parameters.AddWithValue("@phone", Phone);
-                command.Parameters.AddWithValue("@gender", Gender);
-                command.Parameters.AddWithValue("@age", Age);
-                command.Parameters.AddWithValue("@role", Role);
-                command.Parameters.AddWithValue("@username", Username);
-                command.Parameters.AddWithValue("@password", Password);
-                connection.Open();
-                int rowsadded = command.ExecuteNonQuery();
-                MessageBox.Show("Inserted Succesfully");
+                try
+                {
+                    string Name = userDetailsModel.Name;
+                    string Address = userDetailsModel.Address;
+                    string Email = userDetailsModel.Email;
+                    string Phone = userDetailsModel.Phone;
+                    string Gender = userDetailsModel.Gender;
+                    int Age = userDetailsModel.Age;
+                    string Role = userDetailsModel.Role;
+                    string Username = userDetailsModel.username;
+                    string Password = userDetailsModel.password;
+                    SqlCommand command = new SqlCommand("AddUser", connection);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@empname", Name);
+                    command.Parameters.AddWithValue("@address", Address);
+                    command.Parameters.AddWithValue("@email", Email);
+                    command.Parameters.AddWithValue("@phone", Phone);
+                    command.Parameters.AddWithValue("@gender", Gender);
+                    command.Parameters.AddWithValue("@age", Age);
+                    command.Parameters.AddWithValue("@role", Role);
+                    command.Parameters.AddWithValue("@username", Username);
+                    command.Parameters.AddWithValue("@password", Password);
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Inserted Succesfully");
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
             }
         }
         public List<AddUserDetailsModel> GetUserData()
         {
-            List<AddUserDetailsModel> addUserDetailsModels = new List<AddUserDetailsModel>();
-            PharmacyManagementEntities pharmacyManagementEntities = new PharmacyManagementEntities();
-            var data = from userobj in pharmacyManagementEntities.UserDetails
-                       join roleobj in pharmacyManagementEntities.Roles on userobj.RoleID equals roleobj.RoleID
-                       select userobj;
-            foreach (var user in data)
+            try
             {
-                AddUserDetailsModel addUserDetailsModel = new AddUserDetailsModel();
-                addUserDetailsModel.Roling = new RoleData();
-                addUserDetailsModel.ID = user.EmployeeID;
-                addUserDetailsModel.Name = user.EmployeeName;
-                addUserDetailsModel.Address = user.EmployeeAddress;
-                addUserDetailsModel.Email = user.Email;
-                addUserDetailsModel.Phone = user.PhoneNo;
-                addUserDetailsModel.Gender = user.Gender;
-                addUserDetailsModel.Age = user.Age;
-                addUserDetailsModel.Roling.RoleName = user.Role.RoleName;
-                addUserDetailsModels.Add(addUserDetailsModel);
-
+                List<AddUserDetailsModel> addUserDetailsModels = new List<AddUserDetailsModel>();
+                PharmacyManagementEntities pharmacyManagementEntities = new PharmacyManagementEntities();
+                var data = from userobj in pharmacyManagementEntities.UserDetails
+                           join roleobj in pharmacyManagementEntities.Roles on userobj.RoleID equals roleobj.RoleID
+                           select userobj;
+                foreach (var user in data)
+                {
+                    AddUserDetailsModel addUserDetailsModel = new AddUserDetailsModel();
+                    addUserDetailsModel.Roling = new RoleData();
+                    addUserDetailsModel.ID = user.EmployeeID;
+                    addUserDetailsModel.Name = user.EmployeeName;
+                    addUserDetailsModel.Address = user.EmployeeAddress;
+                    addUserDetailsModel.Email = user.Email;
+                    addUserDetailsModel.Phone = user.PhoneNo;
+                    addUserDetailsModel.Gender = user.Gender;
+                    addUserDetailsModel.Age = user.Age;
+                    if (user.RoleID == 1)
+                    {
+                        addUserDetailsModel.Roling.RoleName = "Employee";
+                    }
+                    else
+                    {
+                        addUserDetailsModel.Roling.RoleName = "Manger";
+                    }
+                    addUserDetailsModels.Add(addUserDetailsModel);
+                }
+                return addUserDetailsModels;
             }
-            return addUserDetailsModels;
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
         }
         public void DeleteUserData(AddUserDetailsModel addUserDetailsModel)
         {
@@ -110,8 +140,7 @@ namespace DataAccessLayer
                     }
                     else
                     { entity.RoleID = 1;}
-                   // entity.Role.RoleName = addUserDetailsModel.Role;
-                    //entities.UserDetails.Add(entity);
+
                 }
                entities.SaveChanges();
 

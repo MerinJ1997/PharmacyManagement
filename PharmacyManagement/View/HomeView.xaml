@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PharmacyManagement.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl1_Load">
+    
     <DockPanel >
 
         <Grid>
@@ -36,7 +37,7 @@
                 <Label Grid.Row="3" Grid.Column="0"></Label>
                 <Label Grid.Row="4" Grid.Column="0" Content="Address" FontWeight="Bold"></Label>
 
-                <TextBox Grid.Row="0" Grid.Column="1" Margin="0,0,-302,9" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5" >
+                <TextBox Grid.Row="0" Grid.Column="1" Margin="0,0,-302,9" x:Name="txtph" RenderTransformOrigin="0.5,0.5" >
                     <TextBox.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -47,15 +48,15 @@
                     </TextBox.RenderTransform>
                 </TextBox>
                 <Label Grid.Row="1" Grid.Column="1" ></Label>
-                <TextBox Grid.Row="2" Grid.Column="1" Margin="0,0,-302,10" Grid.RowSpan="2" ></TextBox>
+                <TextBox Grid.Row="2" Grid.Column="1" Margin="0,0,-302,10" x:Name="txtmail" Grid.RowSpan="2" ></TextBox>
                 <Label Grid.Row="3" Grid.Column="1"></Label>
-                <TextBox Grid.Row="4" Grid.Column="1" Margin="0,0,-302,0" ></TextBox>
+                <TextBox Grid.Row="4" Grid.Column="1" Margin="0,0,-302,0" x:Name="txtadd" ></TextBox>
 
 
             </Grid>
-            <Button Content="     Edit "  Margin="315,0,360,147" VerticalAlignment="Bottom"   x:Name="btn">
+            <Button Content="     Edit "  Margin="315,0,360,147" VerticalAlignment="Bottom"   x:Name="btn" Click="btn_Click">
             </Button>
-            <Button Content="     Save"  Margin="430,0,232,147" VerticalAlignment="Bottom"    x:Name="btn_Copy"/>
+            
         </Grid>
     </DockPanel>
 </UserControl>

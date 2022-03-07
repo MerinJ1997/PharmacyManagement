@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PharmacyManagement.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="UserControl1_Load">
 
     <Grid >
         <Grid.Background>
@@ -42,7 +43,7 @@
             <Label Grid.Row="5" Grid.Column="0"></Label>
             <Label Grid.Row="6" Grid.Column="0" Content="Email" FontSize="15" FontWeight="Bold"></Label>
 
-            <TextBox Grid.Row="0" Grid.Column="1" Margin="0,0,-302,9" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5" >
+            <TextBox Grid.Row="0" Grid.Column="1" x:Name="name" Margin="0,0,-302,9" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5" >
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -53,15 +54,16 @@
                 </TextBox.RenderTransform>
             </TextBox>
             <Label Grid.Row="1" Grid.Column="1" ></Label>
-            <TextBox Grid.Row="2" Grid.Column="1" Margin="0,0,-302,10" Grid.RowSpan="2" x:Name="phno"></TextBox>
+            <TextBox x:Name="phno" Grid.Row="2" Grid.Column="1" Margin="0,0,-302,10"  Grid.RowSpan="2" ></TextBox>
             <Label Grid.Row="3" Grid.Column="1"></Label>
-            <TextBox Grid.Row="4" Grid.Column="1" Margin="0,0,-302,0" x:Name="Address"></TextBox>
+            <TextBox x:Name="Address" Grid.Row="4" Grid.Column="1" Margin="0,0,-302,0" ></TextBox>
             <Label Grid.Row="5" Grid.Column="1"></Label>
 
-            <TextBox Grid.Row="6" Grid.Column="1" Margin="0,0,-302,0" x:Name="Email"></TextBox>
+            <TextBox x:Name="Email" Grid.Row="6" Grid.Column="1" Margin="0,0,-302,0"></TextBox>
 
 
         </Grid>
+        <Button Content="     Edit" HorizontalAlignment="Left" Margin="371,312,0,0" VerticalAlignment="Top" Click="Button_Click"/>
 
     </Grid>
 

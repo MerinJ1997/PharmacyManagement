@@ -140,7 +140,7 @@ namespace DataAccessLayer
                     }
                     else
                     { entity.RoleID = 1;}
-                    
+
                 }
                entities.SaveChanges();
 

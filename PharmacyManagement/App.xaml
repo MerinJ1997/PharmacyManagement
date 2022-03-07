@@ -46,6 +46,9 @@
         <DataTemplate DataType="{x:Type viewModel:MainPageHomeViewModel}">
             <view:MainPageHome></view:MainPageHome>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:SearchViewModel}">
+            <view:SearchView></view:SearchView>
+        </DataTemplate>
 
 
 

@@ -40,6 +40,10 @@ namespace PharmacyManagement.Commands
             {
                 model.SelectedView = new LoginViewModel();
             }
+             else if (parameter.ToString() =="Search")
+            {
+                model.SelectedView = new SearchViewModel(); 
+            }
         }
     }
 }

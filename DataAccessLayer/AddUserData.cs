@@ -20,7 +20,7 @@ namespace DataAccessLayer
         }
         public void SaveUserData(AddUserDetailsModel userDetailsModel)
         {
-            //ValidateData(userDetailsModel, new CancelEventArgs());
+            
             SqlConnection connection = null;
             using(connection = new SqlConnection("data source =.; database = PharmacyManagement; integrated security = SSPI"))
             {
@@ -85,7 +85,6 @@ namespace DataAccessLayer
                     {
                         addUserDetailsModel.Roling.RoleName = "Manger";
                     }
-                    //addUserDetailsModel.Roling.RoleName = user.Role.RoleName;
                     addUserDetailsModels.Add(addUserDetailsModel);
                 }
                 return addUserDetailsModels;
@@ -141,8 +140,7 @@ namespace DataAccessLayer
                     }
                     else
                     { entity.RoleID = 1;}
-                    //entity.Role.RoleName = addUserDetailsModel.Role;
-                    //entities.UserDetails.Add(entity);
+                    
                 }
                entities.SaveChanges();
 

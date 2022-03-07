@@ -110,7 +110,7 @@ namespace DataAccessLayer
                     }
                     else
                     { entity.RoleID = 1;}
-                    entity.Role.RoleName = addUserDetailsModel.Role;
+                   // entity.Role.RoleName = addUserDetailsModel.Role;
                     //entities.UserDetails.Add(entity);
                 }
                entities.SaveChanges();

@@ -60,7 +60,15 @@ namespace DataAccessLayer
                 addUserDetailsModel.Phone = user.PhoneNo;
                 addUserDetailsModel.Gender = user.Gender;
                 addUserDetailsModel.Age = user.Age;
-                addUserDetailsModel.Roling.RoleName = user.Role.RoleName;
+                if(user.RoleID == 1)
+                {
+                    addUserDetailsModel.Roling.RoleName = "Employee";
+                }
+                else
+                {
+                    addUserDetailsModel.Roling.RoleName = "Manger";
+                }
+                //addUserDetailsModel.Roling.RoleName = user.Role.RoleName;
                 addUserDetailsModels.Add(addUserDetailsModel);
 
             }
@@ -110,7 +118,7 @@ namespace DataAccessLayer
                     }
                     else
                     { entity.RoleID = 1;}
-                    entity.Role.RoleName = addUserDetailsModel.Role;
+                    //entity.Role.RoleName = addUserDetailsModel.Role;
                     //entities.UserDetails.Add(entity);
                 }
                entities.SaveChanges();

@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PharmacyManagement.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" >
 
     <Grid >
         <Grid.Background>
@@ -53,12 +53,12 @@
                 </TextBox.RenderTransform>
             </TextBox>
             <Label Grid.Row="1" Grid.Column="1" ></Label>
-            <TextBox Grid.Row="2" Grid.Column="1" Margin="0,0,-302,10" Grid.RowSpan="2" x:Name="phno"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="1" Margin="0,0,-302,10"  Grid.RowSpan="2" ></TextBox>
             <Label Grid.Row="3" Grid.Column="1"></Label>
-            <TextBox Grid.Row="4" Grid.Column="1" Margin="0,0,-302,0" x:Name="Address"></TextBox>
+            <TextBox Grid.Row="4" Grid.Column="1" Margin="0,0,-302,0" ></TextBox>
             <Label Grid.Row="5" Grid.Column="1"></Label>
 
-            <TextBox Grid.Row="6" Grid.Column="1" Margin="0,0,-302,0" x:Name="Email"></TextBox>
+            <TextBox Grid.Row="6" Grid.Column="1" Margin="0,0,-302,0"></TextBox>
 
 
         </Grid>

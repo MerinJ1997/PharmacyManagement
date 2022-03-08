@@ -7,14 +7,17 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="AliceBlue">
-        <TextBox HorizontalAlignment="Left" Margin="106,0,0,351" TextWrapping="Wrap" x:Name="txtsearch" VerticalAlignment="Bottom" Width="267" Height="30"/>
-        <Button Content="   Search" HorizontalAlignment="Left" Margin="450,58,0,0" VerticalAlignment="Top"/>
-        <DataGrid AutoGenerateColumns="False" HorizontalAlignment="Left" x:Name="grdSearchList" Margin="240,179,0,79" Width="299">
+        <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Margin="122,0,0,351" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="267" Height="30"/>
+        <Button Content="   Search" HorizontalAlignment="Left" Margin="450,58,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <DataGrid x:Name="GridView" AutoGenerateColumns="False" HorizontalAlignment="Left"  Margin="128,179,0,79" Width="401">
             <DataGrid.Columns>
-                <DataGridTextColumn  Header="Medicine Name" Width="150"></DataGridTextColumn>
-                <DataGridTextColumn  Header="Stock Available" Width="150"></DataGridTextColumn>
+                <DataGridTextColumn  Header="Medicine Name" Width="150" Binding="{Binding MedicineName}"></DataGridTextColumn>
+                <DataGridTextColumn  Header="Unit Price" Width="100" Binding="{Binding price}"></DataGridTextColumn>
+
+                <DataGridTextColumn  Header="Stock Available" Width="150" Binding="{Binding StockAvailable}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
+        
 
     </Grid>
 </UserControl>

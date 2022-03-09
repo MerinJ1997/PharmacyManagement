@@ -11,7 +11,25 @@ namespace PharmacyManagement.ViewModel
 {
     public class BillingViewModel : BaseViewModel
     {
-       
+        private int _medid;
+
+        public int Medid
+        {
+            get { return _medid; }
+            set { _medid = value;OnPropertyChanged("Medid"); }
+        }
+
+        private float _price;
+
+        public float Price
+        {
+            get { return _price; }
+            set { _price = value; OnPropertyChanged("Price"); }
+        }
+
+
+
+
     }
     
 }

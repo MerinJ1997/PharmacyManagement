@@ -58,6 +58,7 @@
     <Compile Include="Bill.cs">
       <DependentUpon>PharmacyDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="BillData.cs" />
     <Compile Include="Count.cs">
       <DependentUpon>PharmacyDB.tt</DependentUpon>
     </Compile>

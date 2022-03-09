@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PharmacyManagement.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="47*"/>
@@ -36,22 +36,22 @@
                     <ColumnDefinition Width="auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0" Content="Medicine ID" FontWeight="Bold" Margin="0,0,0,13" Grid.RowSpan="4" ></Label>
-                <TextBox Grid.Row="0" Grid.Column="1" Margin="0,0,-225,3" Grid.RowSpan="3" Name="medid"/>
-                <Label Grid.Row="6" Grid.Column="0" Content="Medicine Name" Margin="0,9,0,11" FontWeight="Bold" />
-                <Label Grid.Row="6" Grid.Column="0" Content="Unit Price" Margin="0,61,0,-48" FontWeight="Bold"/>
+                <Label Grid.Row="0" Grid.Column="0" Content="Medicine Name" FontWeight="Bold" Margin="0,0,0,13" Grid.RowSpan="4" ></Label>
+                <TextBox Grid.Row="0" Grid.Column="1" Margin="0,0,-225,3" Grid.RowSpan="3" x:Name="medname"/>
+                <Label Grid.Row="6" Grid.Column="0" Content="Medicine ID" Margin="0,9,0,11"  FontWeight="Bold" />
+                <Label Grid.Row="6" Grid.Column="0" Content="Unit Price" Margin="0,61,0,-48"  FontWeight="Bold"/>
                 <Label Grid.Row="6" Grid.Column="0" Content="Quantity" Margin="0,108,0,-108" FontWeight="Bold" ></Label>
-                <TextBox Grid.Row="6" Grid.Column="1" Margin="0,5,-225,10" Name="medname"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Margin="0,60,-225,-45" Name="unit"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Margin="0,106,-225,-91" Name="qty"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Margin="0,154,-225,-139" Name="totalprice"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Margin="0,5,-225,10" x:Name="medid"  />
+                <TextBox Grid.Row="6" Grid.Column="1" Margin="0,60,-225,-45" x:Name="unit" />
+                <TextBox Grid.Row="6" Grid.Column="1" Margin="0,106,-225,-91" x:Name="qty"/>
+                <TextBox Grid.Row="6" Grid.Column="1" Margin="0,154,-225,-139" x:Name="totalprice"/>
                 <Label Grid.Row="6" Grid.Column="0" Content="Total Price" Margin="0,158,0,-158" FontWeight="Bold"/>
 
             </Grid>
             <DataGrid  Margin="365,35,30,189" AutoGenerateColumns="False" Opacity="0.70" FontWeight="Bold">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Medicine ID" Width="100"/>
-                    <DataGridTextColumn Header="Medicine Name" Width="130"/>
+                    <DataGridTextColumn Header="Medicine Name" Width="100"/>
+                    <DataGridTextColumn Header="Medicine ID" Width="130"/>
                     <DataGridTextColumn Header="Company Price" Width="130"/>
                     <DataGridTextColumn Header="Unit Price" Width="100"/>
                     <DataGridTextColumn Header="Quantity" Width="100"/>
@@ -60,12 +60,17 @@
             </DataGrid>
 
             <Button Content="     Add" Margin="160,376,387,58" TextOptions.TextFormattingMode="Display" />
-            <Button Content="    Print" Click ="Button_Click" Margin="270,376,279,58" TextOptions.TextFormattingMode="Display"  />
+            <Button Content="    Search" Click ="Button_Click" Margin="270,376,279,58" TextOptions.TextFormattingMode="Display"  />
             <Button Content="    Expiry" Margin="495,376,55,58" TextOptions.TextFormattingMode="Display" Background="#a33b3b"/>
             <Button Content="    Clear" Margin="381,376,175,58" TextOptions.TextFormattingMode="Display"/>
 
         </Grid>
-        <Frame x:Name="mainbill" Grid.RowSpan="2" Margin="121,4,10,-4" Grid.ColumnSpan="2"/>
+        <Frame x:Name="mainbill" Grid.RowSpan="2" Margin="121,4,10,-4" Grid.ColumnSpan="2"   />
+        <DataGrid x:Name="grdlist" Margin="179,290,477,53"  AutoGenerateColumns="False" SelectionChanged="grdlist_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Medicine Name" Binding="{Binding MedName}"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 
 </UserControl>

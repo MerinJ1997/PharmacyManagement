@@ -71,6 +71,7 @@
     <Compile Include="Commands\AddUserSubmitCommand.cs" />
     <Compile Include="Commands\EmployeeCommand.cs" />
     <Compile Include="Commands\HomePageCommands.cs" />
+    <Compile Include="Commands\SearchStockCommand.cs" />
     <Compile Include="Commands\StockSubmitCommand.cs" />
     <Compile Include="ViewModel\AboutUsViewModel.cs" />
     <Compile Include="ViewModel\AddStockViewModel.cs" />

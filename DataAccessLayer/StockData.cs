@@ -1,6 +1,8 @@
 ﻿using EntityLayer;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -89,7 +91,7 @@ namespace DataAccessLayer
                     entity.Price = stockModel.UnitPrice;
                     entity.CompanyName = stockModel.Company;
 
-                   
+
                 }
                 pharmacy.SaveChanges();
 
@@ -100,7 +102,49 @@ namespace DataAccessLayer
                 throw ex;
             }
         }
-
-
+        
+        public void SearchData(StockModel add)
+        {
+            List<StockModel> model = new List<StockModel>();            
+            MessageBox.Show("Searching for result");
+            using (SqlConnection con = new SqlConnection("data source =.; database = PharmacyManagement; integrated security = SSPI"))
+            {
+                string search = add.MedName;
+                string cmdst = "select MedicineName,Price,StockAvailable from StockDetails where MedicineName like '%" + search + "%'";
+                SqlCommand cmd = new SqlCommand(cmdst, con);
+                con.Open();
+                SqlDataReader read = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(read);
+                con.Close();
+                
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    add.MedName = dt.Rows[i]["MedicineName"].ToString();
+                    add.StockAvailable = Convert.ToInt32(dt.Rows[i]["StockAvailable"]);
+                    model.Add(add);
+                    if (add.StockAvailable > 0)
+                    {
+                        MessageBox.Show("Stock Available");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Out of Stock");
+                    }
+                }
+            }
+        }
     }
 }
+            
+            
+            
+                
+            
+            
+        
+
+
+
+    
+

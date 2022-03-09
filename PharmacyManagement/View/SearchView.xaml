@@ -7,17 +7,28 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid Background="AliceBlue">
-        <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Margin="122,0,0,351" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="267" Height="30"/>
-        <Button Content="   Search" HorizontalAlignment="Left" Margin="450,58,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <DataGrid x:Name="GridView" AutoGenerateColumns="False" HorizontalAlignment="Left"  Margin="128,179,0,79" Width="401">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="200"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="1" Margin="100,0,0,0" Content="Medicine Name" VerticalAlignment="Center" FontSize="18"/>
+        <!--<Label Grid.Row="2" Margin="100,0,0,0" Content="Stock" VerticalAlignment="Center" FontSize="18"/>-->
+        <TextBox Grid.Row="1" Text="{Binding MedName}" Margin="300,0,0,0" x:Name="txtName" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Center" Width="187" Height="30"/>
+        <!--<TextBox Grid.Row="2" Margin="300,0,0,0" x:Name="txtStock" Text="{Binding Stock}" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Center" Width="187" Height="30"/>-->
+        <Button Grid.Row="3" Content="   Search" Command="{Binding Submit}" HorizontalAlignment="Left" Margin="620,25,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        <!--<DataGrid Grid.Row="4" x:Name="GridView" ItemsSource="{Binding list}" AutoGenerateColumns="False" HorizontalAlignment="Center" Width="753" Margin="0,0,0,67" >
             <DataGrid.Columns>
-                <DataGridTextColumn  Header="Medicine Name" Width="150" Binding="{Binding MedicineName}"></DataGridTextColumn>
-                <DataGridTextColumn  Header="Unit Price" Width="100" Binding="{Binding price}"></DataGridTextColumn>
-
+                <DataGridTextColumn  Header="Medicine Name" Width="150" Binding="{Binding MedName}"></DataGridTextColumn>
+                <DataGridTextColumn  Header="Unit Price" Width="100" Binding="{Binding UnitPrice}"></DataGridTextColumn>
                 <DataGridTextColumn  Header="Stock Available" Width="150" Binding="{Binding StockAvailable}"></DataGridTextColumn>
             </DataGrid.Columns>
-        </DataGrid>
-        
+        </DataGrid>-->
+        <TextBox x:Name="TextBox1_Copy" HorizontalAlignment="Left" Margin="202,0,0,299" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="187" Height="30"/>
+        <TextBox x:Name="TextBox1_Copy1" HorizontalAlignment="Left" Margin="202,0,0,251" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="187" Height="30"/>
+
 
     </Grid>
 </UserControl>

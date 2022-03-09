@@ -79,10 +79,6 @@ namespace PharmacyManagement.View
                 command.Parameters.AddWithValue("@ph", ph);
                 command.Parameters.AddWithValue("@email", mail);
                 command.Parameters.AddWithValue("@ename", Name);
-
-
-
-
                 connection.Open();
 
                 try

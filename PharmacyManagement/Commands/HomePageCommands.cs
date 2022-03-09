@@ -1,4 +1,5 @@
-﻿using PharmacyManagement.ViewModel;
+﻿using EntityLayer;
+using PharmacyManagement.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace PharmacyManagement.Commands
     public class HomePageCommands : ICommand
     {
         public MainPageViewModel model;
+        StockModel stockmodel = new StockModel();
         public HomePageCommands(MainPageViewModel mviewModel)
         {
             this.model = mviewModel;
@@ -42,7 +44,7 @@ namespace PharmacyManagement.Commands
             }
              else if (parameter.ToString() =="Search")
             {
-                model.SelectedView = new SearchViewModel(); 
+                model.SelectedView = new SearchViewModel(stockmodel); 
             }
         }
     }

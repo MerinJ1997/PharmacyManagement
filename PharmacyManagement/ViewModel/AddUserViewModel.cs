@@ -18,7 +18,6 @@ namespace PharmacyManagement.ViewModel
         //public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
         private AddUserDetailsModel addUserDetailsModel;
         private string _name;
-
         public string Name
         {
             get { return _name; }

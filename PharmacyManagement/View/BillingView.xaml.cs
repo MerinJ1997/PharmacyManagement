@@ -32,16 +32,11 @@ namespace PharmacyManagement.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
-
             StockModel stock1 = new StockModel();
             stock1.MedName = medname.Text;
             BillBussiness bb = new BillBussiness();
-
-            
             var list = bb.SearchData(stock1);
             grdlist.ItemsSource=list;
-
         }
 
         private void grdlist_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -67,9 +62,6 @@ namespace PharmacyManagement.View
                             medid.Text = item.MedID.ToString();
                             unit.Text = item.UnitPrice.ToString();
                         }
-                        
-
-
                     }
                 }
 
@@ -79,9 +71,6 @@ namespace PharmacyManagement.View
             
             }
         }
-
-
-
         public IEnumerable<DataGridRow> GetDataGridRows(DataGrid grdList)
         {
             var itemsSource = grdlist.ItemsSource as IEnumerable;
@@ -92,14 +81,51 @@ namespace PharmacyManagement.View
                 if (null != row) yield return row;
             }
         }
-
-        
+        public void Quantity_txtchanged(object sender, EventArgs e)
+        {
+            if (qty.Text != "")
+            {
+                Int64 unitprice = Convert.ToInt64(unit.Text);
+                Int64 quantity = Convert.ToInt64(qty.Text);
+                Int64 totalPrice =unitprice * quantity;
+                txtPrice.Text = "Rs." + totalPrice.ToString();
+            }
+            else
+            {
+                txtPrice.Clear();
+            }
+        }
+        protected int n, totalAmount = 0;
+        protected Int64 stock, newStock;
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            StockModel stocks = new StockModel();
+            stocks.MedName = medname.Text;
+            BillBussiness bb = new BillBussiness();
+            var data = bb.fetchMedicine(stocks);
+            foreach(var item in data)
+            {
+                stock = item.StockAvailable;
+            }
+            Int64 Qty = Convert.ToInt64(qty.Text);
+            if (Qty <= stock)
+            {
+                newStock = stock - Qty;
+                //stock = newStock;
+                stocks.MedName = medname.Text;
+                stocks.StockAvailable =Convert.ToInt32(newStock);
+                bb.UpdateQuantity(stocks);
+                MessageBox.Show("Stock Left: " + newStock);
+            }
+            else
+            {
+                MessageBox.Show("Exceeded stock limit. Please enter value less than " + stock);
+            }
+        }
     }
 }
         //public void bill_Load(Object sender, EventArgs e)
         //{
-            
-                          
                 //try
                 //{
                 //List<StockModel> models = new List<StockModel>();
@@ -118,22 +144,14 @@ namespace PharmacyManagement.View
                 //        for (int i = 0; i < dt.Rows.Count; i++)
                 //        {
                 //            add.MedName = dt.Rows[i]["MedicineName"].ToString();
-
-
                 //            models.Add(add);
 
                 //        }
-                  
-
                 //}
-                
                 //catch (Exception ex)
                 //{
                 //    MessageBox.Show("Unable to Open this page");
                 //}
-
-
-            
           //}
 
         

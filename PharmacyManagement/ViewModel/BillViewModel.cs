@@ -6,9 +6,7 @@ using System.Threading.Tasks;
 
 namespace PharmacyManagement.ViewModel
 {
-    public class ReceiptViewModel : BaseViewModel
+    public class BillViewModel : BaseViewModel
     {
-       
-
     }
 }

@@ -20,32 +20,31 @@
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
         <Grid Margin="150,4,-5,-44" Grid.ColumnSpan="3" Grid.RowSpan="2">
-            <Grid Margin="16,37,434,133">
+            <Grid Margin="16,37,335,133">
                 <Grid.RowDefinitions >
-                    <RowDefinition Height="auto" ></RowDefinition>
-                    <RowDefinition Height="auto" ></RowDefinition>
-                    <RowDefinition Height="auto" ></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="5.56"/>
-                    <RowDefinition Height="7.92"/>
-                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="40" ></RowDefinition>
+                    <RowDefinition Height="40" ></RowDefinition>
+                    <RowDefinition Height="40" ></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="100"></ColumnDefinition>
-                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="180"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="0" Grid.Column="0" Content="Medicine Name" FontWeight="Bold" Margin="0,0,0,13" Grid.RowSpan="4" ></Label>
-                <TextBox Grid.Row="0" Grid.Column="1" Margin="0,0,-225,3" Grid.RowSpan="3" x:Name="medname"/>
-                <Label Grid.Row="6" Grid.Column="0" Content="Medicine ID" Margin="0,9,0,11"  FontWeight="Bold" />
-                <Label Grid.Row="6" Grid.Column="0" Content="Unit Price" Margin="0,61,0,-48"  FontWeight="Bold"/>
-                <Label Grid.Row="6" Grid.Column="0" Content="Quantity" Margin="0,108,0,-108" FontWeight="Bold" ></Label>
-                <TextBox Grid.Row="6" Grid.Column="1" Margin="0,5,-225,10" x:Name="medid"  />
-                <TextBox Grid.Row="6" Grid.Column="1" Margin="0,60,-225,-45" x:Name="unit" />
-                <TextBox Grid.Row="6" Grid.Column="1" Margin="0,106,-225,-91" x:Name="qty"/>
-                <TextBox Grid.Row="6" Grid.Column="1" Margin="0,154,-225,-139" x:Name="totalprice"/>
-                <Label Grid.Row="6" Grid.Column="0" Content="Total Price" Margin="0,158,0,-158" FontWeight="Bold"/>
+                <Label Grid.Row="0" Grid.Column="0" Content="Medicine Name" FontWeight="Bold"  ></Label>
+                
+                <Label Grid.Row="1" Grid.Column="0" Content="Medicine ID" VerticalAlignment="Center"  FontWeight="Bold" />
+                <Label Grid.Row="2" Grid.Column="0" Content="Unit Price" VerticalAlignment="Center" FontWeight="Bold"/>
+                <Label Grid.Row="3" Grid.Column="0" Content="Quantity" VerticalAlignment="Center" FontWeight="Bold" ></Label>
+                <TextBox Grid.Row="0" Grid.Column="1" Height="30" VerticalAlignment="Center" x:Name="medname"  />
+                <TextBox Grid.Row="1" Grid.Column="1" Height="30" VerticalAlignment="Center" x:Name="medid" />
+                <TextBox Grid.Row="2" Grid.Column="1" Height="30" x:Name="unit" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="3" Grid.Column="1" Height="30" x:Name="qty" VerticalAlignment="Center"/>
+                <Label Grid.Row="4" Grid.Column="0" Content="Total Price"  FontWeight="Bold" VerticalAlignment="Center"/>
+                <Label Grid.Row="4" Grid.Column="1" Height="30" Background="#d1f0e9" Content="$0.0"  FontWeight="Bold" VerticalAlignment="Center"/>
 
             </Grid>
             <DataGrid  Margin="365,35,30,189" AutoGenerateColumns="False" Opacity="0.70" FontWeight="Bold">

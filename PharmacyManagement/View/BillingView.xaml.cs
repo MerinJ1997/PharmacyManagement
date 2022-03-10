@@ -148,7 +148,12 @@ namespace PharmacyManagement.View
             {
                 MessageBox.Show("Exceeded stock limit. Please enter value less than " + stock);
             }
-          
+
+            Clear();
+        }
+        void Refresh()
+        {
+
 
         }
     }

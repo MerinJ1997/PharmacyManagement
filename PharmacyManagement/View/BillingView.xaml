@@ -46,7 +46,7 @@
                 <TextBox Grid.Row="4" Name="txtPrice" Grid.Column="1" Height="30" Background="#d1f0e9" Text="$0.0"  FontWeight="Bold" VerticalAlignment="Center" IsEnabled="False" />
 
             </Grid>
-            <DataGrid x:Name="grdmed"  Margin="365,35,30,189" AutoGenerateColumns="False" Opacity="0.70" FontWeight="Bold">
+            <DataGrid x:Name="grdmed" CanUserDeleteRows="True" SelectionChanged="grdmedlistChanged" MouseDoubleClick="grdmed_MouseDoubleClick" Margin="365,35,30,189" AutoGenerateColumns="False" Opacity="0.70" FontWeight="Bold">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Medicine Name" Binding="{Binding MedName}" Width="100"/>
                     <DataGridTextColumn Header="Medicine ID" Width="130" Binding="{Binding MedID}" />
@@ -56,7 +56,7 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
-        <Frame x:Name="mainbill" Grid.RowSpan="2" Margin="121,4,10,-4" Grid.ColumnSpan="2" />
+        <Frame x:Name="mainbill" Grid.RowSpan="2" Margin="121,4,10,-4" Grid.ColumnSpan="2"  />
         <DataGrid x:Name="grdlist"  Height="100" Width="150" AutoGenerateColumns="False" SelectionChanged="grdlist_SelectionChanged" Margin="73,268,534,55">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Medicine Name" Binding="{Binding MedName}"/>
@@ -67,6 +67,7 @@
             <Button Content="    Search" Click ="Button_Click"  TextOptions.TextFormattingMode="Display" Margin="216,10,361,10"  />
             <Button Content="    Print"  TextOptions.TextFormattingMode="Display" Margin="548,10,29,10"/>
             <Button Content="    Clear"  TextOptions.TextFormattingMode="Display" Margin="434,10,143,10" Click="ClearButton"/>
+            <Button Content="    Delete"  TextOptions.TextFormattingMode="Display" Margin="98,10,479,10" Click="DeleteButton"/>
 
         </Grid>
     </Grid>

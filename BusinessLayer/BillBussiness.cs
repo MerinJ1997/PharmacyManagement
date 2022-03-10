@@ -22,6 +22,11 @@ namespace BusinessLayer
             BillData bd = new BillData();
             return bd.FetchDataByMedName(add);
         }
+        public void UpdateQuantity(StockModel add)
+        {
+            BillData bd =new BillData();
+            bd.Update(add);
+        }
     }
 
 }

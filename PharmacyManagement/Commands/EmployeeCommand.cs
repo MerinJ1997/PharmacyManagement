@@ -1,4 +1,5 @@
-﻿using PharmacyManagement.View;
+﻿using EntityLayer;
+using PharmacyManagement.View;
 using PharmacyManagement.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -35,7 +36,7 @@ namespace PharmacyManagement.Commands
             else if (parameter.ToString() == "Billing")
 
             {
-                model.SelectedView = new BillingViewModel();
+                model.SelectedView = new BillViewModel();
             }
             
             else if (parameter.ToString() == "Log Out")

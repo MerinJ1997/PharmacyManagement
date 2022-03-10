@@ -69,6 +69,7 @@
     </ApplicationDefinition>
     <Compile Include="Commands\AddUserCommand.cs" />
     <Compile Include="Commands\AddUserSubmitCommand.cs" />
+    <Compile Include="Commands\BillingCommand.cs" />
     <Compile Include="Commands\EmployeeCommand.cs" />
     <Compile Include="Commands\HomePageCommands.cs" />
     <Compile Include="Commands\SearchStockCommand.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="ViewModel\AddUserViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BillingViewModel.cs" />
+    <Compile Include="ViewModel\BillViewModel.cs" />
     <Compile Include="ViewModel\ContactUsViewModel.cs" />
     <Compile Include="ViewModel\EmployeeDetailViewModel.cs" />
     <Compile Include="ViewModel\EmployeeWelcomeViewModel.cs" />

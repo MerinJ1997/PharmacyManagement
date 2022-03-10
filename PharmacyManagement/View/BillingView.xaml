@@ -19,8 +19,8 @@
             <ColumnDefinition Width="31*"/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Grid Margin="150,4,-5,-44" Grid.ColumnSpan="3" Grid.RowSpan="2">
-            <Grid Margin="16,37,335,133">
+        <Grid Margin="150,4,-5,-81" Grid.ColumnSpan="3" Grid.RowSpan="2">
+            <Grid Margin="16,37,335,245">
                 <Grid.RowDefinitions >
                     <RowDefinition Height="40" ></RowDefinition>
                     <RowDefinition Height="40" ></RowDefinition>
@@ -35,41 +35,40 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Grid.Row="0" Grid.Column="0" Content="Medicine Name" FontWeight="Bold"  ></Label>
-                
                 <Label Grid.Row="1" Grid.Column="0" Content="Medicine ID" VerticalAlignment="Center"  FontWeight="Bold" />
                 <Label Grid.Row="2" Grid.Column="0" Content="Unit Price" VerticalAlignment="Center" FontWeight="Bold"/>
                 <Label Grid.Row="3" Grid.Column="0" Content="Quantity" VerticalAlignment="Center" FontWeight="Bold" ></Label>
                 <TextBox Grid.Row="0" Grid.Column="1" Height="30" VerticalAlignment="Center" x:Name="medname"  />
-                <TextBox Grid.Row="1" Grid.Column="1" Height="30" VerticalAlignment="Center" x:Name="medid" />
-                <TextBox Grid.Row="2" Grid.Column="1" Height="30" x:Name="unit" VerticalAlignment="Center"/>
-                <TextBox Grid.Row="3" Grid.Column="1" Height="30" x:Name="qty" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="1" Grid.Column="1" Height="30" VerticalAlignment="Center" x:Name="medid" IsEnabled="False" />
+                <TextBox Grid.Row="2" Grid.Column="1" Height="30" x:Name="unit" VerticalAlignment="Center" IsEnabled="False" />
+                <TextBox Grid.Row="3" Grid.Column="1" Height="30" x:Name="qty" VerticalAlignment="Center" TextChanged="Quantity_txtchanged" />
                 <Label Grid.Row="4" Grid.Column="0" Content="Total Price"  FontWeight="Bold" VerticalAlignment="Center"/>
-                <Label Grid.Row="4" Grid.Column="1" Height="30" Background="#d1f0e9" Content="$0.0"  FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBox Grid.Row="4" Name="txtPrice" Grid.Column="1" Height="30" Background="#d1f0e9" Text="$0.0"  FontWeight="Bold" VerticalAlignment="Center" IsEnabled="False" />
 
             </Grid>
             <DataGrid  Margin="365,35,30,189" AutoGenerateColumns="False" Opacity="0.70" FontWeight="Bold">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Medicine Name" Width="100"/>
                     <DataGridTextColumn Header="Medicine ID" Width="130"/>
-                    <DataGridTextColumn Header="Company Price" Width="130"/>
                     <DataGridTextColumn Header="Unit Price" Width="100"/>
                     <DataGridTextColumn Header="Quantity" Width="100"/>
                     <DataGridTextColumn Header="Price" Width="100"/>
                 </DataGrid.Columns>
             </DataGrid>
-
-            <Button Content="     Add" Margin="160,376,387,58" TextOptions.TextFormattingMode="Display" />
-            <Button Content="    Search" Click ="Button_Click" Margin="270,376,279,58" TextOptions.TextFormattingMode="Display"  />
-            <Button Content="    Expiry" Margin="495,376,55,58" TextOptions.TextFormattingMode="Display" Background="#a33b3b"/>
-            <Button Content="    Clear" Margin="381,376,175,58" TextOptions.TextFormattingMode="Display"/>
-
         </Grid>
-        <Frame x:Name="mainbill" Grid.RowSpan="2" Margin="121,4,10,-4" Grid.ColumnSpan="2"   />
-        <DataGrid x:Name="grdlist" Margin="179,290,477,53"  AutoGenerateColumns="False" SelectionChanged="grdlist_SelectionChanged">
+        <Frame x:Name="mainbill" Grid.RowSpan="2" Margin="121,4,10,-4" Grid.ColumnSpan="2" />
+        <DataGrid x:Name="grdlist"  Height="100" Width="150" AutoGenerateColumns="False" SelectionChanged="grdlist_SelectionChanged" Margin="73,268,534,55">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Medicine Name" Binding="{Binding MedName}"/>
             </DataGrid.Columns>
         </DataGrid>
+        <Grid Grid.ColumnSpan="2" Margin="80,419,43,-49" Height="80" Grid.RowSpan="2">
+            <Button Content="     Add"  TextOptions.TextFormattingMode="Display" Margin="324,10,253,10" Click="AddButton_Click" />
+            <Button Content="    Search" Click ="Button_Click"  TextOptions.TextFormattingMode="Display" Margin="216,10,361,10"  />
+            <Button Content="    Print"  TextOptions.TextFormattingMode="Display" Margin="548,10,29,10"/>
+            <Button Content="    Clear"  TextOptions.TextFormattingMode="Display" Margin="434,10,143,10"/>
+
+        </Grid>
     </Grid>
 
 </UserControl>

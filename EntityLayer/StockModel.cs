@@ -14,5 +14,7 @@ namespace EntityLayer
         public int StockAvailable { get; set; }
         public float UnitPrice { get; set; }
         public DateTime Expiry { get; set; }
+        public int Quantity{ get; set; }
+        public string Total { get; set; }
     }
 }

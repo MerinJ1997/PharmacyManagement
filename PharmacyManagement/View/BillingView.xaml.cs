@@ -97,6 +97,20 @@ namespace PharmacyManagement.View
         }
         protected int n, totalAmount = 0;
         protected Int64 stock, newStock;
+
+        private void ClearButton(object sender, RoutedEventArgs e)
+        {
+            Clear();
+        }
+        public void Clear()
+        {
+            medname.Text = string.Empty;
+            medid.Text = string.Empty;
+            unit.Text = string.Empty;
+            qty.Text = string.Empty;
+            txtPrice.Text = string.Empty;
+        }
+        
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             StockModel stocks = new StockModel();
@@ -107,7 +121,20 @@ namespace PharmacyManagement.View
             {
                 stock = item.StockAvailable;
             }
+
+            int MedId =Convert.ToInt32( medid.Text);
+            string MedName=medname.Text;
             Int64 Qty = Convert.ToInt64(qty.Text);
+            float UnitPrice =float.Parse( unit.Text);
+            string Total=txtPrice.Text;
+            List<StockModel> list = new List<StockModel>();
+            stocks.MedID = MedId;
+            stocks.MedName = MedName;
+            stocks.UnitPrice = UnitPrice;
+            stocks.Total = Total;
+            stocks.Quantity=Convert.ToInt32( Qty);
+            list.Add(stocks);
+            grdmed.ItemsSource=list;
             if (Qty <= stock)
             {
                 newStock = stock - Qty;
@@ -121,6 +148,8 @@ namespace PharmacyManagement.View
             {
                 MessageBox.Show("Exceeded stock limit. Please enter value less than " + stock);
             }
+          
+
         }
     }
 }

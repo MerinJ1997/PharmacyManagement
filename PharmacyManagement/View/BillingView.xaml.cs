@@ -66,9 +66,9 @@ namespace PharmacyManagement.View
                 }
 
             }
-            catch(Exception ex) {
+            catch(Exception ex) 
+            {
                 Console.WriteLine("No data ");
-            
             }
         }
         public IEnumerable<DataGridRow> GetDataGridRows(DataGrid grdList)
@@ -102,6 +102,12 @@ namespace PharmacyManagement.View
         {
             Clear();
         }
+
+        private void PrintButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            mainbill.Content = new BillReceipt();
+        }
+
         public void Clear()
         {
             medname.Text = string.Empty;
@@ -121,7 +127,6 @@ namespace PharmacyManagement.View
             {
                 stock = item.StockAvailable;
             }
-
             int MedId =Convert.ToInt32( medid.Text);
             string MedName=medname.Text;
             Int64 Qty = Convert.ToInt64(qty.Text);
@@ -148,8 +153,6 @@ namespace PharmacyManagement.View
             {
                 MessageBox.Show("Exceeded stock limit. Please enter value less than " + stock);
             }
-          
-
         }
     }
 }

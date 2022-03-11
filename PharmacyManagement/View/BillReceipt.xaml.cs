@@ -33,7 +33,24 @@ namespace PharmacyManagement.View
 
         private void Grid_SourceUpdated(object sender, DataTransferEventArgs e)
         {
+            
+        }
 
+        private void Print_Button_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                this.IsEnabled = false;
+                PrintDialog printDialog = new PrintDialog();
+                if (printDialog.ShowDialog() == true)
+                {
+                    printDialog.PrintVisual(this, "invoice");
+                }
+            }
+            finally
+            {
+                this.IsEnabled = true;
+            }
         }
     }
 }

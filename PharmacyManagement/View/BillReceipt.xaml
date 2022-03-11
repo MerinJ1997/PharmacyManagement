@@ -43,16 +43,20 @@
                 </DataGrid.Columns>
 
             </DataGrid>
-            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="454,0,0,26" Grid.RowSpan="2">
-                <StackPanel Width="157">
+            
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="422,0,0,13">
+                <StackPanel Margin="3">
+                    <Button x:Name="btnPrint" Margin="0,18" Height="58" Content="    Print" Click="Print_Button_Click"/>
+                </StackPanel>
+                <StackPanel Margin="3" Width="157">
                     <Label Content="SubTotal"/>
                     <Label Content="GST"/>
                     <Label Content="Total"/>
                 </StackPanel>
                 <StackPanel Width="157">
-                    <Label  />
-                    <Label />
-                    <Label />
+                    <Label Background="AliceBlue" Margin="3" Height="17"  />
+                    <Label Margin="3" Height="17" />
+                    <Label Margin="5" Height="17" />
                 </StackPanel>
             </StackPanel>
         </Grid>

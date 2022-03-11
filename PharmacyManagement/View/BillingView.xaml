@@ -56,7 +56,7 @@
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
-        <Frame x:Name="mainbill" Grid.RowSpan="2" Margin="121,4,10,-4" Grid.ColumnSpan="2"  />
+
         <DataGrid x:Name="grdlist"  Height="100" Width="150" AutoGenerateColumns="False" SelectionChanged="grdlist_SelectionChanged" Margin="73,268,534,55">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Medicine Name" Binding="{Binding MedName}"/>
@@ -65,11 +65,12 @@
         <Grid Grid.ColumnSpan="2" Margin="80,419,43,-49" Height="80" Grid.RowSpan="2">
             <Button Content="     Add"  TextOptions.TextFormattingMode="Display" Margin="324,10,253,10" Click="AddButton_Click" />
             <Button Content="    Search" Click ="Button_Click"  TextOptions.TextFormattingMode="Display" Margin="216,10,361,10"  />
-            <Button Content="    Print"  TextOptions.TextFormattingMode="Display" Margin="548,10,29,10"/>
+            <Button Content="    Print"  TextOptions.TextFormattingMode="Display" Margin="548,10,29,10" Click="PrintButton_Click_1"/>
             <Button Content="    Clear"  TextOptions.TextFormattingMode="Display" Margin="434,10,143,10" Click="ClearButton"/>
             <Button Content="    Delete"  TextOptions.TextFormattingMode="Display" Margin="98,10,479,10" Click="DeleteButton"/>
 
         </Grid>
+        <Frame x:Name="mainbill" Grid.RowSpan="2" Margin="121,4,10,-4" Grid.ColumnSpan="2" />
     </Grid>
 
 </UserControl>

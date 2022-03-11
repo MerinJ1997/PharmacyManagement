@@ -41,7 +41,6 @@ namespace PharmacyManagement.View
             BillBussiness bb = new BillBussiness();
             var list = bb.SearchData(stock1);
             grdlist.ItemsSource=list;
-
         }
 
         private void grdlist_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -134,8 +134,8 @@ namespace PharmacyManagement.View
                         string name = (grdMD.SelectedCells[0].Column.GetCellContent(datas) as TextBlock).Text;
                         int qtyGRID = Convert.ToInt32((grdMD.SelectedCells[3].Column.GetCellContent(datas) as TextBlock).Text);
                         stock.MedName = name;
-                        var list = bb.fetchMedicine(stock);
-                        int dbqty = stock.StockAvailable;
+                        var list1 = bb.fetchMedicine(stock);
+                        //int dbqty = stock.StockAvailable;
                         foreach (var item in list)
                         {
                             qty = (int)Convert.ToInt64(item.StockAvailable);
@@ -145,16 +145,18 @@ namespace PharmacyManagement.View
                         var itemToRemove = list2.Find(r => r.MedID == id);
                         if (itemToRemove != null)
                         {
-                            var fetch= bb.fetchMedicine(stock);
-                            foreach(var item in fetch)
-                            {
-                                stock.StockAvailable = qtyGRID+item.StockAvailable;
-                                stock.MedName =name;
-                                bb.UpdateQuantity(stock);
-                            }    
-                            list.Remove(itemToRemove);
+                            list2.Remove(itemToRemove);
+                            grdMD.ItemsSource = list2;
                         }
-                        grdMD.ItemsSource = list;
+                        var fetch = bb.fetchMedicine(stock);
+                        foreach (var item in fetch)
+                        {
+                            stock.StockAvailable = qtyGRID + item.StockAvailable;
+                            stock.MedName = name;
+                            bb.UpdateQuantity(stock);
+                        }
+                        
+                        
                     }
                 }
             }

@@ -3,6 +3,7 @@ using EntityLayer;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -25,6 +26,9 @@ namespace PharmacyManagement.View
     /// </summary>
     public partial class BillingView : UserControl
     {
+        List<StockModel> list = new List<StockModel>();
+        List<List<StockModel>> list1 =new List<List<StockModel>>();
+
         public BillingView()
         {
             InitializeComponent();
@@ -104,9 +108,7 @@ namespace PharmacyManagement.View
             Clear();
         }
 
-        private void PrintButton_Click_1(object sender, RoutedEventArgs e)
-        {
-            mainbill.Content = new BillReceipt();
+
         }
 
         private void DeleteButton(object sender, RoutedEventArgs e)
@@ -168,14 +170,17 @@ namespace PharmacyManagement.View
             Int64 Qty = Convert.ToInt64(qty.Text);
             float UnitPrice =float.Parse( unit.Text);
             string Total=txtPrice.Text;
-            List<StockModel> list = new List<StockModel>();
+            
             stocks.MedID = MedId;
             stocks.MedName = MedName;
             stocks.UnitPrice = UnitPrice;
             stocks.Total = Total;
             stocks.Quantity=Convert.ToInt32( Qty);
+
             list.Add(stocks);
-            grdmed.ItemsSource=list;
+            list1.Add(list);
+            grdmed.ItemsSource = list1;
+            
             if (Qty <= stock)
             {
                 newStock = stock - Qty;
@@ -189,8 +194,11 @@ namespace PharmacyManagement.View
             {
                 MessageBox.Show("Exceeded stock limit. Please enter value less than " + stock);
             }
+
         }
+        
     }
+    
 }
         //public void bill_Load(Object sender, EventArgs e)
         //{

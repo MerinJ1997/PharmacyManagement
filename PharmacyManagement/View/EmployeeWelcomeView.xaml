@@ -1,11 +1,12 @@
-﻿<UserControl x:Class="PharmacyManagement.View.EmployeeWelcomeView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:PharmacyManagement.View"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+﻿<Window x:Class="PharmacyManagement.View.EmployeeWelcomeView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PharmacyManagement.View"
+        mc:Ignorable="d"
+        Title="EmployeeWelcomeView" Height="450" Width="800">
+   
     <Grid>
         <ContentControl Content="{Binding SelectedView}"/>
         <Menu Background="Black" HorizontalAlignment="Left" Width="150"  FontSize="14" >
@@ -17,7 +18,7 @@
             <MenuItem  Header="My Profile" Command="{Binding EmployeeCommand}" CommandParameter="My Profile" >
                 <MenuItem.Icon>
                     <Image Source="/images/adduser.jpeg" />
-                </MenuItem.Icon>                
+                </MenuItem.Icon>
             </MenuItem>
             <MenuItem Header="Billing" Command="{Binding EmployeeCommand}" CommandParameter="Billing" Height="30" >
                 <MenuItem.Icon>
@@ -28,9 +29,7 @@
                 <MenuItem.Icon>
                     <Image Source="/images/icons8-logout-48.png" />
                 </MenuItem.Icon>
-            </MenuItem>    
+            </MenuItem>
         </Menu>
     </Grid>
-    
-</UserControl>
- 
+</Window>

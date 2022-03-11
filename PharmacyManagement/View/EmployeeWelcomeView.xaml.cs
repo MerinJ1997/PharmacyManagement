@@ -11,7 +11,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PharmacyManagement.View
@@ -19,17 +18,12 @@ namespace PharmacyManagement.View
     /// <summary>
     /// Interaction logic for EmployeeWelcomeView.xaml
     /// </summary>
-    public partial class EmployeeWelcomeView : UserControl
+    public partial class EmployeeWelcomeView : Window
     {
         public EmployeeWelcomeView()
         {
             InitializeComponent();
             DataContext = new EmployeeWelcomeViewModel();
-        }
-
-        private void MenuItem_SubmenuClosed(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

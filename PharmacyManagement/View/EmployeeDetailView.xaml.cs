@@ -32,7 +32,10 @@ namespace PharmacyManagement.View
             using (connection = new SqlConnection("data source =.; database = PharmacyManagement; integrated security = SSPI"))
             {
 
+
+
                 var query = "Select * from UserDetails where EmployeeID =6 and RoleID =1";
+
 
                 SqlCommand command = new SqlCommand(query, connection);
                 connection.Open();
@@ -66,7 +69,7 @@ namespace PharmacyManagement.View
             using (connection = new SqlConnection("data source =.; database = PharmacyManagement; integrated security = SSPI"))
             {
 
-                int empid = 4;
+                int empid = 24;
                 string Name = name.Text;
                 string ph = phno.Text;
                 string mail = Email.Text;
@@ -97,6 +100,7 @@ namespace PharmacyManagement.View
             }
         }
 
-        
+       
+
     }
 }

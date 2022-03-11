@@ -11,7 +11,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PharmacyManagement.View
@@ -19,7 +18,7 @@ namespace PharmacyManagement.View
     /// <summary>
     /// Interaction logic for AdminPageView.xaml
     /// </summary>
-    public partial class AdminPageView : UserControl
+    public partial class AdminPageView : Window
     {
         public AdminPageView()
         {

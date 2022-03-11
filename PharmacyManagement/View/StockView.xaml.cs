@@ -68,6 +68,7 @@ namespace PharmacyManagement.View
                 {
                     MessageBox.Show("No Data available for Delete:??");
                 }
+                
             }
             catch (Exception ex)
             {
@@ -104,6 +105,7 @@ namespace PharmacyManagement.View
 
             
         }
+
     }
 }
     

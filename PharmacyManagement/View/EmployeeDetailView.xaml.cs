@@ -32,7 +32,10 @@ namespace PharmacyManagement.View
             using (connection = new SqlConnection("data source =.; database = PharmacyManagement; integrated security = SSPI"))
             {
 
-                var query = "Select * from UserDetails where EmployeeID =24 and RoleID =1";
+
+
+                var query = "Select * from UserDetails where EmployeeID =6 and RoleID =1";
+
 
                 SqlCommand command = new SqlCommand(query, connection);
                 connection.Open();

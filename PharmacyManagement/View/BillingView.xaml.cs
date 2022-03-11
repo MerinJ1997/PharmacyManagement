@@ -108,6 +108,41 @@ namespace PharmacyManagement.View
             mainbill.Content = new BillReceipt();
         }
 
+        private void DeleteButton(object sender, RoutedEventArgs e)
+        {
+            //grdmed.Items.Remove(grdmed.SelectedItem);
+
+        }
+
+        private void grdmed_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            //grdmed.Items.RemoveAt(grdmed.SelectedIndex);
+            //list1.Remove(grdmed.SelectedIndex);
+            //string id = (grdmed.SelectedCells[0].Column.GetCellContent(data) as TextBlock).Text;
+        }
+
+
+        private void grdmedlistChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            try
+            {
+                var row_list = GetDataGridRows(grdmed);
+                foreach (DataGridRow single_row in row_list)
+                {
+                    if (single_row.IsSelected == true)
+                    {
+                        //Get your value over here
+                        var data = grdmed.SelectedItem;
+                        string id = (grdmed.SelectedCells[0].Column.GetCellContent(data) as TextBlock).Text;
+                        //grdmed.Items.Remove(grdmed.SelectedItem);
+                    }
+                }
+            }
+            catch (Exception ex)
+            { Console.WriteLine(ex.Message); }
+        }
+
         public void Clear()
         {
             medname.Text = string.Empty;

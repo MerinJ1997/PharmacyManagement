@@ -62,14 +62,14 @@
                 <DataGridTextColumn Header="Medicine Name" Binding="{Binding MedName}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Grid Grid.ColumnSpan="2" Margin="80,419,43,-49" Height="80" Grid.RowSpan="2">
-            <Button Content="     Add"  TextOptions.TextFormattingMode="Display" Margin="324,10,253,10" Click="AddButton_Click" />
-            <Button Content="    Search" Click ="Button_Click"  TextOptions.TextFormattingMode="Display" Margin="216,10,361,10"  />
-            <Button Content="    Print"  TextOptions.TextFormattingMode="Display" Margin="548,10,29,10" Click="PrintButton_Click_1" /> 
-            <Button Content="    Clear"  TextOptions.TextFormattingMode="Display" Margin="434,10,143,10" Click="ClearButton"/>
-            <Button Content="    Delete"  TextOptions.TextFormattingMode="Display" Margin="98,10,479,10" Click="delete_Click"  /> 
+        <StackPanel Orientation="Horizontal" Height="70" Width="550" Margin="0,520,0,0">
+            <Button Content="     Add"  TextOptions.TextFormattingMode="Display" Margin="5" Click="AddButton_Click" />
+            <Button Content="    Search" Click ="Button_Click"  TextOptions.TextFormattingMode="Display" Margin="5"  />
+            <Button Content="    Print"  TextOptions.TextFormattingMode="Display" Margin="5" Click="PrintButton_Click_1" />
+            <Button Content="    Clear"  TextOptions.TextFormattingMode="Display" Margin="5" Click="ClearButton"/>
+            <Button Content="    Delete"  TextOptions.TextFormattingMode="Display" Margin="5" Click="delete_Click"  />
 
-        </Grid>
+        </StackPanel>
         <Frame x:Name="mainbill" Grid.RowSpan="2" Margin="121,4,10,-4" Grid.ColumnSpan="2" />
     </Grid>
 

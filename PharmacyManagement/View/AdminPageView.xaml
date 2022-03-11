@@ -73,11 +73,11 @@
 
 
         </Menu>
+        <!--<Button>-->
+            <Image Source="/images/icons8-home-64.png" Margin="33,39,683,0" VerticalAlignment="Top" Height="60"/>
 
+        <!--</Button>-->
 
-
-
-        <Image Source="/images/icons8-home-64.png" Margin="33,39,683,0" VerticalAlignment="Top" Height="60"/>
 
 
 

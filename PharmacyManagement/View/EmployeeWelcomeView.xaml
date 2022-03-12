@@ -25,11 +25,12 @@
                     <Image Source="/images/icons8-bill-64.png" />
                 </MenuItem.Icon>
             </MenuItem>
-            <MenuItem Header="Log Out" Command="{Binding EmployeeCommand}" CommandParameter="Log Out" Height="30">
+            <Button Content="Logout" Click="Button_Click"></Button>
+            <!--<MenuItem Header="Log Out" Command="{Binding EmployeeCommand}" CommandParameter="Log Out" Height="30">
                 <MenuItem.Icon>
                     <Image Source="/images/icons8-logout-48.png" />
                 </MenuItem.Icon>
-            </MenuItem>
+            </MenuItem>-->
         </Menu>
     </Grid>
 </Window>

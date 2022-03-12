@@ -12,7 +12,6 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace PharmacyManagement.View
@@ -20,14 +19,13 @@ namespace PharmacyManagement.View
     /// <summary>
     /// Interaction logic for LoginView.xaml
     /// </summary>
-    public partial class LoginView : UserControl
+    public partial class LoginView : Window
     {
         public LoginView()
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Login(object sender, RoutedEventArgs e)
         {
             SqlConnection sqlCon = new SqlConnection(@"Data Source=.;Database=PharmacyManagement;Integrated Security=SSPI");
             try
@@ -45,13 +43,14 @@ namespace PharmacyManagement.View
                     EmployeeWelcomeView dashboard = new EmployeeWelcomeView();
                     dashboard.Show();
                     MessageBox.Show("Employee Login Successfully Completed");
-                   // this.Close();
+                     this.Close();
                 }
-                else if(RoleID == 2)
+                else if (RoleID == 2)
                 {
                     AdminPageView dashboard = new AdminPageView();
                     dashboard.Show();
                     MessageBox.Show("Admin Login Successfully Completed");
+                    this.Close();
 
                 }
                 else
@@ -67,6 +66,13 @@ namespace PharmacyManagement.View
             {
                 sqlCon.Close();
             }
+        }
+
+        private void BackButton(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }

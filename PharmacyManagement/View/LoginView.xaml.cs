@@ -62,11 +62,25 @@ namespace PharmacyManagement.View
                 }
                 else if (RoleID == 2)
                 {
-                    AdminPageView dashboard = new AdminPageView();
-                    dashboard.Show();
-                    MessageBox.Show("Admin Login Successfully Completed");
-                    this.Close();
-
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    adapter.SelectCommand = sqlCmd;
+                    DataSet dataSet = new DataSet();
+                    adapter.Fill(dataSet);
+                    if (dataSet.Tables[0].Rows.Count > 0)
+                    {
+                        string name = dataSet.Tables[0].Rows[0]["EmployeeName"].ToString();
+                        string address = dataSet.Tables[0].Rows[0]["EmployeeAddress"].ToString();
+                        string phone = dataSet.Tables[0].Rows[0]["PhoneNo"].ToString();
+                        string email = dataSet.Tables[0].Rows[0]["Email"].ToString();
+                        AdminPageView dashboard = new AdminPageView();
+                        dashboard.name.Text=name;
+                        dashboard.phone.Text=phone;
+                        dashboard.email.Text=email;
+                        
+                        dashboard.Show();
+                        MessageBox.Show("Admin Login Successfully Completed");
+                        this.Close();
+                    }
                 }
                 else
                 {

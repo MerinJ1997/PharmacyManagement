@@ -4,8 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PharmacyManagement.View"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             mc:Ignorable="d" Height="853" Width="1353">
     <UserControl.Resources>
 
 
@@ -54,17 +53,18 @@ VerticalScrollBarVisibility="Hidden"/>
             <ColumnDefinition Width="363*"/>
             <ColumnDefinition Width="37*"/>
         </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2" Margin="252,10,-127,-10">
+            <Grid Margin="-65,80,61,-80"  >
 
-        <Grid Margin="70,-32,0,32" Grid.ColumnSpan="2"  >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="14*"/>
-                <ColumnDefinition Width="0*"/>
-                <ColumnDefinition Width="499*"/>
-                <ColumnDefinition Width="73*"/>
-                <ColumnDefinition Width="72*"/>
-                <ColumnDefinition Width="2*"/>
-            </Grid.ColumnDefinitions>
-            <Image Source="/images/users.jpg" Opacity="0.78" Margin="66,29,0,-29" OpacityMask="#FF9EE7FF" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="4" HorizontalAlignment="Left" Width="804" Grid.Column="2"  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="14*"/>
+                    <ColumnDefinition Width="0*"/>
+                    <ColumnDefinition Width="499*"/>
+                    <ColumnDefinition Width="73*"/>
+                    <ColumnDefinition Width="72*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <!--<Image Source="/images/users.jpg" Opacity="0.78" Margin="66,29,0,-29" OpacityMask="#FF9EE7FF" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="4" HorizontalAlignment="Left" Width="804" Grid.Column="2"  >
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -73,90 +73,96 @@ VerticalScrollBarVisibility="Hidden"/>
                         <TranslateTransform Y="-1.472"/>
                     </TransformGroup>
                 </Image.RenderTransform>
-            </Image>
+            </Image>-->
 
-            <Grid  Margin="249,41,15,27" Grid.Column="2">
-                <Grid.RowDefinitions >
-                    <RowDefinition Height="auto" ></RowDefinition>
-                    <RowDefinition Height="auto">
-                    </RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                    <RowDefinition Height="auto"></RowDefinition>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto"></ColumnDefinition>
-                    <ColumnDefinition Width="auto"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Label Grid.Row="0" Grid.Column="0" Content="Name " Foreground="White"  FontWeight="Bold" HorizontalContentAlignment="Left" VerticalContentAlignment="Stretch" HorizontalAlignment="Left" VerticalAlignment="Top"></Label>
-                <Label Grid.Row="1" Grid.Column="0" ></Label>
-                <Label Grid.Row="2" Grid.Column="0" Content="Address " Foreground="White" FontWeight="Bold"></Label>
-                <Label Grid.Row="3" Grid.Column="0"></Label>
-                <Label Grid.Row="4" Grid.Column="0" Content="Phone No " Foreground="White"  FontWeight="Bold"></Label>
-                <Label Grid.Row="5" Grid.Column="0"></Label>
-                <Label Grid.Row="6" Grid.Column="0" Content="Email ID " Foreground="White"  FontWeight="Bold"></Label>
-                <Label Grid.Row="7" Grid.Column="0"></Label>
-                <Label Grid.Row="8" Grid.Column="0" Content="Gender "  Foreground="White"  FontWeight="Bold"></Label>
-                <Label Grid.Row="9" Grid.Column="0"></Label>
-                <Label Grid.Row="10" Grid.Column="0" Content="Age "  Foreground="White"  FontWeight="Bold"></Label>
-                <Label Grid.Row="11" Grid.Column="0"></Label>
-                <Label Grid.Row="12" Grid.Column="0" Content="UserName "  Foreground="White"  FontWeight="Bold"></Label>
-                <Label Grid.Row="13" Grid.Column="0"></Label>
-                <Label Grid.Row="14" Grid.Column="0" Content="Password "  Foreground="White"  FontWeight="Bold"></Label>
-                <Label Grid.Row="15" Grid.Column="0"></Label>
-                <Label Grid.Row="16" Grid.Column="0" Content="Role " Foreground="White"  FontWeight="Bold"></Label>
-                <Label Grid.Row="17" Grid.Column="0"></Label>
-                <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtname" Text="{Binding Name}" Margin="0,0,-301,10" Grid.RowSpan="2" ></TextBox>
-                <Label Grid.Row="1" Grid.Column="1"></Label>
-                <TextBox Grid.Row="2" Grid.Column="1"  x:Name="txtaddress" Text="{Binding Address}" Margin="0,0,-302,0" ></TextBox>
-                <Label Grid.Row="3" Grid.Column="1"></Label>
-                <TextBox Grid.Row="4" Grid.Column="1"  x:Name="txtphno" Text="{Binding PhoneNo}" Margin="0,0,-302,0" ></TextBox>
-                <Label Grid.Row="5" Grid.Column="1"></Label>
-                <TextBox Grid.Row="6" Grid.Column="1"  x:Name="txtemail"  Text="{Binding Email}" Margin="0,0,-302,0" ></TextBox>
-                <Label Grid.Row="7" Grid.Column="1"></Label>
+                <Grid  Margin="249,41,15,27" Grid.Column="2">
+                    <Grid.RowDefinitions >
+                        <RowDefinition Height="auto" ></RowDefinition>
+                        <RowDefinition Height="auto">
+                        </RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                        <ColumnDefinition Width="auto"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Content="Name " Foreground="White"  FontWeight="Bold" HorizontalContentAlignment="Left" VerticalContentAlignment="Stretch" HorizontalAlignment="Left" VerticalAlignment="Top"></Label>
+                    <Label Grid.Row="1" Grid.Column="0" ></Label>
+                    <Label Grid.Row="2" Grid.Column="0" Content="Address " Foreground="White" FontWeight="Bold"></Label>
+                    <Label Grid.Row="3" Grid.Column="0"></Label>
+                    <Label Grid.Row="4" Grid.Column="0" Content="Phone No " Foreground="White"  FontWeight="Bold"></Label>
+                    <Label Grid.Row="5" Grid.Column="0"></Label>
+                    <Label Grid.Row="6" Grid.Column="0" Content="Email ID " Foreground="White"  FontWeight="Bold"></Label>
+                    <Label Grid.Row="7" Grid.Column="0"></Label>
+                    <Label Grid.Row="8" Grid.Column="0" Content="Gender "  Foreground="White"  FontWeight="Bold"></Label>
+                    <Label Grid.Row="9" Grid.Column="0"></Label>
+                    <Label Grid.Row="10" Grid.Column="0" Content="Age "  Foreground="White"  FontWeight="Bold"></Label>
+                    <Label Grid.Row="11" Grid.Column="0"></Label>
+                    <Label Grid.Row="12" Grid.Column="0" Content="UserName "  Foreground="White"  FontWeight="Bold"></Label>
+                    <Label Grid.Row="13" Grid.Column="0"></Label>
+                    <Label Grid.Row="14" Grid.Column="0" Content="Password "  Foreground="White"  FontWeight="Bold"></Label>
+                    <Label Grid.Row="15" Grid.Column="0"></Label>
+                    <Label Grid.Row="16" Grid.Column="0" Content="Role " Foreground="White"  FontWeight="Bold"></Label>
+                    <Label Grid.Row="17" Grid.Column="0"></Label>
+                    <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtname" Text="{Binding Name}" Margin="0,0,-301,10" Grid.RowSpan="2" ></TextBox>
+                    <Label Grid.Row="1" Grid.Column="1"></Label>
+                    <TextBox Grid.Row="2" Grid.Column="1"  x:Name="txtaddress" Text="{Binding Address}" Margin="0,0,-302,0" ></TextBox>
+                    <Label Grid.Row="3" Grid.Column="1"></Label>
+                    <TextBox Grid.Row="4" Grid.Column="1"  x:Name="txtphno" Text="{Binding PhoneNo}" Margin="0,0,-302,0" ></TextBox>
+                    <Label Grid.Row="5" Grid.Column="1"></Label>
+                    <TextBox Grid.Row="6" Grid.Column="1"  x:Name="txtemail"  Text="{Binding Email}" Margin="0,0,-302,0" ></TextBox>
+                    <Label Grid.Row="7" Grid.Column="1"></Label>
 
-                <ComboBox Grid.Row="8" Grid.Column="1" Text="{Binding Gender}" x:Name="cmbgender" Margin="0,0,-302,0" >
-                    <TextBlock Text="Male" Margin="0,0,-302,0"></TextBlock>
-                    <TextBlock Text="Female"></TextBlock>
-                    <TextBlock Text="Others"></TextBlock>
-                </ComboBox>
-                <Label Grid.Row="9" Grid.Column="1"></Label>
-                <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Age}" x:Name="Age" Margin="0,0,-302,0" ></TextBox>
-                <Label Grid.Row="11" Grid.Column="1"></Label>
-                <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding Username}" x:Name="username" Margin="0,0,-303,10" Grid.RowSpan="2" ></TextBox>
-                <Label Grid.Row="13" Grid.Column="1"></Label>
-                <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Password}" x:Name="password"  Margin="0,0,-302,10" Grid.RowSpan="2" ></TextBox>
-                <Label Grid.Row="15" Grid.Column="1"></Label>
-                <ComboBox Grid.Row="16" Grid.Column="1" Text="{Binding Role}" x:Name="role" Margin="0,0,-304,23" Grid.RowSpan="2">
-                    <TextBlock Text="Manager" Margin="0,0,-302,0"></TextBlock>
-                    <TextBlock Text="Employee"></TextBlock>
-                </ComboBox>
-                <Label Grid.Row="17" Grid.Column="1"></Label>
-
-
+                    <ComboBox Grid.Row="8" Grid.Column="1" Text="{Binding Gender}" x:Name="cmbgender" Margin="0,0,-302,0" >
+                        <TextBlock Text="Male" Margin="0,0,-302,0"></TextBlock>
+                        <TextBlock Text="Female"></TextBlock>
+                        <TextBlock Text="Others"></TextBlock>
+                    </ComboBox>
+                    <Label Grid.Row="9" Grid.Column="1"></Label>
+                    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding Age}" x:Name="Age" Margin="0,0,-302,0" ></TextBox>
+                    <Label Grid.Row="11" Grid.Column="1"></Label>
+                    <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding Username}" x:Name="username" Margin="0,0,-303,10" Grid.RowSpan="2" ></TextBox>
+                    <Label Grid.Row="13" Grid.Column="1"></Label>
+                    <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding Password}" x:Name="password"  Margin="0,0,-302,10" Grid.RowSpan="2" ></TextBox>
+                    <Label Grid.Row="15" Grid.Column="1"></Label>
+                    <ComboBox Grid.Row="16" Grid.Column="1" Text="{Binding Role}" x:Name="role" Margin="0,0,-303,0">
+                        <TextBlock Text="Manager" Margin="0,0,-302,0"></TextBlock>
+                        <TextBlock Text="Employee"></TextBlock>
+                    </ComboBox>
+                    <Label Grid.Row="17" Grid.Column="1"></Label>
 
 
+
+
+
+                </Grid>
 
             </Grid>
-        </Grid>
-        <Button Content=" Add User " Command="{Binding Submit}" Margin="435,0,191,32" VerticalAlignment="Bottom"   x:Name="btn" Height="55" Click="btn_Click">
-        </Button>
-        <Button Content="     Clear "  Margin="585,0,41,32" VerticalAlignment="Bottom"   Height="55" Click="Button_Click">
-        </Button>
+        </StackPanel>
+
+        <!--<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,0,-302,10">-->
+        <Border Background="AliceBlue" CornerRadius="20" Margin="695,502,378,280" BorderThickness="10">
+        </Border>
+        <Button Content="Clear" Click="Button_Click" Margin="730,513,414,295" Background="AliceBlue" BorderThickness="0"/>
+        <Border Background="AliceBlue" CornerRadius="20" Margin="540,512,551,289" />
+        <Button Content=" Add User " Background="AliceBlue" Command="{Binding Submit}" Margin="556,515,567,0" VerticalAlignment="Top"   x:Name="btn" Height="45" Click="btn_Click" BorderThickness="0"/>
+        <!--</StackPanel>-->
 
 
     </Grid>

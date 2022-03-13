@@ -25,40 +25,40 @@ namespace PharmacyManagement.View
         {
             InitializeComponent();
         }
-        public void UserControl1_Load(Object sender, EventArgs e)
-        {
+        //public void UserControl1_Load(Object sender, EventArgs e)
+        //{
 
-            SqlConnection connection = null;
-            using (connection = new SqlConnection("data source =.; database = PharmacyManagement; integrated security = SSPI"))
-            {
-
-
-
-                var query = "Select * from UserDetails where EmployeeID =6 and RoleID =1";
+        //    SqlConnection connection = null;
+        //    using (connection = new SqlConnection("data source =.; database = PharmacyManagement; integrated security = SSPI"))
+        //    {
 
 
-                SqlCommand command = new SqlCommand(query, connection);
-                connection.Open();
 
-                // SqlDataReader sqlDataReader = command.ExecuteReader();
+        //        var query = "Select * from UserDetails where EmployeeID =6 and RoleID =1";
 
 
-                using (SqlDataReader sdr = command.ExecuteReader())
-                {
-                    sdr.Read();
-                    name.Text = sdr["EmployeeName"].ToString();
-                    Address.Text = sdr["EmployeeAddress"].ToString();
-                    phno.Text = sdr["PhoneNo"].ToString();
-                    Email.Text= sdr["Email"].ToString();
+        //        SqlCommand command = new SqlCommand(query, connection);
+        //        connection.Open();
+
+        //        // SqlDataReader sqlDataReader = command.ExecuteReader();
 
 
-                }
-                connection.Close();
+        //        using (SqlDataReader sdr = command.ExecuteReader())
+        //        {
+        //            sdr.Read();
+        //            name.Text = sdr["EmployeeName"].ToString();
+        //            Address.Text = sdr["EmployeeAddress"].ToString();
+        //            phno.Text = sdr["PhoneNo"].ToString();
+        //            Email.Text= sdr["Email"].ToString();
 
-            }
+
+        //        }
+        //        connection.Close();
+
+        //    }
 
 
-        }
+        //}
 
         
 

@@ -1,4 +1,5 @@
-﻿using PharmacyManagement.ViewModel;
+﻿using PharmacyManagement.View;
+using PharmacyManagement.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,14 @@ namespace PharmacyManagement
         {
             InitializeComponent();
             DataContext = new MainPageViewModel();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            LoginView login = new LoginView();
+            login.Show();
+            this.Close();
+
         }
     }
 }

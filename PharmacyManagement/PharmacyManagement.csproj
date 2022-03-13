@@ -322,6 +322,15 @@
       <Name>EntityLayer</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\home-page %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-phone-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\icons8-email-64.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

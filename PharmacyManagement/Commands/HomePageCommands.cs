@@ -38,10 +38,10 @@ namespace PharmacyManagement.Commands
             {
                 model.SelectedView = new ContactUsViewModel();
             }
-            else if (parameter.ToString() == "Login")
-            {
-                model.SelectedView = new LoginViewModel();
-            }
+            //else if (parameter.ToString() == "Login")
+            //{
+            //    model.SelectedView = new LoginViewModel();
+            //}
              else if (parameter.ToString() =="Search")
             {
                 model.SelectedView = new SearchViewModel(stockmodel); 

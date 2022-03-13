@@ -14,7 +14,7 @@
             </Grid.RowDefinitions>
             <ContentControl Content="{Binding SelectedView}"></ContentControl>
 
-            <Menu Height="63" Background="Transparent" Name="menu1" VerticalAlignment="Top" BorderThickness="2" Foreground="White" FontSize="16" FontWeight="Bold">
+            <Menu Height="63" Background="Transparent" Name="menu1" VerticalAlignment="Top"  BorderThickness="2" Foreground="White" FontSize="16" FontWeight="Bold">
                 <!--<Menu.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="Black" Offset="0.528" />
@@ -52,7 +52,7 @@
 
                     </MenuItem.Icon>-->
                 <!--</MenuItem>-->
-                <MenuItem Header="Search Here for Medicines " Command="{Binding HomePageCommands}" CommandParameter="Search" IsCheckable="true" Foreground="White" FontSize="16">
+                <MenuItem Header="Search here for Medicines " Command="{Binding HomePageCommands}" CommandParameter="Search" IsCheckable="true" Foreground="White" FontSize="16">
                     <TextBox Width="170"></TextBox>
                     <MenuItem.Icon>
 
@@ -60,10 +60,10 @@
 
                     </MenuItem.Icon>
                 </MenuItem>
-                <Button Content="User Login" Height="57" Width="124" Click="Button_Click"></Button>
 
 
             </Menu>
+            <Button HorizontalAlignment="Right" VerticalAlignment="Top" Content="User Login" FontWeight="Bold" Foreground="White" Background="#4082ed"  Height="29" Width="85" Click="Button_Click"></Button>
 
 
         </Grid>

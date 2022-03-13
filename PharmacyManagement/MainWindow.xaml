@@ -14,7 +14,7 @@
             </Grid.RowDefinitions>
             <ContentControl Content="{Binding SelectedView}"></ContentControl>
 
-            <Menu Height="63" Background="Transparent" Name="menu1" VerticalAlignment="Top" BorderThickness="2" Foreground="White" FontSize="16" FontWeight="Bold">
+            <Menu Height="63" Background="Transparent" Name="menu1" VerticalAlignment="Top"  BorderThickness="2" Foreground="White" FontSize="16" FontWeight="Bold">
                 <!--<Menu.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="Black" Offset="0.528" />

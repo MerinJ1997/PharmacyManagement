@@ -351,12 +351,139 @@
   </ItemGroup>
   <ItemGroup>
 
+    <Resource Include="images - Copy\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\6e22000a0d68024c1b100e9c50ca304704afd197-640x380.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\aa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\addproduct.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\adduser.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\AgBRJd8.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\back-icon-png-16.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\backicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\bg-4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\billing2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\bills.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\capsules.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\emp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\employeelogin.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\EmployeeWelcomeView.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\green.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\green1.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\home-page %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\hugo-banner-image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\icons8-about-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\icons8-administrator-male-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\icons8-bill-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\icons8-contact-us-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\icons8-email-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\icons8-home-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\icons8-login-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\icons8-logout-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\icons8-phone-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\icons8-search-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\istockphoto-1175143614-612x612.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\login.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\logout.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\mainpage.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\medicines.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\page1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\Pharmacists.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\updatestock.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\users.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\viewupdate.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\searchimage2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images - Copy\searchimage2.jpg" />
+
+
     <Resource Include="images\updateicon.png" />
 
 
     <Resource Include="images\icons8-save-48.png" />
 
     <Resource Include="images\welcome %283%29.jpg" />
+
 
 
   </ItemGroup>

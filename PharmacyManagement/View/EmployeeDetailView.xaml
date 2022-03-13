@@ -19,7 +19,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Content="Welcome Employee !" FontWeight="Bold" FontSize="25" Grid.ColumnSpan="2" Margin="379,44,0,70" Grid.RowSpan="2" />
+        <Label Grid.Row="0" Content="Welcome Employee !" FontWeight="Bold" FontSize="45" Grid.ColumnSpan="2" Margin="222,21,0,70" Grid.RowSpan="2" />
         <Grid  Margin="273,109,30,121">
             <Grid.RowDefinitions >
                 <RowDefinition Height="auto" />
@@ -34,36 +34,16 @@
                 <ColumnDefinition Width="auto"></ColumnDefinition>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Label Grid.Row="0" Grid.Column="0" Content="Name" FontSize="15" FontWeight="Bold"></Label>
             <Label Grid.Row="1" Grid.Column="0" ></Label>
-            <Label Grid.Row="2" Grid.Column="0" Content="Phone" FontSize="15" FontWeight="Bold"></Label>
             <Label Grid.Row="3" Grid.Column="0"></Label>
-            <Label Grid.Row="4" Grid.Column="0" Content="Address"  FontSize="15" FontWeight="Bold"></Label>
             <Label Grid.Row="5" Grid.Column="0"></Label>
-            <Label Grid.Row="6" Grid.Column="0" Content="Email" FontSize="15" FontWeight="Bold"></Label>
-
-            <TextBox Grid.Row="0" Grid.Column="1" x:Name="name" Margin="0,0,-302,9" Grid.RowSpan="2" RenderTransformOrigin="0.5,0.5" >
-                <TextBox.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="0.074"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </TextBox.RenderTransform>
-            </TextBox>
             <Label Grid.Row="1" Grid.Column="1" ></Label>
-            <TextBox x:Name="phno" Grid.Row="2" Grid.Column="1" Margin="0,0,-302,10"  Grid.RowSpan="2" ></TextBox>
             <Label Grid.Row="3" Grid.Column="1"></Label>
-            <TextBox x:Name="Address" Grid.Row="4" Grid.Column="1" Margin="0,0,-302,0" ></TextBox>
             <Label Grid.Row="5" Grid.Column="1"></Label>
-
-            <TextBox x:Name="Email" Grid.Row="6" Grid.Column="1" Margin="0,0,-302,0"></TextBox>
 
 
         </Grid>
-        <Button Content="     Edit" HorizontalAlignment="Left" Margin="371,312,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-
+        
     </Grid>
 
 </UserControl>

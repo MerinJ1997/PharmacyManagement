@@ -10,13 +10,14 @@
         <Grid.Background>
             <ImageBrush ImageSource="/images/emp.png" Opacity=".6" />
         </Grid.Background>
-
-
-
-        <DataGrid Background="Black"  ItemsSource="{Binding adduserlist}" 
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="170"/>
+            <RowDefinition Height="200"/>
+        </Grid.RowDefinitions>
+        <DataGrid Background="Black" Grid.Row="1" ItemsSource="{Binding adduserlist}" 
             Name="DataGrid" IsReadOnly="True"
-            Margin="192,24,8,251" AutoGenerateColumns="False" Opacity="0.60" FontWeight="Bold" FontStyle="Normal" >
+            AutoGenerateColumns="False" Opacity="0.60" FontWeight="Bold" FontStyle="Normal" Margin="223,0,35,0">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="EmpID" Width="50" Binding="{Binding ID}"  ></DataGridTextColumn>
                 <DataGridTextColumn Header="Name" MinWidth="60" Width="*" Binding="{Binding Name}"  ></DataGridTextColumn>
@@ -40,35 +41,39 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-
             </DataGrid.Columns>
-
         </DataGrid>
-        <!--<Label Content="Employee ID" HorizontalAlignment="Left" Margin="191,214,0,0" VerticalAlignment="Top" Width="122" Height="31"/>-->
-        <Label Content="Name" HorizontalAlignment="Left" Margin="191,235,0,0" VerticalAlignment="Top" Width="122" Height="31"/>
-        <Label Content="Address" HorizontalAlignment="Left" Margin="191,262,0,0" VerticalAlignment="Top" Width="122" Height="36"/>
-        <Label Content="Phone" HorizontalAlignment="Left" Margin="191,303,0,0" VerticalAlignment="Top" Width="122" Height="32"/>
-        <Label Content="Email" HorizontalAlignment="Left" Margin="511,226,0,0" VerticalAlignment="Top" Width="125" Height="31"/>
-        <Label Content="Gender" HorizontalAlignment="Left" Margin="511,259,0,0" VerticalAlignment="Top" Width="125" Height="30"/>
-        <Label Content="Age" HorizontalAlignment="Left" Margin="511,296,0,0" VerticalAlignment="Top" Width="125" Height="36"/>
-        <Label Content="Role" HorizontalAlignment="Left" Margin="511,327,0,0" VerticalAlignment="Top" Width="125" Height="32"/>
-        <!--<TextBox HorizontalAlignment="Left" x:Name="txtId" Margin="352,220,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="25" Width="86"/>-->
-        <TextBox HorizontalAlignment="Left" x:Name="txtname" Margin="352,237,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="25" Width="86"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtphone" Margin="352,303,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="25" Width="86"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtaddress" Margin="352,270,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="25" Width="86"/>
-        <TextBox HorizontalAlignment="Left" x:Name="txtemail" Margin="641,232,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="25" Width="86"/>
-
-        <Button Content="      Edit" Margin="442,386,258,10" RenderTransformOrigin="2.094,1.662" Click="Button_Click"  ></Button>
-        <ComboBox   x:Name="cmbgender" Margin="642,264,74,164"  >
-            <TextBlock Text="Male" ></TextBlock>
-            <TextBlock Text="Female"></TextBlock>
-            <TextBlock Text="Others"></TextBlock>
-        </ComboBox>
-        <TextBox HorizontalAlignment="Left" x:Name="txtage" Margin="641,296,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="25" Width="86"/>
-        <ComboBox HorizontalAlignment="Left" x:Name="txtrole" Margin="641,334,0,0"  VerticalAlignment="Top" Height="25" Width="86">
-            <TextBlock Text="Employee"></TextBlock>
-            <TextBlock Text="Manager"></TextBlock>
-        </ComboBox>
-
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="223,0,302,0">
+        <StackPanel>
+            <Label Content="Name" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="122" Height="30"/>
+                <Label Content="Address" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="122" Height="30"/>
+                <Label Content="Phone" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="122" Height="28"/>
+                <Label Content="Email" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="125" Height="28"/>
+                <Label Content="Gender" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="125" Height="28"/>
+                <Label Content="Age" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="125" Height="27"/>
+                <Label Content="Role" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="125" Height="25"/>
+        </StackPanel>
+            <StackPanel>
+                <TextBox HorizontalAlignment="Left" x:Name="txtname"  TextWrapping="Wrap" Margin="0,2" VerticalAlignment="Top" Height="25" Width="100"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtphone" TextWrapping="Wrap" Margin="0,2" VerticalAlignment="Top" Height="25" Width="100"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtaddress"  TextWrapping="Wrap" Margin="0,2" VerticalAlignment="Top" Height="25" Width="100"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtemail"  TextWrapping="Wrap" Margin="0,2" VerticalAlignment="Top" Height="25" Width="100"/>
+                <ComboBox Margin="0,2"  x:Name="cmbgender" Width="100"  >
+                    <TextBlock Text="Male" ></TextBlock>
+                    <TextBlock Text="Female"></TextBlock>
+                    <TextBlock Text="Others"></TextBlock>
+                </ComboBox>
+                <TextBox HorizontalAlignment="Left" x:Name="txtage"  TextWrapping="Wrap" Margin="0,2" VerticalAlignment="Top" Height="25" Width="100"/>
+                <ComboBox HorizontalAlignment="Left" x:Name="txtrole"  Margin="0,2" VerticalAlignment="Top" Height="25" Width="100">
+                    <TextBlock Text="Employee"></TextBlock>
+                    <TextBlock Text="Manager"></TextBlock>
+                </ComboBox>
+            </StackPanel>
+        </StackPanel>
+        <Button Grid.Row="2" Height="30" Width="30" Click="Button_Click" Margin="495,3,260,167" >
+            <Button.Background>
+                <ImageBrush ImageSource="/images/updateicon.png" />
+            </Button.Background>
+        </Button>
     </Grid>
 </UserControl>

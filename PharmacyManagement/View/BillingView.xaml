@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:PharmacyManagement.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" >
-    <Grid>
+    <Grid Margin="70 0 0 0">
         <Grid.RowDefinitions>
             <RowDefinition Height="47*"/>
             <RowDefinition Height="3*"/>
@@ -49,7 +49,7 @@
                 <Label Grid.Row="5" Grid.Column="0" Content="Total "  FontWeight="Bold" VerticalAlignment="Center"/>
 
             </Grid>
-            <DataGrid x:Name="grdMD" Margin="365,35,30,189" AutoGenerateColumns="False" Opacity="0.70" FontWeight="Bold">
+            <DataGrid x:Name="grdMD" Width="550" Margin="301,35,24,263" AutoGenerateColumns="False" Opacity="0.70" FontWeight="Bold">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Medicine Name" Binding="{Binding MedName}" Width="100"/>
                     <DataGridTextColumn Header="Medicine ID" Width="130" Binding="{Binding MedID}" />
@@ -60,18 +60,18 @@
             </DataGrid>
         </Grid>
 
-        <DataGrid x:Name="grdlist" Width="150" AutoGenerateColumns="False" SelectionChanged="grdlist_SelectionChanged" Margin="73,285,534,55">
+        <DataGrid x:Name="grdlist" Width="100" Background="CadetBlue" Height="120" AutoGenerateColumns="False" SelectionChanged="grdlist_SelectionChanged" Margin="-100,285,439,55">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Medicine Name" Binding="{Binding MedName}"/>
+                <DataGridTextColumn  Header="Medicine Name"  Width="100" Binding="{Binding MedName}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Orientation="Horizontal" Height="70" Margin="103,373,31,7" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <Button Content="     Add"  TextOptions.TextFormattingMode="Display" Margin="5" Click="AddButton_Click" />
-            <Button Content="    Search" Click ="Button_Click"  TextOptions.TextFormattingMode="Display" Margin="5"  />
-            <Button Content="    Print"  TextOptions.TextFormattingMode="Display" Margin="5" Click="PrintButton_Click_1" />
-            <Button Content="    Clear"  TextOptions.TextFormattingMode="Display" Margin="5" Click="ClearButton"/>
-            <Button Content="    Delete"  TextOptions.TextFormattingMode="Display" Margin="5" Click="delete_Click"  />
-            <Button Content="     Save" TextOptions.TextFormattingMode="Display" Margin="5" Click="Save_Click"  />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="70" Margin="103,373,31,7" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <Button Content="Add" Background="Gray" TextOptions.TextFormattingMode="Display" Margin="5" Click="AddButton_Click" Width="59" Height="37" />
+            <Button Content="Search" Background="gray" Click ="Button_Click"  TextOptions.TextFormattingMode="Display" Margin="5" Width="59" Height="37"  />
+            <Button Content="Print" Background="gray" TextOptions.TextFormattingMode="Display" Margin="5" Click="PrintButton_Click_1" Width="59" Height="37"/>
+            <Button Content="Clear" Background="White" TextOptions.TextFormattingMode="Display" Margin="5" Click="ClearButton" Width="59" Height="37"/>
+            <Button Content="Delete" Background="Red" TextOptions.TextFormattingMode="Display" Margin="5" Click="delete_Click" Width="59" Height="37"  />
+            <Button Content="Save" Background="Green" TextOptions.TextFormattingMode="Display" Margin="5" Click="Save_Click" Width="59" Height="37"  />
 
         </StackPanel>
         <Frame x:Name="mainbill" Grid.RowSpan="2" Margin="121,4,10,-4" Grid.ColumnSpan="2" />

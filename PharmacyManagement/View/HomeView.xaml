@@ -9,15 +9,16 @@
 
     <DockPanel >
 
-        <Grid>
+        <Grid Margin=" 100 30 0  0">
             <Grid.Background>
-                <ImageBrush  ImageSource="/images/istockphoto-1175143614-612x612.jpg" />
+                <ImageBrush  ImageSource="/images/hugo-banner-image.png" />
+
 
 
             </Grid.Background>
 
 
-            <Label Margin="300,16,105,380" Content="Welcome Admin !" FontWeight="Bold" FontSize="25"></Label>
+            <Label Margin="300,16,105,380"  FontWeight="Bold" FontSize="25"></Label>
             
 
         </Grid>

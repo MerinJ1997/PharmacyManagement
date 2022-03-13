@@ -16,5 +16,9 @@ namespace EntityLayer
         public DateTime Expiry { get; set; }
         public int Quantity{ get; set; }
         public string Total { get; set; }
+        public float TotalAmount { get; set; }
+        public double GST { get; set; }
+        public int InvoiceNo { get; set; }
+        public string Date { get; set; }
     }
 }

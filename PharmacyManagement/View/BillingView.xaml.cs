@@ -27,7 +27,7 @@ namespace PharmacyManagement.View
     public partial class BillingView : UserControl
     {
         ObservableCollection<StockModel> list = new ObservableCollection<StockModel>();
-        protected int n, totalAmount = 0;
+        protected int totalAmount = 0;
         protected Int64 stock, newStock;
         public BillingView()
         {
@@ -81,7 +81,7 @@ namespace PharmacyManagement.View
                 float unitprice = float.Parse(unit.Text);
                 Int64 quantity = Convert.ToInt64(qty.Text);
                 float totalPrice = unitprice * quantity;
-                txtPrice.Text = "Rs." + totalPrice.ToString();
+                txtPrice.Text = /*"Rs." +*/ totalPrice.ToString();
             }
             else
             {
@@ -110,16 +110,40 @@ namespace PharmacyManagement.View
             qty.Text = string.Empty;
             txtPrice.Text = string.Empty;
         }
+        public void CalculateGST()
+        {
+            StockModel stocks = new StockModel();  
+            int Amnt = Convert.ToInt32(txtTotalAmnt.Text);
+            gst = Amnt * 0.05;
+            stocks.GST = gst;
+            stocks.TotalAmount = Amnt;
+            BillBussiness bill = new BillBussiness();
+            bill.Bill(stocks);          // to save gst and total amount
+        }
+        public void SaveBillDetails()       //to save the details in grid
+        {
+            StockModel stocks = new StockModel();
+            BillBussiness bussiness = new BillBussiness();
+            foreach(var item in list)
+            {                
+                stocks.MedName = item.MedName;
+                stocks.Quantity = item.Quantity;
+                stocks.UnitPrice = item.UnitPrice;                
+                stocks.Total = item.Total;
+                bussiness.Bill2(stocks);
+            }
+             
+        }
         private void PrintButton_Click_1(object sender, RoutedEventArgs e)
         {
-            mainbill.Content = new BillReceipt();
+            mainbill.Content = new BillReceipt();    
         }
 
         private void delete_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                int qty;
+                
                 StockModel stock = new StockModel();
                 BillBussiness bb = new BillBussiness();
                 var row_list = GetDataGridRows(grdMD);
@@ -128,25 +152,18 @@ namespace PharmacyManagement.View
                     if (single_row.IsSelected == true)
                     {
                         //Get your value over here
-                       
+
                         var datas = grdMD.SelectedItem;
                         int id = Convert.ToInt32((grdMD.SelectedCells[1].Column.GetCellContent(datas) as TextBlock).Text);
                         string name = (grdMD.SelectedCells[0].Column.GetCellContent(datas) as TextBlock).Text;
                         int qtyGRID = Convert.ToInt32((grdMD.SelectedCells[3].Column.GetCellContent(datas) as TextBlock).Text);
                         stock.MedName = name;
-                        var list1 = bb.fetchMedicine(stock);
-                        //int dbqty = stock.StockAvailable;
-                        foreach (var item in list)
-                        {
-                            qty = (int)Convert.ToInt64(item.StockAvailable);
-                            
-                        }
-                        var list2 = list.ToList();
-                        var itemToRemove = list2.Find(r => r.MedID == id);
+
+                        var itemToRemove = list.ToList().Find(r => r.MedID == id);
                         if (itemToRemove != null)
                         {
-                            list2.Remove(itemToRemove);
-                            grdMD.ItemsSource = list2;
+                            list.Remove(itemToRemove);
+                            grdMD.ItemsSource = list;
                         }
                         var fetch = bb.fetchMedicine(stock);
                         foreach (var item in fetch)
@@ -155,8 +172,6 @@ namespace PharmacyManagement.View
                             stock.MedName = name;
                             bb.UpdateQuantity(stock);
                         }
-                        
-                        
                     }
                 }
             }
@@ -165,11 +180,8 @@ namespace PharmacyManagement.View
                 MessageBox.Show("No data to delete");
             }
         }
-
         private void AddButton_Click(object sender, RoutedEventArgs e) // Add to grid from text
         {
-           
-
                 StockModel stocks = new StockModel();
                 stocks.MedName = medname.Text;
                 BillBussiness bb = new BillBussiness();
@@ -178,23 +190,16 @@ namespace PharmacyManagement.View
                 {
                     stock = item.StockAvailable;
                 }
-
                 int MedId = Convert.ToInt32(medid.Text);
                 string MedName = medname.Text;
                 if (qty.Text != "")
                 {
                     int Qty = Convert.ToInt32(qty.Text);
+
+                if (Qty <= stock)
+                {
                     float UnitPrice = float.Parse(unit.Text);
                     string Total = txtPrice.Text;
-                    //foreach (var item in list)            //to add existing medicine again
-                    //{
-                    //    if (item.MedID == MedId && item.MedName == MedName)
-                    //    {
-                    //        var x = grdMD.SelectedItem;
-                    //        int quantity = Convert.ToInt32((grdMD.SelectedCells[0].Column.GetCellContent(x) as TextBlock).Text);
-                    //        Qty = Qty + quantity;
-                    //    }
-                    //}
                     stocks.MedID = MedId;
                     stocks.MedName = MedName;
                     stocks.UnitPrice = UnitPrice;
@@ -203,16 +208,15 @@ namespace PharmacyManagement.View
 
                     list.Add(stocks);                //to add list to datagrid
                     grdMD.ItemsSource = list;
-
-                    if (Qty <= stock)
-                    {
-                        newStock = stock - Qty;
+                    newStock = stock - Qty;
                         //stock = newStock;
-                        stocks.MedName = medname.Text;
-                        stocks.StockAvailable = Convert.ToInt32(newStock);
-                        bb.UpdateQuantity(stocks);
-                        MessageBox.Show("Stock Left: " + newStock);
-                    }
+                    stocks.MedName = medname.Text;
+                    stocks.StockAvailable = Convert.ToInt32(newStock);
+                    bb.UpdateQuantity(stocks);
+                    MessageBox.Show("Stock Left: " + newStock);
+                    totalAmount = totalAmount + Convert.ToInt32(txtPrice.Text);
+                    txtTotalAmnt.Text = totalAmount.ToString();                    
+                }
                     else
                     {
                         MessageBox.Show("Exceeded stock limit. Please enter value less than " + stock);
@@ -223,8 +227,16 @@ namespace PharmacyManagement.View
                     MessageBox.Show("Enter values");
                 }
                 Clear();
-           
         }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            CalculateGST();
+            SaveBillDetails();
+        }
+
+        public double gst;
+        
         
     }
 }

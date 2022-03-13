@@ -44,8 +44,6 @@ namespace DataAccessLayer
             }
             return models;
         }
-
-
         public List<StockModel> FetchDataByMedName(StockModel add)
         {
             List<StockModel> models = new List<StockModel>();
@@ -90,6 +88,81 @@ namespace DataAccessLayer
                 connection.Open();
                 cmd.ExecuteNonQuery();
             }
+        }
+        public void SaveBillData(StockModel add)
+        {
+            SqlConnection conn = null;
+            using (conn = new SqlConnection("data source =.; database = PharmacyManagement; integrated security = SSPI"))
+            {
+                double gst = add.GST;
+                float TotalAmount = add.TotalAmount;
+                SqlCommand cmd = new SqlCommand("SaveBill", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@GST", gst);
+                cmd.Parameters.AddWithValue("@TotalAmnt", TotalAmount);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Inserted Successfully");
+            }
+        }
+        public void SaveBillData2(StockModel add)
+        {
+            SqlConnection conn = null;
+            using (conn = new SqlConnection("data source = .; database = PharmacyManagement; integrated security = SSPI"))
+            {
+                string name = add.MedName;
+                int qty = add.Quantity;
+                int price = Convert.ToInt32(add.UnitPrice);
+                int totalPrice = Convert.ToInt32(add.Total);
+                
+                SqlCommand cmd = new SqlCommand("SaveBillData", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@medName", name);
+                cmd.Parameters.AddWithValue("@quantity", qty);
+                cmd.Parameters.AddWithValue("@unitprice", price);
+                cmd.Parameters.AddWithValue("@totalprice", totalPrice);
+                
+                conn.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Inserted Successfully");
+            }
+        }
+        public List<StockModel> GetBillData()
+        {
+            List<StockModel> model = new List<StockModel>();
+            SqlConnection conn = null;
+            using (conn = new SqlConnection("data source = .; database = PharmacyManagement; integrated security = SSPI"))
+            {                
+                SqlCommand cmd = new SqlCommand("GetBillData", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                //cmd.CommandText = "GetBillData";
+                //cmd.Connection = conn;
+                conn.Open();
+                //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                SqlDataReader dr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                //adapter.Fill(dt);
+                dt.Load(dr);
+                for(int i = 0; i < dt.Rows.Count; i++)
+                {
+                    StockModel stockModel = new StockModel();
+                    stockModel.InvoiceNo = Convert.ToInt32(dt.Rows[i]["InvoiceNo"]);                    
+                    
+                    
+                        stockModel.MedName = dt.Rows[i]["MedName"].ToString();
+                        stockModel.Quantity = Convert.ToInt32(dt.Rows[i]["Quantity"]);
+                        stockModel.UnitPrice = Convert.ToInt32(dt.Rows[i]["UnitPrice"]);
+                        stockModel.Total = dt.Rows[i]["Price"].ToString();
+                        stockModel.GST = Convert.ToInt32(dt.Rows[i]["GST"]);
+                        stockModel.Date = dt.Rows[i]["Date"].ToString();
+                        stockModel.TotalAmount = Convert.ToInt32(dt.Rows[i]["TotalAmount"]);
+                        model.Add(stockModel);
+                    
+                    
+                    
+                }
+            }
+            return model;
         }
     }
 

@@ -27,6 +27,26 @@ namespace BusinessLayer
             BillData bd =new BillData();
             bd.Update(add);
         }
+        public void GetBill(StockModel add)
+        {
+            BillData billData = new BillData();
+            billData.SaveBillData(add);
+        }
+        public void Bill(StockModel add)
+        {
+            BillData billData = new BillData();
+            billData.SaveBillData(add);
+        }
+        public void Bill2(StockModel add)
+        {
+            BillData billData = new BillData();
+            billData.SaveBillData2(add);
+        }
+        public List<StockModel> GetBillDet()
+        {
+            BillData billData = new BillData();
+            return billData.GetBillData();
+        }
     }
 
 }

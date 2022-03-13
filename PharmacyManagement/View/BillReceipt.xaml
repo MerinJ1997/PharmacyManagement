@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PharmacyManagement.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="Bill_Load">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/images/6e22000a0d68024c1b100e9c50ca304704afd197-640x380.png" />
@@ -22,7 +23,7 @@
             </StackPanel>
             <StackPanel Orientation="Vertical" Width="210">
                 <TextBox Margin="5"  x:Name="txtInvoice" />
-                <DatePicker Margin="5"/>
+                <TextBox x:Name="txtDate" Margin="5"/>
                 <TextBox x:Name="txtEditStudentName"  TextWrapping="Wrap" Margin="5"   FontSize="14"/>
                 <TextBox x:Name="txtEditEmail"  TextWrapping="Wrap" Margin="5"  FontSize="14" />
                 <TextBox x:Name="txtMobile"  TextWrapping="Wrap" Margin="5"   FontSize="14"/>
@@ -33,30 +34,29 @@
                 <RowDefinition Height="150"/>
                 <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
-            <DataGrid Height="150" AutoGenerateColumns="False" Opacity="0.70" Margin="53,0,10,0" >
+            <DataGrid x:Name="grdReceipt" Height="150" AutoGenerateColumns="False" Opacity="0.70" Margin="53,0,10,0" >
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Medicine Name"  Width="180" Binding="{Binding }" />
-                    <DataGridTextColumn Header="Description"  Width="250" Binding="{Binding }" />
-                    <DataGridTextColumn Header="Quantity"  Width="100" Binding="{Binding }" />
-                    <DataGridTextColumn Header="Unit Price"  Width="100" Binding="{Binding }" />
-                    <DataGridTextColumn Header="Price"  Width="80" Binding="{Binding }" />
+                    <DataGridTextColumn Header="Medicine Name"  Width="180" Binding="{Binding MedName}" />                    
+                    <DataGridTextColumn Header="Quantity"  Width="100" Binding="{Binding Quantity}" />
+                    <DataGridTextColumn Header="Unit Price"  Width="100" Binding="{Binding UnitPrice}" />
+                    <DataGridTextColumn Header="Price"  Width="80" Binding="{Binding Total}" />
                 </DataGrid.Columns>
 
             </DataGrid>
             
-            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="422,0,0,13">
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="479,0,0,13">
                 <StackPanel Margin="3">
-                    <Button x:Name="btnPrint" Margin="0,18" Height="58" Content="    Print" Click="Print_Button_Click"/>
+                    <Button x:Name="btnPrint" Margin="0,18" Height="58" Content=" Print" Click="Print_Button_Click"/>
                 </StackPanel>
-                <StackPanel Margin="3" Width="157">
-                    <Label Content="SubTotal"/>
-                    <Label Content="GST"/>
-                    <Label Content="Total"/>
+                <StackPanel Margin="0,0,0,0" Width="94">
+                    <Label Content="SubTotal" FontSize="14"/>
+                    <Label Content="GST" FontSize="14"/>
+                    <Label Content="Total" FontSize="14"/>
                 </StackPanel>
-                <StackPanel Width="157">
-                    <Label Background="AliceBlue" Margin="3" Height="17"  />
-                    <Label Margin="3" Height="17" />
-                    <Label Margin="5" Height="17" />
+                <StackPanel Width="100">
+                    <TextBox x:Name="txtSubTotal" Background="AliceBlue" FontSize="14" Margin="0,2" Height="20"  />
+                    <TextBox x:Name="txtGST" Margin="0,6" Height="20" FontSize="14" />
+                    <TextBox x:Name="txtTotal" Margin="0,6" Height="20" FontSize="14" />
                 </StackPanel>
             </StackPanel>
         </Grid>

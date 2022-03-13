@@ -25,8 +25,7 @@ namespace PharmacyManagement.View
         {
             InitializeComponent();
         }
-        //public void UserControl1_Load(Object sender, EventArgs e)
-        //{
+
 
         //    SqlConnection connection = null;
         //    using (connection = new SqlConnection("data source =.; database = PharmacyManagement; integrated security = SSPI"))

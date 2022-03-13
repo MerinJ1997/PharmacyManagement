@@ -32,7 +32,7 @@ namespace PharmacyManagement.View
             {
                 if (sqlCon.State == System.Data.ConnectionState.Closed)
                     sqlCon.Open();
-                string query = "select RoleID from Users where Username=@Username AND Password=@Password";
+                string query = "select RoleID,EmployeeName,EmployeeAddress,PhoneNo,Email from UserDetails where Username=@Username AND Password=@Password";
                 SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
                 sqlCmd.CommandType = CommandType.Text;
                 sqlCmd.Parameters.AddWithValue("@Username", txtUsername.Text);
@@ -40,10 +40,25 @@ namespace PharmacyManagement.View
                 int RoleID = Convert.ToInt32(sqlCmd.ExecuteScalar());
                 if (RoleID == 1)
                 {
-                    EmployeeWelcomeView dashboard = new EmployeeWelcomeView();
-                    dashboard.Show();
-                    MessageBox.Show("Employee Login Successfully Completed");
-                     this.Close();
+                    SqlDataAdapter adapter = new SqlDataAdapter();
+                    adapter.SelectCommand = sqlCmd;
+                    DataSet dataSet = new DataSet();
+                    adapter.Fill(dataSet);
+                    if (dataSet.Tables[0].Rows.Count > 0)
+                    {
+                        string name = dataSet.Tables[0].Rows[0]["EmployeeName"].ToString();
+                        string address = dataSet.Tables[0].Rows[0]["EmployeeAddress"].ToString();
+                        string phone = dataSet.Tables[0].Rows[0]["PhoneNo"].ToString();
+                        string email = dataSet.Tables[0].Rows[0]["Email"].ToString();
+                        EmployeeWelcomeView dashboard = new EmployeeWelcomeView();
+                        dashboard.name.Text = name;
+                        dashboard.address.Text = address;
+                        dashboard.phone.Text = phone;
+                        dashboard.email.Text = email;
+                        dashboard.Show();
+                        MessageBox.Show("Employee Login Successfully Completed");
+                        this.Close();
+                    }
                 }
                 else if (RoleID == 2)
                 {

@@ -9,12 +9,16 @@
    
     <Grid>
         <ContentControl Content="{Binding SelectedView}"/>
-        <Menu Background="Black" HorizontalAlignment="Left" Width="150"  FontSize="14" >
+        <Menu Background="Black" HorizontalAlignment="Left" Width="200"  FontSize="14" >
             <Menu.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel VerticalAlignment="Center" Background="LightGray" />
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
+            <TextBox Width="194" x:Name="name"></TextBox>
+            <TextBox Width="194" x:Name="address"></TextBox>
+            <TextBox Width="194" x:Name="phone"></TextBox>
+            <TextBox Width="194" x:Name="email"></TextBox>
             <MenuItem  Header="My Profile" Command="{Binding EmployeeCommand}" CommandParameter="My Profile" >
                 <MenuItem.Icon>
                     <Image Source="/images/adduser.jpeg" />

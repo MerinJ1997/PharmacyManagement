@@ -60,7 +60,7 @@
 
                     </MenuItem.Icon>
                 </MenuItem>
-                <Button Content="User Login" Height="57" Width="124" Click="Button_Click"></Button>
+                <Button Content="User Login" FontWeight="Bold" Foreground="White" Background="#4082ed"  Height="29" Width="85" Click="Button_Click"></Button>
 
 
             </Menu>

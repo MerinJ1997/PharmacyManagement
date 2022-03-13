@@ -6,7 +6,12 @@
              xmlns:local="clr-namespace:PharmacyManagement.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="AliceBlue">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush  ImageSource="/images/searchimage2.jpg" />
+
+
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
             <RowDefinition Height="50"/>
@@ -14,11 +19,12 @@
             <RowDefinition Height="100"/>
             <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="1" Margin="100,0,0,0" Content="Medicine Name" VerticalAlignment="Center" FontSize="18"/>
+        <Label Margin="40,0,60,0" Content="Medicine Name" FontWeight="Bold" Foreground="Black" VerticalAlignment="Center" FontSize="18" Height="50" Grid.Row="1"/>
         <!--<Label Grid.Row="2" Margin="100,0,0,0" Content="Stock" VerticalAlignment="Center" FontSize="18"/>-->
-        <TextBox Grid.Row="1" Text="{Binding MedName}" Margin="300,0,0,0" x:Name="txtName" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Center" Width="187" Height="30"/>
+        <TextBox Text="{Binding MedName}" Margin="226,0,0,0" x:Name="txtName" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Center" Width="241" Height="50" Grid.Row="1"/>
         <!--<TextBox Grid.Row="2" Margin="300,0,0,0" x:Name="txtStock" Text="{Binding Stock}" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Center" Width="187" Height="30"/>-->
-        <Button Grid.Row="3" Content="   Search" Command="{Binding Submit}" HorizontalAlignment="Left" Margin="620,25,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+
+        <Button Grid.Row="3" Content=" Search" FontWeight="ExtraBold"  Foreground="White" Background="#46669c" Command="{Binding Submit}" HorizontalAlignment="Left" Margin="491,12,0,0" VerticalAlignment="Top" Click="Button_Click" Height="48" Width="95"/>
         <!--<DataGrid Grid.Row="4" x:Name="GridView" ItemsSource="{Binding list}" AutoGenerateColumns="False" HorizontalAlignment="Center" Width="753" Margin="0,0,0,67" >
             <DataGrid.Columns>
                 <DataGridTextColumn  Header="Medicine Name" Width="150" Binding="{Binding MedName}"></DataGridTextColumn>

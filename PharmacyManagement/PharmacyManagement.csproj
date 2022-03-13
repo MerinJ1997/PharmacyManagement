@@ -337,6 +337,12 @@
   <ItemGroup>
     <Resource Include="images\hugo-banner-image.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\searchimage.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\searchimage2.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

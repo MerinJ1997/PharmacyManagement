@@ -52,7 +52,7 @@
 
                     </MenuItem.Icon>-->
                 <!--</MenuItem>-->
-                <MenuItem Header="Search Here for Medicines " Command="{Binding HomePageCommands}" CommandParameter="Search" IsCheckable="true" Foreground="White" FontSize="16">
+                <MenuItem Header="Search here for Medicines " Command="{Binding HomePageCommands}" CommandParameter="Search" IsCheckable="true" Foreground="White" FontSize="16">
                     <TextBox Width="170"></TextBox>
                     <MenuItem.Icon>
 
@@ -60,10 +60,10 @@
 
                     </MenuItem.Icon>
                 </MenuItem>
-                <Button Content="User Login" FontWeight="Bold" Foreground="White" Background="#4082ed"  Height="29" Width="85" Click="Button_Click"></Button>
 
 
             </Menu>
+            <Button HorizontalAlignment="Right" VerticalAlignment="Top" Content="User Login" FontWeight="Bold" Foreground="White" Background="#4082ed"  Height="29" Width="85" Click="Button_Click"></Button>
 
 
         </Grid>

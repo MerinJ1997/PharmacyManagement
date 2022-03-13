@@ -86,44 +86,52 @@ namespace PharmacyManagement.View
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            StockModel stockModel = new StockModel();
-            id = (DataGrid.SelectedItem as StockModel).MedID;
-            string Name = medname.Text;
-            string UnitPrice = Price.Text;
-            string StockAvailable = stock.Text;
-            string Expiry = dtpicker.Text;
-            if (Name != null && UnitPrice != null && StockAvailable != null)
+            try
             {
-                if (Name.Length > 0)
+                StockModel stockModel = new StockModel();
+                id = (DataGrid.SelectedItem as StockModel).MedID;
+                string Name = medname.Text;
+                string UnitPrice = Price.Text;
+                string StockAvailable = stock.Text;
+                string Expiry = dtpicker.Text;
+                if (Name != null && UnitPrice != null && StockAvailable != null)
                 {
-                    if (!rName.IsMatch(Name))
+                    if (Name.Length > 0)
                     {
-                        MessageBox.Show("Invalid Medicine Name");
-                    }
-                    else if (!rUnit.IsMatch(UnitPrice))
-                    {
-                        MessageBox.Show("Invalid Price");
-                    }
-                    else if (!rUnit.IsMatch(StockAvailable))
-                    {
-                        MessageBox.Show("Invalid Price");
-                    }
-                    else
-                    {
-                        stockModel.MedID = id;
-                        stockModel.MedName = medname.Text;
-                        stockModel.StockAvailable = Int32.Parse(stock.Text);
-                        stockModel.UnitPrice = float.Parse(Price.Text);
-                        stockModel.Expiry = Convert.ToDateTime(dtpicker.Text);
-                        stockModel.Company = companyname.Text;
-                        UpdateStockBusiness usb = new UpdateStockBusiness();
-                        usb.UpdateData(stockModel);
-                        MessageBox.Show("Stock Details is Updated");
+                        if (!rName.IsMatch(Name))
+                        {
+                            MessageBox.Show("Invalid Medicine Name");
+                        }
+                        else if (!rUnit.IsMatch(UnitPrice))
+                        {
+                            MessageBox.Show("Invalid Price");
+                        }
+                        else if (!rUnit.IsMatch(StockAvailable))
+                        {
+                            MessageBox.Show("Invalid Price");
+                        }
+                        else
+                        {
+                            stockModel.MedID = id;
+                            stockModel.MedName = medname.Text;
+                            stockModel.StockAvailable = Int32.Parse(stock.Text);
+                            stockModel.UnitPrice = float.Parse(Price.Text);
+                            stockModel.Expiry = Convert.ToDateTime(dtpicker.Text);
+                            stockModel.Company = companyname.Text;
+                            UpdateStockBusiness usb = new UpdateStockBusiness();
+                            usb.UpdateData(stockModel);
+                            MessageBox.Show("Stock Details is Updated");
+                        }
                     }
                 }
+                Refresh();
+                ClearTextBox();
             }
-            Refresh();
-            ClearTextBox();
+            catch (Exception ex)
+            {
+                MessageBox.Show("Enter Values");
+            }
+            
         }
     }
 }

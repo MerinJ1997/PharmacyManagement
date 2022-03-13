@@ -8,7 +8,7 @@
         Title="AdminPageView" Height="450" Width="800">
     <Grid>
         <ContentControl Content="{Binding SelectedView}"></ContentControl>
-        <Menu Background="#0a1e5e" Margin="0,0,626,0" FontSize="14" >
+        <Menu Background="#0a1e5e" Margin="0,0,626,0" FontSize="14" Width="150" HorizontalAlignment="Left" >
             <Menu.ItemsPanel>
                 <ItemsPanelTemplate>
 
@@ -51,7 +51,13 @@
 
                 </MenuItem.Icon>
             </MenuItem>
-            <Button Content="Logout" Click="Button_Click"></Button>
+            <Button Margin="30" HorizontalAlignment="Center">
+                <Button.Background>
+                    <ImageBrush ImageSource="/images/icons8-logout-48.png" />
+
+                </Button.Background>
+                <TextBlock Width="50" Height="30"></TextBlock>
+            </Button>
             <!--<MenuItem Header="Logout" Command="{Binding AddUserCommand }" CommandParameter="Logout" Height="30">
                 <MenuItem.Icon>
 
@@ -65,7 +71,7 @@
 
         </Menu>
         <!--<Button>-->
-        <Image Source="/images/icons8-home-64.png" Margin="33,39,683,0" VerticalAlignment="Top" Height="60"/>
+        <Image Source="/images/icons8-home-64.png" Margin="33,39,683,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="60"/>
 
         <!--</Button>-->
 
@@ -79,7 +85,7 @@
                 <TextBlock x:Name="phone" FontSize="15" FontWeight="Bold"  Margin="10"  />
                 <Image Source="/images/icons8-email-64.png"  Height="20" Margin="10" />
 
-                <TextBlock x:Name="email" FontSize="15" FontWeight="Bold"  Margin="10"  />
+                <TextBlock x:Name="email" FontSize="12"  FontWeight="Bold" Width="207" Margin="10"  />
                 
 
 

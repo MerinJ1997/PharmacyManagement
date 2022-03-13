@@ -5,7 +5,7 @@
 
              
 
-             StartupUri="../View/EmployeeDetailView.xaml"
+             StartupUri="MainWindow.xaml"
 
              xmlns:view="clr-namespace:PharmacyManagement.View"
              xmlns:viewModel="clr-namespace:PharmacyManagement.ViewModel">

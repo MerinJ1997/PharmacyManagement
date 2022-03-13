@@ -334,6 +334,9 @@
   <ItemGroup>
     <Resource Include="images\EmployeeWelcomeView.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\hugo-banner-image.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

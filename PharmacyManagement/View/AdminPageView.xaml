@@ -69,7 +69,23 @@
 
         <!--</Button>-->
 
+        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="10">
+           
+            <StackPanel Orientation="Horizontal" Background="Transparent"  Width="425">
+                <Image Source="/images/icons8-administrator-male-40.png" Height="20" />
 
+                <TextBlock x:Name="name" FontSize="15" FontWeight="Bold"  Margin="10"   />
+                <Image Source="/images/icons8-phone-64.png"  Height="20" Margin="10" />
+                <TextBlock x:Name="phone" FontSize="15" FontWeight="Bold"  Margin="10"  />
+                <Image Source="/images/icons8-email-64.png"  Height="20" Margin="10" />
+
+                <TextBlock x:Name="email" FontSize="15" FontWeight="Bold"  Margin="10"  />
+                
+
+
+               
+            </StackPanel>
+        </StackPanel>
 
 
 

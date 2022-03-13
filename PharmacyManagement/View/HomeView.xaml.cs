@@ -25,70 +25,34 @@ namespace PharmacyManagement.View
         {
             InitializeComponent();
         }
-        public void UserControl1_Load(Object sender, EventArgs e)
-        {
+        //public void UserControl1_Load(Object sender, EventArgs e)
+        //{
 
-            SqlConnection connection = null;
-            using (connection = new SqlConnection("data source =.; database = PharmacyManagement; integrated security = SSPI"))
-            {
+        //    SqlConnection connection = null;
+        //    using (connection = new SqlConnection("data source =.; database = PharmacyManagement; integrated security = SSPI"))
+        //    {
 
-                var query = "Select * from UserDetails where EmployeeID =4 and RoleID =2";
+        //        var query = "Select * from UserDetails where EmployeeID =4 and RoleID =2";
 
-                SqlCommand command = new SqlCommand(query, connection);
-                connection.Open();
-                // SqlDataReader sqlDataReader = command.ExecuteReader();
-
-
-                using (SqlDataReader sdr = command.ExecuteReader())
-                {
-                    sdr.Read();
-                    txtph.Text = sdr["PhoneNo"].ToString();
-                    txtadd.Text = sdr["EmployeeAddress"].ToString();
-                    txtmail.Text = sdr["Email"].ToString();
+        //        SqlCommand command = new SqlCommand(query, connection);
+        //        connection.Open();
+        //        // SqlDataReader sqlDataReader = command.ExecuteReader();
 
 
-                }
-                connection.Close();
-
-            }
-        }
-
-        private void btn_Click(object sender, RoutedEventArgs e)
-        {
-            SqlConnection connection = null;
-            using (connection = new SqlConnection("data source =.; database = PharmacyManagement; integrated security = SSPI"))
-            {
-
-                int empid = 7;
-                string ph = txtph.Text;
-                string mail = txtmail.Text;
-                string add = txtadd.Text;
-                string query = "update UserDetails set EmployeeAddress= @add , PhoneNo= @ph  ,Email=@email where EmployeeID=@empid";
-
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@empid", empid);
-                command.Parameters.AddWithValue("@add", add);
-                command.Parameters.AddWithValue("@ph", ph);
-                command.Parameters.AddWithValue("@email", mail);
+        //        using (SqlDataReader sdr = command.ExecuteReader())
+        //        {
+        //            sdr.Read();
+        //            txtph.Text = sdr["PhoneNo"].ToString();
+        //            txtadd.Text = sdr["EmployeeAddress"].ToString();
+        //            txtmail.Text = sdr["Email"].ToString();
 
 
-                connection.Open();
+        //        }
+        //        connection.Close();
 
-                try
-                {
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Updated..");
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show(" Not Updated");
-                }
-                finally
-                {
-                    connection.Close();
-                }
-            }
+        //    }
+        //}
 
-        }
+       
     }
 }

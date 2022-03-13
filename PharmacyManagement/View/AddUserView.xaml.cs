@@ -25,6 +25,29 @@ namespace PharmacyManagement.View
             InitializeComponent();
         }
 
-        
+        void clear()
+        {
+            txtname.Text = string.Empty;
+            txtaddress.Text = string.Empty;
+            txtphno.Text = string.Empty;
+            txtemail.Text = string.Empty;
+            cmbgender.Text = string.Empty;
+            Age.Text = string.Empty;
+            username.Text = String.Empty;
+            password.Text = String.Empty;
+            role.Text = string.Empty;
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            clear();
+
+        }
+
+        private void btn_Click(object sender, RoutedEventArgs e)
+        {
+            clear();
+        }
     }
 }

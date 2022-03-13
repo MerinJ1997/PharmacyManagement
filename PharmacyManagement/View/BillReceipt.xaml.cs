@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLayer;
+using EntityLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,15 +27,27 @@ namespace PharmacyManagement.View
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            EmployeeWelcomeView obj = new EmployeeWelcomeView();
-            
-        }
+        //private void Button_Click(object sender, RoutedEventArgs e)
+        //{
+        //    EmployeeWelcomeView obj = new EmployeeWelcomeView();
+        //}
 
-        private void Grid_SourceUpdated(object sender, DataTransferEventArgs e)
+        public void Bill_Load(Object sender, EventArgs e)
         {
-            
+            List<StockModel> sm = new List<StockModel>();
+            //StockModel model = new StockModel();
+            BillBussiness billBussiness = new BillBussiness();
+            sm = billBussiness.GetBillDet();
+            grdReceipt.ItemsSource = sm;
+            foreach (var stock in sm)
+            {                
+                int qty = stock.Quantity;
+                txtInvoice.Text = stock.InvoiceNo.ToString();
+                txtDate.Text = stock.Date.ToString();
+                txtSubTotal.Text = stock.TotalAmount.ToString();
+                txtGST.Text = stock.GST.ToString();
+                txtTotal.Text = (stock.TotalAmount + stock.GST).ToString();
+            }
         }
 
         private void Print_Button_Click(object sender, RoutedEventArgs e)

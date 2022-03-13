@@ -10,10 +10,14 @@
         <Grid.Background >
             <ImageBrush ImageSource="/images/1.jpg"/>
         </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="200"/>
+        </Grid.RowDefinitions>
 
         <DataGrid 
-            Name="DataGrid" IsReadOnly="True" ItemsSource="{Binding list}"
-            Margin="177,23,10,259" AutoGenerateColumns="False" Opacity="0.9" FontWeight="Bold" FontStyle="Normal"  >
+            Name="DataGrid" Grid.Row="1" IsReadOnly="True" ItemsSource="{Binding list}" Height="190" AutoGenerateColumns="False" Opacity="0.9" FontWeight="Bold" FontStyle="Normal" Margin="223,5,37,5"  >
             <DataGrid.Columns>
                 <DataGridTextColumn Header="MedicineID" Binding="{Binding MedID}" Width="75" ></DataGridTextColumn>
                 <DataGridTextColumn Header="Name"  Width="45" Binding="{Binding MedName}" ></DataGridTextColumn>
@@ -38,19 +42,29 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <Label Content="Name" Foreground="White" HorizontalAlignment="Left" Margin="191,212,0,0" VerticalAlignment="Top" Width="122" Height="31"/>
-        <Label Content="Company Name" Foreground="White" HorizontalAlignment="Left" Margin="191,256,0,0" VerticalAlignment="Top" Width="122" Height="31"/>
-        <Label Content="Available Stock" Foreground="White" HorizontalAlignment="Left" Margin="191,298,0,0" VerticalAlignment="Top" Width="122" Height="36"/>
+        <StackPanel Grid.Row="2" Height="200" Orientation="Horizontal" Margin="223,0,302,0" >
+            <StackPanel>
+                <Label Content="Name" Foreground="White" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="122" Height="31"/>
+                <Label Content="Company Name" Foreground="White" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="122" Height="31"/>
+                <Label Content="Available Stock" Foreground="White" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="122" Height="36"/>
+                <Label Content="Unit Price" Foreground="White" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="125" Height="31"/>
+                <Label Content="Expiry Date"  Foreground="White" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="125" Height="36"/>
+            </StackPanel>
+            <StackPanel>
+                <TextBox HorizontalAlignment="Left" Margin="0,3" TextWrapping="Wrap" x:Name="medname" VerticalAlignment="Top" Height="25" Width="100"/>
+                <TextBox HorizontalAlignment="Left" Margin="0,3" TextWrapping="Wrap" x:Name="companyname"  VerticalAlignment="Top" Height="25" Width="100"/>
+                <TextBox HorizontalAlignment="Left" Margin="0,3" TextWrapping="Wrap" x:Name="stock" VerticalAlignment="Top" Height="25" Width="100"/>
+                <TextBox HorizontalAlignment="Left" x:Name="Price" Margin="0,3" TextWrapping="Wrap" Height="25" Width="100"/>
+                <DatePicker Margin="0,3" Width="100" Height="31" x:Name="dtpicker"/>
+            </StackPanel>
+        </StackPanel>
+        <Button Grid.Row="2" Height="30" Width="30" Click="Button_Click" Margin="495,3,260,167" >
+            <Button.Background>
+                <ImageBrush ImageSource="/images/updateicon.png" />
+            </Button.Background>
+        </Button>
+        <!--<Button Content="Update" Foreground="White" HorizontalAlignment="Left" Margin="588,296,0,0" VerticalAlignment="Top" Width="80" Height="54" Click="Button_Click"/>-->
 
-        <Label Content="Unit Price" Foreground="White" HorizontalAlignment="Left" Margin="191,349,0,0" VerticalAlignment="Top" Width="125" Height="31"/>
-        <Label Content="Expiry Date"  Foreground="White" HorizontalAlignment="Left" Margin="191,391,0,0" VerticalAlignment="Top" Width="125" Height="36"/>
-        <TextBox HorizontalAlignment="Left" Margin="352,220,0,0" TextWrapping="Wrap" x:Name="medname" VerticalAlignment="Top" Height="25" Width="86"/>
-        <TextBox HorizontalAlignment="Left" Margin="352,261,0,0" TextWrapping="Wrap" x:Name="companyname"  VerticalAlignment="Top" Height="25" Width="86"/>
-        <TextBox HorizontalAlignment="Left" Margin="352,299,0,0" TextWrapping="Wrap" x:Name="stock" VerticalAlignment="Top" Height="25" Width="86"/>
-        <DatePicker Margin="352,386,255,41"  x:Name="dtpicker"/>
-
-        <Button Content="Update" Foreground="White" HorizontalAlignment="Left" Margin="588,296,0,0" VerticalAlignment="Top" Width="80" Height="54" Click="Button_Click"/>
-        <TextBox HorizontalAlignment="Left" x:Name="Price" Margin="352,349,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="25" Width="86"/>
 
         <!--<Button x:Name="btn"  Margin="334,333,366,57" Width="100" Background="Transparent" BorderThickness="0" BorderBrush="Transparent">
             <Border CornerRadius="9" Height="25" Width="95" BorderBrush="Black" Background="Aqua" BorderThickness="1" >

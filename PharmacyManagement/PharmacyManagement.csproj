@@ -351,9 +351,13 @@
   </ItemGroup>
   <ItemGroup>
 
+    <Resource Include="images\updateicon.png" />
+
+
     <Resource Include="images\icons8-save-48.png" />
 
     <Resource Include="images\welcome %283%29.jpg" />
+
 
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

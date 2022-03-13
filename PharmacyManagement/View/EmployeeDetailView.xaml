@@ -7,43 +7,13 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
             >
-    <Grid >
+    <Grid Margin="150 0 0 0">
         <Grid.Background>
-            <ImageBrush ImageSource="/images/EmployeeWelcomeView.jpg" 
- />
+            <ImageBrush ImageSource="/images/welcome (3).jpg" />
+
+ 
         </Grid.Background>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Label Grid.Row="0" Content="Welcome Employee !" FontWeight="Bold" FontSize="45" Grid.ColumnSpan="2" Margin="222,10,0,70" Grid.RowSpan="2" />
-        <Grid  Margin="273,109,30,121">
-            <Grid.RowDefinitions >
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto"></ColumnDefinition>
-                <ColumnDefinition Width="auto"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Label Grid.Row="1" Grid.Column="0" ></Label>
-            <Label Grid.Row="3" Grid.Column="0"></Label>
-            <Label Grid.Row="5" Grid.Column="0"></Label>
-            <Label Grid.Row="1" Grid.Column="1" ></Label>
-            <Label Grid.Row="3" Grid.Column="1"></Label>
-            <Label Grid.Row="5" Grid.Column="1"></Label>
-
-
-        </Grid>
+        
         
     </Grid>
 

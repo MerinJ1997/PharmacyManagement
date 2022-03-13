@@ -24,5 +24,26 @@ namespace PharmacyManagement.View
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            clear();
+        }
+
+
+        void clear()
+        {
+            txtid.Text=string.Empty;
+            txtname.Text=string.Empty;
+            txtcompany.Text=string.Empty;
+            txtprice.Text=string.Empty;
+            dtpicker1.Text=string.Empty;
+            txtstock.Text=string.Empty;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            clear();
+        }
     }
 }

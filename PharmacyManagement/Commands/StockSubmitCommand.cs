@@ -20,7 +20,7 @@ namespace PharmacyManagement.Commands
         {
             addStockViewModel = ViewModel;
         }
-        Regex rName = new Regex(@"^[a-zA-Z]+$");
+        Regex rName = new Regex(@"^[a-zA-Z]+(\s[a-zA-Z]+)?$");
         Regex rUnit = new Regex(@"^[0-9]+$");
 
         public event EventHandler CanExecuteChanged;
@@ -44,33 +44,41 @@ namespace PharmacyManagement.Commands
             {
                 if(Name.Length > 0)
                 {
-                    if (!rName.IsMatch(Name))
-                    {
-                        MessageBox.Show("Invalid Medicine Name");
-                    }
-                    if (!rName.IsMatch(Company))
-                    {
-                        MessageBox.Show("Invalid Medicine Name");
-                    }
-                    else if (!rUnit.IsMatch(UnitPrice))
-                    {
-                        MessageBox.Show("Invalid Price");
-                    }
-                    else if (!rUnit.IsMatch(StockAvailable))
-                    {
-                        MessageBox.Show("Invalid Price");
-                    }
-                    else
-                    {                        
-                        sm.MedID = addStockViewModel.MedId;
-                        sm.MedName = addStockViewModel.MedName;
-                        sm.Company = addStockViewModel.Company;
-                        sm.UnitPrice = addStockViewModel.Price;
-                        sm.StockAvailable = addStockViewModel.Stocks;
-                        sm.Expiry = addStockViewModel.Expiry;
-                        updateStockBusiness.SaveStockBussiness(sm);
-                    }
-                }
+                    //if (!rName.IsMatch(Name))
+                    //{
+                    //    MessageBox.Show("Invalid Medicine Name");
+                    //}
+                    //if (!rName.IsMatch(Company))
+                    //{
+                    //    MessageBox.Show("Invalid Medicine Name");
+                    //}
+                    //else if (!rUnit.IsMatch(UnitPrice))
+                    //{
+                    //    MessageBox.Show("Invalid Price");
+                    //}
+                    //else if (!rUnit.IsMatch(StockAvailable))
+                    //{
+                    //    MessageBox.Show("Invalid Price");
+                    //}
+                    //else
+                    //{                        
+                    //    sm.MedID = addStockViewModel.MedId;
+                    //    sm.MedName = addStockViewModel.MedName;
+                    //    sm.Company = addStockViewModel.Company;
+                    //    sm.UnitPrice = addStockViewModel.Price;
+                    //    sm.StockAvailable = addStockViewModel.Stocks;
+                    //    sm.Expiry = addStockViewModel.Expiry;
+                    //    updateStockBusiness.SaveStockBussiness(sm);
+                    //}
+                    sm.MedID = addStockViewModel.MedId;
+                    sm.MedName = addStockViewModel.MedName;
+                    sm.Company = addStockViewModel.Company;
+                    sm.UnitPrice = addStockViewModel.Price;
+                    sm.StockAvailable = addStockViewModel.Stocks;
+                    sm.Expiry = addStockViewModel.Expiry;
+                    updateStockBusiness.SaveStockBussiness(sm);
+                
+            }
             }
             else
             {

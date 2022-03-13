@@ -97,13 +97,22 @@
                 <Label Grid.Row="15" Grid.Column="1"></Label>
 
                 <Label Grid.Row="17" Grid.Column="1"></Label>
-                <Button  Background="#008227" Command="{Binding StockSubmitCommand}" Height="50" Width="150" Margin="94,0,-174,-59" Grid.RowSpan="2" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="17" >
+                <Button  Background="#008227" Command="{Binding StockSubmitCommand}" Height="50" Width="150" Margin="35,0,-115,-60" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="19" Click="Button_Click_1" >
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/images/icons8-save-48.png" Height="35" Width="43" />
 
-                        <TextBlock Margin="5,3" Foreground="Black" FontWeight="Bold" FontSize="14" Width="51" Height="22"><Run Text="Save"/></TextBlock>
+                        <TextBlock Margin="5,3" Foreground="White" FontWeight="Bold" FontSize="14" Width="51" Height="22"><Run Text="Save"/></TextBlock>
                     </StackPanel>
                 </Button>
+                <Button  Background="#008227" Command="{Binding StockSubmitCommand}" Height="50" Width="150" Margin="218,0,-298,-60" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="19" Click="Button_Click" >
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/images/clear.png" Height="35" Width="43" RenderTransformOrigin="0.593,0.5" />
+
+
+                        <TextBlock Margin="5,3" Foreground="White" FontWeight="Bold" FontSize="14" Width="51" Height="22"><Run Text="Clear"/></TextBlock>
+                    </StackPanel>
+                </Button>
+
 
 
 

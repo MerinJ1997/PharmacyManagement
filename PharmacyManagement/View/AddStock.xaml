@@ -5,14 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PharmacyManagement.View" xmlns:viewmodel="clr-namespace:PharmacyManagement.ViewModel" d:DataContext="{d:DesignInstance Type=viewmodel:AddStockViewModel}"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="700" d:DesignWidth="1200">
     <Grid Margin="0,0,0,0" Background="Black">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="363*"/>
             <ColumnDefinition Width="37*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Margin="70,0,0,0" Grid.ColumnSpan="2"  >
+        <Grid Margin="180,95,-110,-95" Grid.ColumnSpan="2"  >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="14*"/>
                 <ColumnDefinition Width="0*"/>
@@ -22,7 +22,7 @@
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <Image Source="/images/capsules.jpg" 
-            Opacity="0.28" Margin="76,0,0,0" OpacityMask="#FF9EE7FF" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="6" HorizontalAlignment="Left" Width="804"  >
+            Opacity="0.28" Margin="1,80,0,155" OpacityMask="#FF9EE7FF" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="5" HorizontalAlignment="Left" Width="806"  >
                 <Image.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -97,10 +97,12 @@
                 <Label Grid.Row="15" Grid.Column="1"></Label>
 
                 <Label Grid.Row="17" Grid.Column="1"></Label>
-                <Button Content="Save" Command="{Binding StockSubmitCommand}" Height="61" Margin="94,0,-174,-59" Grid.RowSpan="2" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="17" >
-                    <Button.Foreground>
-                        <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveCaptionTextColorKey}}"/>
-                    </Button.Foreground>
+                <Button  Background="#008227" Command="{Binding StockSubmitCommand}" Height="50" Width="150" Margin="94,0,-174,-59" Grid.RowSpan="2" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="17" >
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/images/icons8-save-48.png" Height="35" Width="43" />
+
+                        <TextBlock Margin="5,3" Foreground="Black" FontWeight="Bold" FontSize="14" Width="51" Height="22"><Run Text="Save"/></TextBlock>
+                    </StackPanel>
                 </Button>
 
 

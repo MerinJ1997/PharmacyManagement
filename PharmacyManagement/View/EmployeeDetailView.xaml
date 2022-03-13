@@ -9,7 +9,8 @@
             >
     <Grid >
         <Grid.Background>
-            <ImageBrush ImageSource="/images/Pharmacists.jpeg" Opacity="0.6" />
+            <ImageBrush ImageSource="/images/EmployeeWelcomeView.jpg" 
+ />
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto"/>
@@ -19,7 +20,7 @@
             <RowDefinition Height="auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Content="Welcome Employee !" FontWeight="Bold" FontSize="45" Grid.ColumnSpan="2" Margin="222,21,0,70" Grid.RowSpan="2" />
+        <Label Grid.Row="0" Content="Welcome Employee !" FontWeight="Bold" FontSize="45" Grid.ColumnSpan="2" Margin="222,10,0,70" Grid.RowSpan="2" />
         <Grid  Margin="273,109,30,121">
             <Grid.RowDefinitions >
                 <RowDefinition Height="auto" />

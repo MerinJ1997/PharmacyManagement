@@ -68,6 +68,7 @@
     <Compile Include="DisplayStockDetails_Result.cs">
       <DependentUpon>PharmacyDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="LoginData.cs" />
     <Compile Include="PharmacyDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

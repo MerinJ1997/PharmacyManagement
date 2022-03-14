@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLayer;
+using EntityLayer;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -27,60 +29,48 @@ namespace PharmacyManagement.View
         }
         private void Button_Login(object sender, RoutedEventArgs e)
         {
-            SqlConnection sqlCon = new SqlConnection(@"Data Source=.;Database=PharmacyManagement;Integrated Security=SSPI");
             try
             {
-                if (sqlCon.State == System.Data.ConnectionState.Closed)
-                    sqlCon.Open();
-                string query = "select RoleID,EmployeeName,EmployeeAddress,PhoneNo,Email from UserDetails where Username=@Username AND Password=@Password";
-                SqlCommand sqlCmd = new SqlCommand(query, sqlCon);
-                sqlCmd.CommandType = CommandType.Text;
-                sqlCmd.Parameters.AddWithValue("@Username", txtUsername.Text);
-                sqlCmd.Parameters.AddWithValue("@Password", txtPassword.Password);
-                int RoleID = Convert.ToInt32(sqlCmd.ExecuteScalar());
-                if (RoleID == 1)
+                LoginModel lm = new LoginModel();
+                LoginBussiness LB = new LoginBussiness();
+                lm.username = txtUsername.Text;
+                lm.password = txtPassword.Password;
+                LB.logindetails(lm);
+                int id = lm.roleid;
+
+                if (id == 1)
                 {
-                    SqlDataAdapter adapter = new SqlDataAdapter();
-                    adapter.SelectCommand = sqlCmd;
-                    DataSet dataSet = new DataSet();
-                    adapter.Fill(dataSet);
-                    if (dataSet.Tables[0].Rows.Count > 0)
-                    {
-                        string name = dataSet.Tables[0].Rows[0]["EmployeeName"].ToString();
-                        string address = dataSet.Tables[0].Rows[0]["EmployeeAddress"].ToString();
-                        string phone = dataSet.Tables[0].Rows[0]["PhoneNo"].ToString();
-                        string email = dataSet.Tables[0].Rows[0]["Email"].ToString();
-                        EmployeeWelcomeView dashboard = new EmployeeWelcomeView();
-                        dashboard.name.Text = name;
-                        dashboard.address.Text = address;
-                        dashboard.phone.Text = phone;
-                        dashboard.email.Text = email;
-                        dashboard.Show();
-                        MessageBox.Show("Employee Login Successfully Completed");
-                        this.Close();
-                    }
+
+                    string name = lm.name;
+                    string address = lm.address;
+                    string phone = lm.phone;
+                    string email = lm.email;
+                    EmployeeWelcomeView dashboard = new EmployeeWelcomeView();
+                    dashboard.name.Text = name;
+                    dashboard.address.Text = address;
+                    dashboard.phone.Text = phone;
+                    dashboard.email.Text = email;
+                    dashboard.Show();
+                    MessageBox.Show("Employee Login Successfully Completed");
+                    this.Close();
                 }
-                else if (RoleID == 2)
+
+                else if (id == 2)
                 {
-                    SqlDataAdapter adapter = new SqlDataAdapter();
-                    adapter.SelectCommand = sqlCmd;
-                    DataSet dataSet = new DataSet();
-                    adapter.Fill(dataSet);
-                    if (dataSet.Tables[0].Rows.Count > 0)
-                    {
-                        string name = dataSet.Tables[0].Rows[0]["EmployeeName"].ToString();
-                        string address = dataSet.Tables[0].Rows[0]["EmployeeAddress"].ToString();
-                        string phone = dataSet.Tables[0].Rows[0]["PhoneNo"].ToString();
-                        string email = dataSet.Tables[0].Rows[0]["Email"].ToString();
-                        AdminPageView dashboard = new AdminPageView();
-                        dashboard.name.Text=name;
-                        dashboard.phone.Text=phone;
-                        dashboard.email.Text=email;
-                        
-                        dashboard.Show();
-                        MessageBox.Show("Admin Login Successfully Completed");
-                        this.Close();
-                    }
+
+                    string name = lm.name;
+                    string address = lm.address;
+                    string phone = lm.phone;
+                    string email = lm.email;
+                    AdminPageView dashboard = new AdminPageView();
+                    dashboard.name.Text = name;
+                    dashboard.phone.Text = phone;
+                    dashboard.email.Text = email;
+
+                    dashboard.Show();
+                    MessageBox.Show("Admin Login Successfully Completed");
+                    this.Close();
+
                 }
                 else
                 {
@@ -93,9 +83,11 @@ namespace PharmacyManagement.View
             }
             finally
             {
-                sqlCon.Close();
+
             }
         }
+
+           
 
         private void BackButton(object sender, RoutedEventArgs e)
         {

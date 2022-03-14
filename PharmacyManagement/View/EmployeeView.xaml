@@ -55,8 +55,8 @@
         </StackPanel>
             <StackPanel>
                 <TextBox HorizontalAlignment="Left" x:Name="txtname"  TextWrapping="Wrap" Margin="0,2" VerticalAlignment="Top" Height="25" Width="100"/>
-                <TextBox HorizontalAlignment="Left" x:Name="txtphone" TextWrapping="Wrap" Margin="0,2" VerticalAlignment="Top" Height="25" Width="100"/>
                 <TextBox HorizontalAlignment="Left" x:Name="txtaddress"  TextWrapping="Wrap" Margin="0,2" VerticalAlignment="Top" Height="25" Width="100"/>
+                <TextBox HorizontalAlignment="Left" x:Name="txtphone" TextWrapping="Wrap" Margin="0,2" VerticalAlignment="Top" Height="25" Width="100"/>                
                 <TextBox HorizontalAlignment="Left" x:Name="txtemail"  TextWrapping="Wrap" Margin="0,2" VerticalAlignment="Top" Height="25" Width="100"/>
                 <ComboBox Margin="0,2"  x:Name="cmbgender" Width="100"  >
                     <TextBlock Text="Male" ></TextBlock>

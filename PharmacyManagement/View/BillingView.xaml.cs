@@ -152,17 +152,19 @@ namespace PharmacyManagement.View
                     if (single_row.IsSelected == true)
                     {
                         //Get your value over here
-
                         var datas = grdMD.SelectedItem;
                         int id = Convert.ToInt32((grdMD.SelectedCells[1].Column.GetCellContent(datas) as TextBlock).Text);
                         string name = (grdMD.SelectedCells[0].Column.GetCellContent(datas) as TextBlock).Text;
                         int qtyGRID = Convert.ToInt32((grdMD.SelectedCells[3].Column.GetCellContent(datas) as TextBlock).Text);
+                        int price = Convert.ToInt32((grdMD.SelectedCells[4].Column.GetCellContent(datas)as TextBlock).Text);
                         stock.MedName = name;
 
                         var itemToRemove = list.ToList().Find(r => r.MedID == id);
                         if (itemToRemove != null)
                         {
                             list.Remove(itemToRemove);
+                            totalAmount = totalAmount - price;
+                            txtTotalAmnt.Text = totalAmount.ToString();
                             grdMD.ItemsSource = list;
                         }
                         var fetch = bb.fetchMedicine(stock);

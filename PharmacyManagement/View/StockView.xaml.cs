@@ -94,24 +94,24 @@ namespace PharmacyManagement.View
                 string UnitPrice = Price.Text;
                 string StockAvailable = stock.Text;
                 string Expiry = dtpicker.Text;
-                if (Name != null && UnitPrice != null && StockAvailable != null)
-                {
-                    if (Name.Length > 0)
-                    {
-                        if (!rName.IsMatch(Name))
-                        {
-                            MessageBox.Show("Invalid Medicine Name");
-                        }
-                        else if (!rUnit.IsMatch(UnitPrice))
-                        {
-                            MessageBox.Show("Invalid Price");
-                        }
-                        else if (!rUnit.IsMatch(StockAvailable))
-                        {
-                            MessageBox.Show("Invalid Price");
-                        }
-                        else
-                        {
+                //if (Name != null && UnitPrice != null && StockAvailable != null)
+                //{
+                //    if (Name.Length > 0)
+                //    {
+                //        if (!rName.IsMatch(Name))
+                //        {
+                //            MessageBox.Show("Invalid Medicine Name");
+                //        }
+                //        else if (!rUnit.IsMatch(UnitPrice))
+                //        {
+                //            MessageBox.Show("Invalid Price");
+                //        }
+                //        else if (!rUnit.IsMatch(StockAvailable))
+                //        {
+                //            MessageBox.Show("Invalid Price");
+                //        }
+                //        else
+                //        {
                             stockModel.MedID = id;
                             stockModel.MedName = medname.Text;
                             stockModel.StockAvailable = Int32.Parse(stock.Text);
@@ -121,9 +121,9 @@ namespace PharmacyManagement.View
                             UpdateStockBusiness usb = new UpdateStockBusiness();
                             usb.UpdateData(stockModel);
                             MessageBox.Show("Stock Details is Updated");
-                        }
-                    }
-                }
+                        //}
+                    //}
+                //}
                 Refresh();
                 ClearTextBox();
             }

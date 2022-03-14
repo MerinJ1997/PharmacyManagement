@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    public class AddUserBusiness
+    public class AddUserBusiness : IAddUser
     {
         AddUserData UserData = new AddUserData();
         public void SaveUser(AddUserDetailsModel addUser)

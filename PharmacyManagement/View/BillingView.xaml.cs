@@ -184,6 +184,8 @@ namespace PharmacyManagement.View
         }
         private void AddButton_Click(object sender, RoutedEventArgs e) // Add to grid from text
         {
+            try
+            {
                 StockModel stocks = new StockModel();
                 stocks.MedName = medname.Text;
                 BillBussiness bb = new BillBussiness();
@@ -198,27 +200,27 @@ namespace PharmacyManagement.View
                 {
                     int Qty = Convert.ToInt32(qty.Text);
 
-                if (Qty <= stock)
-                {
-                    float UnitPrice = float.Parse(unit.Text);
-                    string Total = txtPrice.Text;
-                    stocks.MedID = MedId;
-                    stocks.MedName = MedName;
-                    stocks.UnitPrice = UnitPrice;
-                    stocks.Total = Total;
-                    stocks.Quantity = Convert.ToInt32(Qty);
+                    if (Qty <= stock)
+                    {
+                        float UnitPrice = float.Parse(unit.Text);
+                        string Total = txtPrice.Text;
+                        stocks.MedID = MedId;
+                        stocks.MedName = MedName;
+                        stocks.UnitPrice = UnitPrice;
+                        stocks.Total = Total;
+                        stocks.Quantity = Convert.ToInt32(Qty);
 
-                    list.Add(stocks);                //to add list to datagrid
-                    grdMD.ItemsSource = list;
-                    newStock = stock - Qty;
+                        list.Add(stocks);                //to add list to datagrid
+                        grdMD.ItemsSource = list;
+                        newStock = stock - Qty;
                         //stock = newStock;
-                    stocks.MedName = medname.Text;
-                    stocks.StockAvailable = Convert.ToInt32(newStock);
-                    bb.UpdateQuantity(stocks);
-                    MessageBox.Show("Stock Left: " + newStock);
-                    totalAmount = totalAmount + Convert.ToInt32(txtPrice.Text);
-                    txtTotalAmnt.Text = totalAmount.ToString();                    
-                }
+                        stocks.MedName = medname.Text;
+                        stocks.StockAvailable = Convert.ToInt32(newStock);
+                        bb.UpdateQuantity(stocks);
+                        MessageBox.Show("Stock Left: " + newStock);
+                        totalAmount = totalAmount + Convert.ToInt32(txtPrice.Text);
+                        txtTotalAmnt.Text = totalAmount.ToString();
+                    }
                     else
                     {
                         MessageBox.Show("Exceeded stock limit. Please enter value less than " + stock);
@@ -229,6 +231,11 @@ namespace PharmacyManagement.View
                     MessageBox.Show("Enter values");
                 }
                 Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Please Enter Values");
+            }
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)

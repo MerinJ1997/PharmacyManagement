@@ -46,7 +46,7 @@
             
             <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="479,0,0,13">
                 <StackPanel Margin="3">
-                    <Button x:Name="btnPrint" Margin="0,18" Height="58" Content=" Print" Click="Print_Button_Click"/>
+                    <Button x:Name="btnPrint" Margin="0,1" Height="29" Content=" Print" Click="Print_Button_Click" Width="47"/>
                 </StackPanel>
                 <StackPanel Margin="0,0,0,0" Width="94">
                     <Label Content="SubTotal" FontSize="14"/>

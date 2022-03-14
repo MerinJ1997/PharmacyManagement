@@ -46,7 +46,7 @@ namespace PharmacyManagement.View
                 txtDate.Text = stock.Date.ToString();
                 txtSubTotal.Text = stock.TotalAmount.ToString();
                 txtGST.Text = stock.GST.ToString();
-                txtTotal.Text = (stock.TotalAmount + stock.GST).ToString();
+                txtTotal.Text ="Rs. " + (stock.TotalAmount + stock.GST).ToString();
             }
         }
 

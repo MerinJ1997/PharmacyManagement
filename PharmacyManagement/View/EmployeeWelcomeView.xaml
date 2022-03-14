@@ -21,10 +21,10 @@
                     <Image Source="/images/adduser.jpeg" />
                 </MenuItem.Icon>
             </MenuItem>
-            <TextBox Width="194" x:Name="name"></TextBox>
-            <TextBox Width="194" x:Name="address"></TextBox>
-            <TextBox Width="194" x:Name="phone"></TextBox>
-            <TextBox Width="194" x:Name="email"></TextBox>
+            <TextBox Width="194" x:Name="name" IsEnabled="False"></TextBox>
+            <TextBox Width="194" x:Name="address" IsEnabled="False"></TextBox>
+            <TextBox Width="194" x:Name="phone" IsEnabled="False"></TextBox>
+            <TextBox Width="194" x:Name="email" IsEnabled="False"></TextBox>
             <MenuItem Header="Billing" Foreground="White" FontWeight="Bold" Command="{Binding EmployeeCommand}" CommandParameter="Billing" Height="30" >
                 <MenuItem.Icon>
                     <Image Source="/images/icons8-bill-64.png" />

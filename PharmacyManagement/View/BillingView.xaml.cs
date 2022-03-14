@@ -235,6 +235,7 @@ namespace PharmacyManagement.View
         {
             CalculateGST();
             SaveBillDetails();
+            MessageBox.Show("Saved Successfully");
         }
 
         public double gst;

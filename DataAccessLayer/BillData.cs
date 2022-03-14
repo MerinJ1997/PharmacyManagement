@@ -101,8 +101,7 @@ namespace DataAccessLayer
                 cmd.Parameters.AddWithValue("@GST", gst);
                 cmd.Parameters.AddWithValue("@TotalAmnt", TotalAmount);
                 conn.Open();
-                cmd.ExecuteNonQuery();
-                
+                cmd.ExecuteNonQuery();                
             }
         }
         public void SaveBillData2(StockModel add)

@@ -60,14 +60,23 @@ namespace PharmacyManagement.ViewModel
         public string Gender
         {
             get { return _gender; }
-            set { _gender = value; OnPropertyChanged("Gender"); }
+            set 
+            { 
+                if(_gender == null)
+                    _gender = value; 
+                OnPropertyChanged("Gender"); 
+            }
         }
         private string _role;
 
         public string Role
         {
             get { return _role; }
-            set { _role = value; OnPropertyChanged("Role"); }
+            set 
+            { if(_role == null)
+                    _role = value; 
+                OnPropertyChanged("Role"); 
+            }
         }
         private string _username;
 

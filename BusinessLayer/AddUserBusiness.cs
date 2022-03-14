@@ -10,26 +10,22 @@ namespace BusinessLayer
 {
     public class AddUserBusiness
     {
+        AddUserData UserData = new AddUserData();
         public void SaveUser(AddUserDetailsModel addUser)
         {
-            AddUserData userData = new AddUserData();
-            userData.SaveUserData(addUser);
+            UserData.SaveUserData(addUser);
         }
         public List<AddUserDetailsModel> GetUserDetails()
-        {
-            AddUserData userData = new AddUserData();
-            return userData.GetUserData();
+        {            
+            return UserData.GetUserData();
         }
         public void DeleteData(AddUserDetailsModel addUserDetailsModel)
         {
-            AddUserData addUserData = new AddUserData();
-            addUserData.DeleteUserData(addUserDetailsModel);
-
+            UserData.DeleteUserData(addUserDetailsModel);
         }
         public void UpdateData(AddUserDetailsModel addUserDetailsModel)
         {
-            AddUserData addUser = new AddUserData();
-            addUser.UpdateUserData(addUserDetailsModel);
+            UserData.UpdateUserData(addUserDetailsModel);
         }
     }
 }

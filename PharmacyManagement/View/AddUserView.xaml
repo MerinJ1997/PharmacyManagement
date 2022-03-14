@@ -129,7 +129,7 @@ VerticalScrollBarVisibility="Hidden"/>
                     <TextBox Grid.Row="6" Grid.Column="1"  x:Name="txtemail"  Text="{Binding Email}" Margin="0,0,-302,0" ></TextBox>
                     <Label Grid.Row="7" Grid.Column="1"></Label>
 
-                    <ComboBox Grid.Row="8" Grid.Column="1" Text="{Binding Gender}" x:Name="cmbgender" Margin="0,0,-302,0" >
+                    <ComboBox Grid.Row="8" Grid.Column="1" Text = "{Binding Gender}" x:Name="cmbgender" Margin="0,0,-302,0" >
                         <TextBlock Text="Male" Margin="0,0,-302,0"></TextBlock>
                         <TextBlock Text="Female"></TextBlock>
                         <TextBlock Text="Others"></TextBlock>
@@ -146,13 +146,7 @@ VerticalScrollBarVisibility="Hidden"/>
                         <TextBlock Text="Employee"></TextBlock>
                     </ComboBox>
                     <Label Grid.Row="17" Grid.Column="1"></Label>
-
-
-
-
-
                 </Grid>
-
             </Grid>
         </StackPanel>
 
@@ -163,7 +157,5 @@ VerticalScrollBarVisibility="Hidden"/>
         <Border Background="AliceBlue" CornerRadius="20" Margin="540,512,551,289" />
         <Button Content=" Add User " Background="AliceBlue" Command="{Binding Submit}" Margin="556,515,567,0" VerticalAlignment="Top"   x:Name="btn" Height="45" Click="btn_Click" BorderThickness="0"/>
         <!--</StackPanel>-->
-
-
     </Grid>
 </UserControl>

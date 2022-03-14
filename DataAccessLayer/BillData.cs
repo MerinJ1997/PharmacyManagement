@@ -102,7 +102,7 @@ namespace DataAccessLayer
                 cmd.Parameters.AddWithValue("@TotalAmnt", TotalAmount);
                 conn.Open();
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Inserted Successfully");
+                
             }
         }
         public void SaveBillData2(StockModel add)
@@ -124,7 +124,7 @@ namespace DataAccessLayer
                 
                 conn.Open();
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Inserted Successfully");
+                
             }
         }
         public List<StockModel> GetBillData()

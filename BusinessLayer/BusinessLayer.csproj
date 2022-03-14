@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="AddUserBusiness.cs" />
     <Compile Include="BillBussiness.cs" />
+    <Compile Include="IAddUser.cs" />
+    <Compile Include="ILogin.cs" />
     <Compile Include="LoginBussiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UpdateStockBusiness.cs" />

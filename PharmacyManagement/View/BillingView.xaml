@@ -48,7 +48,7 @@
                 <TextBox Grid.Row="5" Grid.Column="1" Name="txtTotalAmnt" Height="30" Background="#d1f0e9" Text="Rs. 0.0"  FontWeight="Bold" VerticalAlignment="Top" IsEnabled="False"  />
                 <Label Grid.Row="5" Grid.Column="0" Content="Total "  FontWeight="Bold" VerticalAlignment="Center"/>
             </Grid>
-            <DataGrid x:Name="grdMD" Width="550" Margin="301,35,24,263" AutoGenerateColumns="False" Opacity="0.70" FontWeight="Bold">
+            <DataGrid x:Name="grdMD" Width="550" Margin="301,35,24,263" AutoGenerateColumns="False" Opacity="0.70" FontWeight="Bold" IsReadOnly="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Medicine Name" Binding="{Binding MedName}" Width="100"/>
                     <DataGridTextColumn Header="Medicine ID" Width="130" Binding="{Binding MedID}" />

@@ -8,13 +8,12 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer
 {
-    public class LoginBussiness
+    public class LoginBussiness : ILogin
     {
         public void logindetails(LoginModel loginModel)
         {
             LoginData ld = new LoginData();
             ld.loginDataDetails(loginModel);
-
         }
     }
 }

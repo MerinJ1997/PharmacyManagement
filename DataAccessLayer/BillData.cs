@@ -133,32 +133,23 @@ namespace DataAccessLayer
             using (conn = new SqlConnection("data source = .; database = PharmacyManagement; integrated security = SSPI"))
             {                
                 SqlCommand cmd = new SqlCommand("GetBillData", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-                //cmd.CommandText = "GetBillData";
-                //cmd.Connection = conn;
-                conn.Open();
-                //SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                cmd.CommandType = CommandType.StoredProcedure;                
+                conn.Open();                
                 SqlDataReader dr = cmd.ExecuteReader();
-                DataTable dt = new DataTable();
-                //adapter.Fill(dt);
+                DataTable dt = new DataTable();                
                 dt.Load(dr);
                 for(int i = 0; i < dt.Rows.Count; i++)
                 {
                     StockModel stockModel = new StockModel();
-                    stockModel.InvoiceNo = Convert.ToInt32(dt.Rows[i]["InvoiceNo"]);                    
-                    
-                    
-                        stockModel.MedName = dt.Rows[i]["MedName"].ToString();
-                        stockModel.Quantity = Convert.ToInt32(dt.Rows[i]["Quantity"]);
-                        stockModel.UnitPrice = Convert.ToInt32(dt.Rows[i]["UnitPrice"]);
-                        stockModel.Total = dt.Rows[i]["Price"].ToString();
-                        stockModel.GST = Convert.ToInt32(dt.Rows[i]["GST"]);
-                        stockModel.Date = dt.Rows[i]["Date"].ToString();
-                        stockModel.TotalAmount = Convert.ToInt32(dt.Rows[i]["TotalAmount"]);
-                        model.Add(stockModel);
-                    
-                    
-                    
+                    stockModel.InvoiceNo = Convert.ToInt32(dt.Rows[i]["InvoiceNo"]);   
+                    stockModel.MedName = dt.Rows[i]["MedName"].ToString();
+                    stockModel.Quantity = Convert.ToInt32(dt.Rows[i]["Quantity"]);
+                    stockModel.UnitPrice = Convert.ToInt32(dt.Rows[i]["UnitPrice"]);
+                    stockModel.Total = dt.Rows[i]["Price"].ToString();
+                    stockModel.GST = Convert.ToInt32(dt.Rows[i]["GST"]);
+                    stockModel.Date = dt.Rows[i]["Date"].ToString();
+                    stockModel.TotalAmount = Convert.ToInt32(dt.Rows[i]["TotalAmount"]);
+                    model.Add(stockModel);
                 }
             }
             return model;

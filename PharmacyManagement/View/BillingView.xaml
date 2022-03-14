@@ -47,7 +47,6 @@
                 <TextBox Grid.Row="4" Name="txtPrice" Grid.Column="1" Height="30" Background="#d1f0e9" Text="Rs. 0.0"  FontWeight="Bold" VerticalAlignment="Center" IsEnabled="False" />
                 <TextBox Grid.Row="5" Grid.Column="1" Name="txtTotalAmnt" Height="30" Background="#d1f0e9" Text="Rs. 0.0"  FontWeight="Bold" VerticalAlignment="Top" IsEnabled="False"  />
                 <Label Grid.Row="5" Grid.Column="0" Content="Total "  FontWeight="Bold" VerticalAlignment="Center"/>
-
             </Grid>
             <DataGrid x:Name="grdMD" Width="550" Margin="301,35,24,263" AutoGenerateColumns="False" Opacity="0.70" FontWeight="Bold">
                 <DataGrid.Columns>

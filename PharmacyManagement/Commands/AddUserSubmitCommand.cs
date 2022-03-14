@@ -40,7 +40,7 @@ namespace PharmacyManagement.Commands
         {
             AddUserDetailsModel add = new AddUserDetailsModel();
             AddUserBusiness addUserBusiness = new AddUserBusiness();
-            //Validation val = new Validation();
+            
             string Name = ViewModel.Name;
             string Address = ViewModel.Address;
             string Email = ViewModel.Email;
